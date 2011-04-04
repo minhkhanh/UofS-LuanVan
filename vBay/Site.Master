@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="vBay.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head id="Head1" runat="server">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>vBay</title>
+        <link href="~/style.css" rel="stylesheet" type="text/css" />
+        <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </head>
+
+    <body>
+        <form id="Form1" runat="server">
+            <div class="page">
+                <div class = "container">
+                    <div id= "head">
+                        <img src="imagine/logo.gif" alt="Can not upload imagine" width="110" height="45" align="middle"/>
+                        <img src="imagine/logo_2.gif" alt="Can not upload imagine" width="158" height="59" align="middle"/>
+                        <span >Chào mừng!</span>
+                        <a id ="signin" href="#"> Sign In </a><span> or </span>
+                        <a id ="registry" href="#"> Registry </a>
+                    </div>
+                    <div id = "namegroup">
+                        <!--Chạy chữ -->
+                        <marquee behavior=scroll direction=right loop=infinite scrolldelay=80> <font face = "VNI-Fato" color="#0099CC"><b> E4 COR-COP EBAY INTRODUCTION</b></font> </marquee>
+                    </div>
+                    <div class = "menu">
+                        <a href="Default.aspx"> Trang chủ </a><img src="imagine/middle.gif"height="24" width="1"  align="middle">
+                        <a href="#"> Sản phẩm </a><img src="imagine/middle.gif"height="24" width="1"  align="middle">
+                        <a href="#"> Dịch vụ </a><img src="imagine/middle.gif"height="24" width="1"  align="middle">
+                        <a href="#"> Thanh toán</a><img src="imagine/middle.gif"height="24" width="1"  align="middle">
+                        <a href="#"> Tài khoản</a><img src="imagine/middle.gif"height="24" width="1"  align="middle">
+                        <a href="About.aspx"> Hỗ trợ </a><img src="imagine/middle.gif"height="24" width="1"  align="middle">
+                    </div>
+                    <div class="search">
+                        <input type="text" size="30" width="100"/> 
+                        <input name="Reset" type="reset" class="button" style=" border-top:3px" value="Search" />
+                    </div>
+                    <div class= "leftmenu">
+                        <div class = "supleftmenu">
+                         <p>
+                         <a href="#"> All Categories</a>
+                         <a href="#"> Thời trang </a>
+                         <a href="#"> Motor</a>
+                         <a href="#"> Điện tử & Công nghệ </a>
+                         <a href="#"> Phim ảnh & Âm nhạc </a>
+                         <a href="#"> Game </a>
+                         <a href="#"> Sách </a> 
+                         <a href="#"> Tranh ảnh </a>
+                         <a href="#"> Nhà cửa </a>
+                         <a href="#"> Other </a> 
+                          </p>	
+                        </div>
+                        <div class ="help">		
+                        <p align="center"><font face= "Academy Engraved LET" color="#666666"><i>Help Center</i></font></p><hr></hr>
+                        <p align="center"><a href="ymsgr:sendim?nguyen_dinhluyen"><img src="http://opi.yahoo.com/online?u=nguyen_dinhluyen&m=g&t=2" border=0/></a><p>
+                        <p align="center"> <font face= "Cambria" color="#666666">E4_Group</font> </p>
+                        </div>	
+                    </div>    
+                    <div class= "content">
+                        <div class="main">
+                            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+                        </div>
+                    </div>
+                    <div class= "rightmenu">
+                        <p><img src="imagine/rightmenu2.gif" width="295" height="265"alt="Can not load imagine!"/></p>
+                        <p><img src="imagine/rightmenu1.gif" width="295" height="265"alt="Can not load imagine!"/></p>
+                        <p align="center"> <font color="#336633"><b>Advertisement</b></font></p>
+                    </div>	
+                 </div>     
+                <div class = "footer">          
+                    <div class="info">
+                        <ul>
+                        <li><a href= "#">Quảng cáo </a></li>
+                        <li><a href= "#"> Thành viên </a></li>
+                        <li><a href= "#"> Thông tin </a></li>	
+                        </ul>
+                    </div>
+                    <div class="seperate">
+                        <img  src="imagine/nav_bg2.gif" width="1" height="80" alt="Can not imagine"/>
+                    </div>
+                <p align="right"><font face="Agency FB, Book Antiqua, Palatino, serif" size="2pt" color="#0000FF"> <b>Copyright 2011 @ Group E4. All rights reserved.</b></font> </p>						   	
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
+
+
+
+
+
+
