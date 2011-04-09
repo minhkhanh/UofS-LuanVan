@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="App_Themes\ThemeSunny\styleSunny.css" />
     <Content Include="imagine\anhkhoa.png" />
     <Content Include="imagine\anhkhoi.png" />
     <Content Include="imagine\background.gif" />
@@ -73,7 +74,7 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
-    <Content Include="style.css" />
+    <Content Include="App_Themes\ThemeNormal\styleNormal.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

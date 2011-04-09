@@ -1,0 +1,170 @@
+
+/*@charset "utf-8"; CSS Document */
+body
+{
+	background-image:url(../../../imagine/background.gif);
+}
+.container
+{
+	width:1000px;	
+	height:980px;
+	margin-left:auto;
+	margin-right:auto;		
+	background-color:#FFF;
+}
+#head
+{
+	float:left;
+	background-color: white;	
+	width:1000px;	
+}
+a#signin 
+{	
+	color:#06F;	
+	text-decoration:none;			
+}
+a#signin:hover
+{
+	color:#F03;	
+	text-decoration:underline;				
+}
+a#registry 
+{	
+	color:#06F;	
+	text-decoration:none;			
+}
+a#registry:hover
+{
+	color:#F03;	
+	text-decoration:underline;				
+}
+#imaginehead
+{
+	border: 1px solid #999;
+}
+#namegroup
+{
+	background:url(../../../imagine/title.gif);		
+	padding-bottom:10px;
+	padding-bottom:10px;
+}
+.menu 
+{
+	width:1000px;
+	height:30px;	
+	background:url(../../../imagine/nav_bg2.gif);
+	clear:both;
+}
+.menu a, .menu a:link , .menu a:visited
+{
+	font-size:15px;	
+	font-weight:800;
+	color:white;
+	font-family:Arial, Helvetica, sans-serif;
+	text-align: center;
+	/* Không có gạch chân trên các đường link*/
+	text-decoration: none;
+	/* Canh lề bên trái của dòng chữ */
+	padding-left:18px;
+	/* Canh lề phải của chữ*/
+	padding-right:18px;
+	
+}
+.menu a:hover,.menu a:active
+{
+	font-weight:1500;
+	font-family:Arial, Helvetica, sans-serif;
+	font-style:italic;
+	color:#FF6;
+}
+.search
+{
+	padding-top:10px;
+	background: url(../../../imagine/search.jpg);	
+	padding-left:621px;	
+	padding-bottom:10px;
+}
+.leftmenu
+{
+	float:left;
+	width:20%;	
+	padding: 0px;
+	margin: 0px;
+	height:auto;
+}
+.supleftmenu a , .supleftmenu a:link, .supleftmenu a:visited
+{	
+	display:block;
+	text-decoration:none;
+	background:url(../../../imagine/menu_bg.png);
+	padding-left: 24px;
+	color:white;
+	font-size: 15px;
+	font-weight:bold;
+	font-family:Cambria (Headings), Helvetica, sans-serif;
+	text-align:left;		
+	border:#FF0;
+	height:25px;
+}
+.supleftmenu a:hover
+{
+	/* Chọn vị trí sẽ thể hiện của tấm ảnh*/
+	background-position:bottom;	
+	font-style:italic;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	color:#FF0;
+}
+.help
+{
+	border: 2px solid #CCC;	
+}
+.content
+{
+	float:left;
+	width:50%;	
+	margin: 0px;
+	padding-left: 5px;
+	height:auto;
+}
+.rightmenu
+{
+	float:left;
+	width:29%;	
+	height:auto;
+}
+.footer
+{
+	width:1000px;	
+	height:auto;
+	margin-left:auto;
+	margin-right:auto;
+	background:url(../../../imagine/search.jpg);
+}
+.seperate
+{
+	width:auto;
+	float:left;
+	padding-top:5px;
+	padding-left:50px;
+	padding-bottom:5px;
+}
+.info
+{
+	width:auto;
+	float:left;
+}
+.info ul
+{
+	padding-top:4px;
+	list-style:none;
+}
+.footer a, .footer a:link, .footer a:visited
+{
+	text-decoration:none;
+	color:#666;
+}
+.footer a:hover
+{
+	text-decoration:underline;
+}

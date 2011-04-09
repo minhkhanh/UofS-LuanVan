@@ -13,5 +13,21 @@ namespace vBay
         {
 
         }
+
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+
+            if (Session["theme"] == null)
+                Page.Theme = "ThemeNormal";
+            else
+                Page.Theme = Session["theme"].ToString();
+            
+        }
+
+       
+
+        
+
     }
+
 }
