@@ -10,3 +10,8 @@
         Phần hiện thị nội dung sản phẩm chính!
     </h2>
 </asp:Content>
+
+<asp:Content ID="Content1" runat="server" ContentPlaceHolderID="ContentPlaceHolderGo">
+<asp:Button runat="server" ID="ButtonChooseTheme"  Text="Go" 
+                            onclick="ButtonChooseTheme_Click"/>
+</asp:Content>

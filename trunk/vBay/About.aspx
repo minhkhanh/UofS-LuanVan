@@ -22,3 +22,8 @@
 
     </div>
 </asp:Content>
+
+<asp:Content ID="Content1" runat="server" ContentPlaceHolderID="ContentPlaceHolderGo">
+<asp:Button runat="server" ID="ButtonChooseTheme"  Text="Go" 
+                            onclick="ButtonChooseTheme_Click"/>
+</asp:Content>
