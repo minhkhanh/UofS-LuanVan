@@ -72,17 +72,16 @@
                         <p align="center"><a href="ymsgr:sendim?nguyen_dinhluyen"><img src="http://opi.yahoo.com/online?u=nguyen_dinhluyen&m=g&t=2" border=0/></a><p>
                         <p align="center"> <font face= "Cambria" color="#666666">E4_Group</font> </p>
                         </div>	
-                    </div>    
+                    </div>     <div class= "rightmenu">
+        <p><img src="imagine/rightmenu2.gif" width="295" height="265"alt="Can not load imagine!"/></p>
+        <p><img src="imagine/rightmenu1.gif" width="295" height="265"alt="Can not load imagine!"/></p>
+        <p align="center"> <font color="#336633"><b>Advertisement</b></font></p>
+    </div>   
                     <div class= "content">
                         <div class="main">
                             <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
                         </div>
-                    </div>
-                    <div class= "rightmenu">
-                        <p><img src="imagine/rightmenu2.gif" width="295" height="265"alt="Can not load imagine!"/></p>
-                        <p><img src="imagine/rightmenu1.gif" width="295" height="265"alt="Can not load imagine!"/></p>
-                        <p align="center"> <font color="#336633"><b>Advertisement</b></font></p>
-                    </div>	
+                    </div>                    	
                  </div>     
                 <div class = "footer">          
                     <div class="info">

@@ -9,6 +9,7 @@
     <h2>
         Phần hiện thị nội dung sản phẩm chính!
     </h2>
+
 </asp:Content>
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="ContentPlaceHolderGo">
