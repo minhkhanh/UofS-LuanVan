@@ -1,0 +1,27 @@
+﻿#MainDiv
+{
+    width: 100%;
+    height: auto;
+}
+
+#List_DanhSachTaiKhoan
+{
+    
+}
+
+#ListView
+{
+    
+}
+
+#Repeater_History
+{
+    color: White;
+    font-family: Arial;
+    background-color: Black;
+}
+
+#TextBox_TenTaiKhoan
+{
+    
+}
