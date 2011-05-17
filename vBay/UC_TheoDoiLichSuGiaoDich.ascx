@@ -18,11 +18,12 @@
     <asp:Label ID="Label3" runat="server" BackColor="Black" Font-Bold="True" 
         ForeColor="White" Text="Tài khoản thực hiện giao dịch:"></asp:Label>
     <asp:TextBox ID="TextBox_TenTaiKhoan" runat="server" BackColor="Black" 
-        ForeColor="White" Height="20px" Width="200px"></asp:TextBox>
+        ForeColor="White" Height="20px" Width="200px" ReadOnly="True"></asp:TextBox>
     <br />
-    <asp:DetailsView ID="DetailsView_LichSuGiaoDich" runat="server" Height="30px" 
-        Width="500px" BackColor="White" ForeColor="Black" HorizontalAlign="Left">
-        <FieldHeaderStyle Width="100px" />
-    </asp:DetailsView>
+    <asp:GridView ID="GridView_LichSuGiaoDich" runat="server" AllowPaging="True" 
+        BackColor="Black" ForeColor="White" HorizontalAlign="Center" Width="300px">
+    </asp:GridView>
+    <br />
+
 </div>
 

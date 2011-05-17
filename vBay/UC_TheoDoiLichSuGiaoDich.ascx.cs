@@ -14,8 +14,10 @@ namespace vBay
 
         protected void Page_Init(object sender, EventArgs e)
         {
+            //Khởi tạo DataEntityDataContext
             dataContext = new DataEntityDataContext();
 
+            //Lấy thông tin tài khoản từ CSDL
             var danhSachTaiKhoan = from a in dataContext.TaiKhoans
                                     where a.BiKhoa == false && a.BiXoa == false
                                     select new { a.TenTaiKhoan, a.MaTaiKhoan };
@@ -40,14 +42,15 @@ namespace vBay
             //Xuất Tên tài khoản lên TextBox_TenTaiKhoan
             TextBox_TenTaiKhoan.Text = tenTaiKhoan;
 
-            //Xuất lịch sử giao dịch lên DetailsView_LichSuGiaoDich                
+            //Đọc thông tin lịch sử giao dịch từ CSDL
             var history = from gd in dataContext.ChiTietDauGias
                           from sp in dataContext.SanPhams
                           where gd.MaTaiKhoan == maTaiKhoan && gd.MaSanPham == sp.MaSanPham
                           select new { sp.TenSanPham, gd.ThoiGianGiaoDich, gd.GiaGiaoDich };
 
-            DetailsView_LichSuGiaoDich.DataSource = history;
-            DetailsView_LichSuGiaoDich.DataBind();
+            //Xuất thông tin lịch sử giao dịch lên GridView_LichSuGiaoDich
+            GridView_LichSuGiaoDich.DataSource = history;
+            GridView_LichSuGiaoDich.DataBind();
         }
     }
 }
