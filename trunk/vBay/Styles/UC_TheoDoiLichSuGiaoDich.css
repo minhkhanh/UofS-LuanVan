@@ -9,16 +9,12 @@
     
 }
 
-#ListView
+#GridView_LichSuGiaoDich
 {
-    
-}
-
-#Repeater_History
-{
-    color: White;
-    font-family: Arial;
-    background-color: Black;
+    table-layout: fixed;
+    overflow: scroll;
+    width: 300px;
+    max-width: 300px;
 }
 
 #TextBox_TenTaiKhoan
