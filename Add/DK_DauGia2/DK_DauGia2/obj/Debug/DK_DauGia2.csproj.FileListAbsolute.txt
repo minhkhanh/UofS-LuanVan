@@ -1,0 +1,5 @@
+E:\YamaProjects\Visual 2010 Projects\PTUD Web\DK_DauGia2\DK_DauGia2\bin\DK_DauGia2.dll
+E:\YamaProjects\Visual 2010 Projects\PTUD Web\DK_DauGia2\DK_DauGia2\bin\DK_DauGia2.pdb
+E:\YamaProjects\Visual 2010 Projects\PTUD Web\DK_DauGia2\DK_DauGia2\obj\Debug\ResolveAssemblyReference.cache
+E:\YamaProjects\Visual 2010 Projects\PTUD Web\DK_DauGia2\DK_DauGia2\obj\Debug\DK_DauGia2.dll
+E:\YamaProjects\Visual 2010 Projects\PTUD Web\DK_DauGia2\DK_DauGia2\obj\Debug\DK_DauGia2.pdb
