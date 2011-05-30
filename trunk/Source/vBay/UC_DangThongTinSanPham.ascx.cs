@@ -11,7 +11,7 @@ namespace vBay
     public partial class UC_DangThongTinSanPham : System.Web.UI.UserControl
     {
         private DataEntityDataContext dataContext;
-        static private String staticImagePath = @"E:\Study At School\Workspace\eBay\vBay\imagine\";
+        static private String staticImagePath = @"E:\Study At School\Workspace\eBay[30-05-2011]\Source\vBay\imagine\";
         static private String staticImageUrl = @"~/imagine/";        
         static private bool isUploadedImage = false;
 
