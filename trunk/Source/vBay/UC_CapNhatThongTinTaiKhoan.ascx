@@ -44,7 +44,13 @@
                 <asp:Label ID="Label7" runat="server" Text="Ngày sinh:" BackColor="Black" 
                     Font-Bold="True" ForeColor="White" Width="30%" Enabled="False"></asp:Label>
                 <asp:TextBox ID="TextBox_NgaySinh" runat="server" BackColor="White" 
-                    ForeColor="Black" Height="20px" MaxLength="50" Width="68%" Enabled="False"></asp:TextBox>
+                    ForeColor="Black" Height="20px" MaxLength="50" Width="30%" Enabled="False"></asp:TextBox>
+                &nbsp;&nbsp;&nbsp;
+                <asp:Label ID="Label14" runat="server" Text="Giới tính:" BackColor="Black" 
+                    Font-Bold="True" ForeColor="White" Width="15%"></asp:Label>
+                <asp:DropDownList ID="DropDownList_GioiTinh" runat="server" BackColor="White" 
+                    ForeColor="Black" Height="20px" Width="18%">
+                </asp:DropDownList>
                 <center>
                     <asp:Calendar ID="Calendar_NgaySinh" runat="server" BackColor="White" 
                         FirstDayOfWeek="Monday" ForeColor="Black" NextPrevFormat="FullMonth" 
@@ -55,19 +61,6 @@
                         <WeekendDayStyle BackColor="#FFFF66" />
                     </asp:Calendar>
                 </center>
-                <asp:Label ID="Label11" runat="server" Text="Nơi sinh:" BackColor="Black" 
-                    Font-Bold="True" ForeColor="White" Width="30%" Enabled="False"></asp:Label>
-                <asp:TextBox ID="TextBox_NoiSinh" runat="server" BackColor="White" 
-                    ForeColor="Black" Height="20px" MaxLength="50" Width="30%"></asp:TextBox>
-                &nbsp;
-                <asp:Label ID="Label14" runat="server" Text="Giới tính:" BackColor="Black" 
-                    Font-Bold="True" ForeColor="White" Width="15%"></asp:Label>
-                <asp:DropDownList ID="List_GioiTinh" runat="server" BackColor="White" 
-                    ForeColor="Black" Height="20px" Width="18%">
-                    <asp:ListItem Value="Nam">Nam</asp:ListItem>
-                    <asp:ListItem Value="Nữ">Nữ</asp:ListItem>
-                </asp:DropDownList>
-                <br />
                 <asp:Label ID="Label12" runat="server" Text="Địa chỉ:" Font-Bold="True" 
                     Width="30%" Enabled="False"></asp:Label>
                 <asp:TextBox ID="TextBox_DiaChi" runat="server" BackColor="White" 
