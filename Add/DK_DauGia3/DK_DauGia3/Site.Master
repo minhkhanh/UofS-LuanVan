@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="DK_DauGia3.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="navbar">
+                <asp:Menu ID="Menu1" runat="server" StaticSubMenuIndent="16px" 
+                    CssClass="navbarmenu" IncludeStyleBlock="False" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem Text="Trang Chủ" Value="Trang Chủ" NavigateUrl="~/Default.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Sản Phẩm" Value="Sản Phẩm" NavigateUrl="~/Default.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Thanh Toán" Value="Thanh Toán" NavigateUrl="~/Default.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Hướng Dẫn" Value="Hướng Dẫn" NavigateUrl="~/Default.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Liên Hệ" Value="Liên Hệ" NavigateUrl="~/Default.aspx"></asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </div>
+            <!-- navbar end-->
+            <div class="loginbar">
+                Login Here
+            </div>
+            <!-- loginbar end-->
+        </div>
+        <!-- header end-->
+
+        <div class="main">
+            <div class="siderbar">
+                This is sidebar
+                <div class="sidebarmenu">
+                    This is sidebar menu
+                </div>
+                <!-- sidebarmenu end-->
+            </div>
+            <!-- sidebar end-->
+
+            <div class="content">
+                This is content
+                <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+            </div>
+            <!-- content end-->
+            
+        </div>
+        <!-- main end-->
+
+        <div class="clear">
+        </div>
+        <!-- clear end-->
+
+        <div class="footer">  
+            <div class="info" >
+                <p>Auction Web</p>
+                <p>Copy right 2011 @ Group E4 All rights reservered</p>
+            </div>
+            <!-- info end-->
+        </div>
+        <!-- footer end-->
+    </div>
+    <!-- page end-->
+        
+    
+    </form>
+</body>
+</html>
