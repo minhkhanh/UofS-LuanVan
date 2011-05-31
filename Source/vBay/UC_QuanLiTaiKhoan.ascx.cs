@@ -14,110 +14,185 @@ namespace vBay
 
         protected void Page_Init(object sender, EventArgs e)
         {
-            //Load CSDL từ server
+            //Hướng xử lí trong hàm Page_Init
+            //  1. Khởi tạo biến dataContext để truy xuất thông tin từ CSDL
+            //  2. Thực hiện truy vấn để lấy danh sách tài khoản chưa bị xóa và chưa bị khóa từ CSDL và load lên DropDownList_TenTaiKhoanCanKhoa
+            //  3. Thực hiện truy vấn để lấy danh sách tài khoản chưa bị xóa nhưng đang bị khóa từ CSDL và load lên GridView_DanhSachTaiKhoanBiKhoa và DropDownList_DanhSachTaiKhoanLocked
+            //  4. Cập nhật cứng ListItems cho DropDownList_ThoiHanKhoa
+
+
+            //Tiến hành
+            //  1. Khởi tạo biến dataContext để truy xuất thông tin từ CSDL
             dataContext = new DataEntityDataContext();
 
-            //Đọc danh sách các tài khoản chưa bị xóa và chưa bị khóa
-            var acc_ChuaBiXoa_ChuaBiKhoa = from tk in dataContext.TaiKhoans
-                                           where tk.BiXoa == false && tk.BiKhoa == false
-                                           select new { tk.MaTaiKhoan, tk.TenTaiKhoan };
+            //  2. Thực hiện truy vấn để lấy danh sách tài khoản chưa bị xóa và chưa bị khóa từ CSDL và load lên DropDownList_TenTaiKhoanCanKhoa
+            var danhSachTaiKhoan_NoDel_NoLocked = from a in dataContext.aspnet_Users
+                                                  from b in dataContext.aspnet_Memberships
+                                                  from c in dataContext.ThongTinTaiKhoans
+                                                  where a.MaThongTinTaiKhoan == c.MaThongTinTaiKhoan && a.UserId == b.UserId
+                                                        && c.BiXoa == false && b.IsApproved == true
+                                                  select new { a.UserId, a.UserName };
 
-            //Đọc danh sách các tài khoản chưa bị xóa và đang bị khóa
-            var acc_ChuaBiXoa_Locked = from tk in dataContext.TaiKhoans
-                                       where tk.BiXoa == false && tk.BiKhoa == true
-                                       select new { tk.MaTaiKhoan, tk.TenTaiKhoan, tk.ThoiDiemUnlock };
-
-            //Cập nhật danh sách tài khoản chưa bị khóa cho DropDownList_TenTaiKhoanCanKhoa
-            //DropDownList_TenTaiKhoanCanKhoa.DataSource = acc_ChuaBiXoa_ChuaBiKhoa;
-            DropDownList_TenTaiKhoanCanKhoa.DataSource = acc_ChuaBiXoa_ChuaBiKhoa;
+            DropDownList_TenTaiKhoanCanKhoa.DataSource = danhSachTaiKhoan_NoDel_NoLocked;
+            DropDownList_TenTaiKhoanCanKhoa.DataTextField = "UserName";
+            DropDownList_TenTaiKhoanCanKhoa.DataValueField = "UserId";
             DropDownList_TenTaiKhoanCanKhoa.DataBind();
 
-            //Cập nhật danh sách tài khoản đang bị khóa GridView_DanhSachTaiKhoanBiKhoa
-            GridView_DanhSachTaiKhoanBiKhoa.DataSource = acc_ChuaBiXoa_Locked;
-            GridView_DanhSachTaiKhoanBiKhoa.DataBind();
-            int page = GridView_DanhSachTaiKhoanBiKhoa.PageIndex;
+            //  3. Thực hiện truy vấn để lấy danh sách tài khoản chưa bị xóa nhưng đang bị khóa từ CSDL và load lên GridView_DanhSachTaiKhoanBiKhoa và DropDownList_DanhSachTaiKhoanLocked
+            var danhSachTaiKhoan_NoDel_Locked = from a in dataContext.aspnet_Users
+                                                from b in dataContext.aspnet_Memberships
+                                                from c in dataContext.ThongTinTaiKhoans
+                                                where a.MaThongTinTaiKhoan == c.MaThongTinTaiKhoan && a.UserId == b.UserId
+                                                      && c.BiXoa == false && b.IsApproved == false
+                                                select new { a.UserId, a.UserName, c.ThoiGianUnlock};
 
-            //Cập nhật danh sách tài khoản đang bị khóa cho DropDownList_DanhSachTaiKhoanLocked
-            DropDownList_DanhSachTaiKhoanLocked.DataSource = acc_ChuaBiXoa_Locked;
+            GridView_DanhSachTaiKhoanBiKhoa.DataSource = danhSachTaiKhoan_NoDel_Locked;
+            GridView_DanhSachTaiKhoanBiKhoa.DataBind();
+
+            DropDownList_DanhSachTaiKhoanLocked.DataSource = danhSachTaiKhoan_NoDel_Locked;
+            DropDownList_DanhSachTaiKhoanLocked.DataTextField = "UserName";
+            DropDownList_DanhSachTaiKhoanLocked.DataValueField = "UserId";
             DropDownList_DanhSachTaiKhoanLocked.DataBind();
 
-            //Cập nhật items cho DropDownList_ThoiHanKhoa
+            //  4. Cập nhật cứng ListItems cho DropDownList_ThoiHanKhoa
             for (int i = 1; i <= 12; i++)
                 DropDownList_ThoiHanKhoa.Items.Add(i.ToString());
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Hướng xử lí trong hàm Page_Load
+            //  1. Cập nhật lại dữ liệu cho GridView_DanhSachTaiKhoanBiKhoa
+
+
+            //Tiến hành
+            //  1. Cập nhật lại dữ liệu cho GridView_DanhSachTaiKhoanBiKhoa
             GridView_DanhSachTaiKhoanBiKhoa.DataBind();
         }
         protected void GridView_DanhSachTaiKhoanBiKhoa_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
+            //Hướng xử lí trong hàm GridView_DanhSachTaiKhoanBiKhoa_PageIndexChanging
+            //  1. Cập nhật lại PageIndex theo e
+            //  2. Gọi hàm Page_Load
+
+
+            //Tiến hành
+            //  1. Cập nhật lại PageIndex theo e
             GridView_DanhSachTaiKhoanBiKhoa.PageIndex = e.NewPageIndex;
 
-            //Chỉ update lại Gridview_DanhSachTaiKhoanBiKhoa => Gọi Page_Load
+            //  2. Gọi hàm Page_Load
             Page_Load(sender, e);
         }
         protected void Button_Lock_Click(object sender, EventArgs e)
         {
-            //Lấy mã tài khoản cần khóa, thời gian khóa và đơn vị thời gian
-            int maTaiKhoan = int.Parse(DropDownList_TenTaiKhoanCanKhoa.SelectedItem.Value.ToString());
-            int thoiHanLock = int.Parse(DropDownList_ThoiHanKhoa.SelectedItem.Value.ToString());
-            String donVi = DropDownList_DonViThoiGian.SelectedItem.Text.ToString();
+            //Hướng xử lí trong hàm Button_Lock_Click
+            //  1. Khai báo userId để lưu UserId của tài khoản cần lock dựa vào SelectedItem.Value của DropDownList_TenTaiKhoanCanKhoa
+            //  2. Khai báo thoiGianLock để lưu thời gian khóa tài khoản dựa vào SelectedItem.Value của DropDownList_ThoiHanKhoa
+            //  3. Khai báo donViThoiGian để lưu đơn vị thời gian khóa tài khoản dựa vào SelectedItem.Value của DropDownList_DonViThoiGian
+            //  4. Gọi hàm LockTaiKhoan với tham số truyền vào là userId, thoiGianLock và donViThoiGian
+            //  5. Gọi hàm Page_Init
 
-            LockTaiKhoan(maTaiKhoan, thoiHanLock, donVi);
 
+            //Tiến hành
+            //  1. Khai báo userId để lưu UserId của tài khoản cần lock dựa vào SelectedItem.Value của DropDownList_TenTaiKhoanCanKhoa
+            Guid userId = Guid.Parse(DropDownList_TenTaiKhoanCanKhoa.SelectedItem.Value.ToString());
+
+            //  2. Khai báo thoiGianLock để lưu thời gian khóa tài khoản dựa vào SelectedItem.Value của DropDownList_ThoiHanKhoa
+            int thoiGianLock = int.Parse(DropDownList_ThoiHanKhoa.SelectedItem.Value.ToString());
+
+            //  3. Khai báo donViThoiGian để lưu đơn vị thời gian khóa tài khoản dựa vào SelectedItem.Value của DropDownList_DonViThoiGian
+            String donViThoiGian = DropDownList_DonViThoiGian.SelectedItem.Text.ToString();
+
+            //  4. Gọi hàm LockTaiKhoan với tham số truyền vào là userId, thoiGianLock và donViThoiGian
+            LockTaiKhoan(userId, thoiGianLock, donViThoiGian);
+
+            //  5. Gọi hàm Page_Init
             Page_Init(sender, e);
         }
         protected void Button_Unlock_Click(object sender, EventArgs e)
         {
-            //Lấy thông tin tài khoản được chọn
-            int maTaiKhoan = int.Parse(DropDownList_DanhSachTaiKhoanLocked.SelectedItem.Value.ToString());
+            //Hướng xử lí trong hàm Button_Unlock_Click
+            //  1. Khai báo userId để lấy UserId của tài khoản đang được chọn dựa vào SelectedItem.Value của DropDownList_DanhSachTaiKhoanLocked
+            //  2. Gọi hàm UnlockTaiKhoan với tham số truyền vào là userId
+            //  3. Gọi hàm Page_Init
 
-            UnlockTaiKhoan(maTaiKhoan);
 
+            //Tiến hành
+            //  1. Khai báo userId để lấy UserId của tài khoản đang được chọn dựa vào SelectedItem.Value của DropDownList_DanhSachTaiKhoanLocked
+            Guid userId = Guid.Parse(DropDownList_DanhSachTaiKhoanLocked.SelectedItem.Value.ToString());
+
+            //  2. Gọi hàm UnlockTaiKhoan với tham số truyền vào là userId
+            UnlockTaiKhoan(userId);
+
+            //  3. Gọi hàm Page_Init
             Page_Init(sender, e);
         }
-        public void LockTaiKhoan(int maTaiKhoan, int thoiHanLock, String donVi)
+        public void LockTaiKhoan(Guid userId, int thoiHanLock, String donVi)
         {
-            TaiKhoan acc = dataContext.TaiKhoans.Single(p => p.MaTaiKhoan == maTaiKhoan);
+            //Hướng xử lí trong hàm LockTaiKhoan
+            //  1. Thực hiện truy vấn để lấy thông tin tài khoản có userId được truyền vào hàm và lưu vào 3 biến là accInfo (ThongTinTaiKhoan), accUser (aspnet_User) và accMembership (aspnet_Membership)
+            //  2. Kiểm tra: Nếu đơn vị thời gian là "Vĩnh viễn"
+            //      2.1. Gán giá trị true cho trường BiXoa => tài khoản đã bị xóa
+            //      Except: Gán giá trị true cho trường BiKhoa
+            //          2.e.1. Đơn vị thời gian khác "Vĩnh viễn", dùng switch để lựa chọn từng trường hợp đơn vị thời gian và xử lí tương ứng
+            //  3. Cập nhật CSDL thông qua biến dataContext
 
-            //Nếu đơn vị thời gian là "Vĩnh viễn" => Xóa tài khoản
+
+            //Tiến hành
+            //  1. Thực hiện truy vấn để lấy thông tin tài khoản có userId được truyền vào hàm và lưu vào 3 biến là accInfo (ThongTinTaiKhoan), accUser (aspnet_User) và accMembership (aspnet_Membership)
+            aspnet_User accUser = dataContext.aspnet_Users.Single(p => p.UserId == userId);
+            aspnet_Membership accMembership = dataContext.aspnet_Memberships.Single(p => p.UserId == userId);
+            ThongTinTaiKhoan accInfo = dataContext.ThongTinTaiKhoans.Single(p => p.MaThongTinTaiKhoan == accUser.MaThongTinTaiKhoan);
+
+            //  2. Kiểm tra: Nếu đơn vị thời gian là "Vĩnh viễn"
             if (donVi == "Vĩnh viễn")
-                acc.BiXoa = true;
+            {
+                //      2.1. Gán giá trị true cho trường BiXoa => tài khoản đã bị xóa
+                accInfo.BiXoa = true;                
+            }            
             else
             {
-                //Nếu đơn vị thời gian khác "Vĩnh viễn" => Tiến hành xóa tài khoản
-                if (donVi != "Vĩnh viễn")
+                //      Except: Gán giá trị false cho trường IsApproved
+                accMembership.IsApproved = false;
+
+                //          2.e.1. Đơn vị thời gian khác "Vĩnh viễn", dùng switch để lựa chọn từng trường hợp đơn vị thời gian và xử lí tương ứng
+                switch (donVi)
                 {
-                    acc.BiKhoa = true;
+                    case "Tuần":
+                        {
+                            DateTime thoiGianUnlock = DateTime.Now.AddDays(thoiHanLock * 7);
+                            accInfo.ThoiGianUnlock = thoiGianUnlock;
 
-                    switch (donVi)
-                    {
-                        case "Tuần":
-                            {
-                                DateTime time = DateTime.Now.AddDays(thoiHanLock * 7);
-                                acc.ThoiDiemUnlock = time;
+                            break;
+                        }
+                    case "Tháng":
+                        {
+                            DateTime thoiGianUnlock = DateTime.Now.AddMonths(thoiHanLock);
+                            accInfo.ThoiGianUnlock = thoiGianUnlock;
 
-                                break;
-                            }
-                        case "Tháng":
-                            {
-                                DateTime time = DateTime.Now.AddMonths(thoiHanLock);
-                                acc.ThoiDiemUnlock = time;
-
-                                break;
-                            }
-                    }
+                            break;
+                        }
                 }
             }
 
+            //  3. Cập nhật CSDL thông qua biến dataContext
             dataContext.SubmitChanges();
         }
-        public void UnlockTaiKhoan(int maTaiKhoan)
+        public void UnlockTaiKhoan(Guid userId)
         {
-            TaiKhoan acc = dataContext.TaiKhoans.Single(p => p.MaTaiKhoan == maTaiKhoan);
+            //Hướng xử lí trong hàm UnlockTaiKhoan
+            //  1. Thực hiện truy vấn để lấy thông tin tài khoản có userId được truyền vào hàm
+            //  2. Gán giá trị true cho trường IsApproved => tại khoản được kích hoạt trở lại
+            //  3. Cập nhật lại CSDL thông qua biến dataContext
 
-            acc.BiKhoa = false;
 
+            //Tiến hành
+            //  1. Thực hiện truy vấn để lấy thông tin tài khoản có userId được truyền vào hàm
+            aspnet_Membership accMembership = dataContext.aspnet_Memberships.Single(p => p.UserId == userId);
+
+            //  2. Gán giá trị false cho trường
+            accMembership.IsApproved = true;
+
+            //  3. Cập nhật lại CSDL thông qua biến dataContext
             dataContext.SubmitChanges();
         }
     }

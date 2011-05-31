@@ -130,33 +130,6 @@ namespace vBay {
         protected global::System.Web.UI.WebControls.TextBox TextBox_NgaySinh;
         
         /// <summary>
-        /// Calendar_NgaySinh control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendar_NgaySinh;
-        
-        /// <summary>
-        /// Label11 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label11;
-        
-        /// <summary>
-        /// TextBox_NoiSinh control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_NoiSinh;
-        
-        /// <summary>
         /// Label14 control.
         /// </summary>
         /// <remarks>
@@ -166,13 +139,22 @@ namespace vBay {
         protected global::System.Web.UI.WebControls.Label Label14;
         
         /// <summary>
-        /// List_GioiTinh control.
+        /// DropDownList_GioiTinh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList List_GioiTinh;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_GioiTinh;
+        
+        /// <summary>
+        /// Calendar_NgaySinh control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar Calendar_NgaySinh;
         
         /// <summary>
         /// Label12 control.

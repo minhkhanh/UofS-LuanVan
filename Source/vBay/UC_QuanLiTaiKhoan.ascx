@@ -12,8 +12,7 @@
         <asp:Label ID="Label3" runat="server" Text="Tên tài khoản cần khóa:" 
             Width="40%" BackColor="Black" ForeColor="White"></asp:Label>
         <asp:DropDownList ID="DropDownList_TenTaiKhoanCanKhoa" runat="server" 
-            BackColor="White" DataTextField="TenTaiKhoan" DataValueField="MaTaiKhoan" 
-            ForeColor="Black" Width="57%">
+            BackColor="White" ForeColor="Black" Width="57%">
         </asp:DropDownList>
         <br />
         <asp:Label ID="Label4" runat="server" Text="Thời hạn khóa:" Width="40%" 
@@ -49,11 +48,11 @@
                 onpageindexchanging="GridView_DanhSachTaiKhoanBiKhoa_PageIndexChanging" 
                 Width="100%">
                 <Columns>
-                    <asp:BoundField DataField="TenTaiKhoan" HeaderText="Tên tài khoản" 
+                    <asp:BoundField DataField="UserName" HeaderText="Tên tài khoản" 
                         InsertVisible="False" ReadOnly="True">
                     <ControlStyle Width="65%" />
                     </asp:BoundField>
-                    <asp:BoundField DataField="ThoiDiemUnlock" HeaderText="Thời hạn Unlock" 
+                    <asp:BoundField DataField="ThoiGianUnlock" HeaderText="Thời hạn Unlock" 
                         InsertVisible="False" ReadOnly="True">
                     <ControlStyle Width="35%" />
                     </asp:BoundField>

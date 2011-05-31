@@ -28,7 +28,7 @@ namespace vBay
             dataContext = new DataEntityDataContext();
 
             //  2. Đọc tên tài khoản đang đăng nhập từ session và hiện tên đăng nhập vào TextBox_TenTaiKhoan
-
+            //????
 
             //  3. Đọc danh sách các loại sản phẩm và load lên DropDownList_LoaiSanPham
             var loaiSanPham = from a in dataContext.LoaiSanPhams
@@ -75,7 +75,7 @@ namespace vBay
                 sanPham.MaLoaiSanPham = int.Parse(DropDownList_LoaiSanPham.SelectedItem.Value.ToString());
                 sanPham.MaTinhTrangSanPham = int.Parse(DropDownList_TinhTrangSanPham.SelectedItem.Value.ToString());
                 sanPham.MoTaSanPham = TextBox_MoTaSanPham.Text;
-                sanPham.NgayDang = DateTime.Today;
+                sanPham.NgayDang = DateTime.Now;
                 switch (DropDownList_ThoiGianDauGia.SelectedItem.Text)
                 {
                     case "1 week":
@@ -113,7 +113,9 @@ namespace vBay
                 sanPham.TenSanPham = TextBox_TenSanPham.Text;
 
                 //  3. Lưu thông tin maHinhMoTa vào biến sanPham
-                Multimedia multimedia = dataContext.Multimedias.Single(p => p.FileName == DropDownList_DanhSachHinhMinhHoa.SelectedItem.Value);
+                //      Khởi tạo chuỗi String fileName để lấy ra trường TenMT trong bảng Multimedia
+                String fileName = DropDownList_DanhSachHinhMinhHoa.SelectedItem.Value.ToString();
+                Multimedia multimedia = dataContext.Multimedias.Single(p => p.TenMT == fileName);
                 sanPham.Multimedia = multimedia;
 
                 //  4. Lưu biến sanPham vào CSDL và trả về maSanPham
@@ -122,7 +124,7 @@ namespace vBay
                 dataContext.SubmitChanges();
 
                 //      Thực hiện tra cứu để lấy lại mã sản phẩm vừa thêm vào CSDL
-                SanPham product = dataContext.SanPhams.Single(p => p.TenSanPham == TextBox_TenSanPham.Text);
+                SanPham product = dataContext.SanPhams.Single(p => p.TenSanPham == TextBox_TenSanPham.Text && p.NgayDang == sanPham.NgayDang);
                 
                 //  5. Khởi tạo các biến SanPham_Multimedia để lưu thông tin các hình mô tả có liên quan đến sản phẩm
                 for (int i = 0; i < DropDownList_DanhSachHinhMinhHoa.Items.Count; i++)
@@ -137,7 +139,9 @@ namespace vBay
                         sanPham_Multimedia.SanPham = product;
 
                         //Đọc CSDL để lấy thông tin Multimedia trùng với fileName được lưu trong Item[i].Value
-                        Multimedia multi = dataContext.Multimedias.Single(p => p.FileName == DropDownList_DanhSachHinhMinhHoa.Items[i].Value);
+                        //     Dùng chuỗi String fileName để lấy ra trường TenMT trong bảng Multimedia
+                        fileName = DropDownList_DanhSachHinhMinhHoa.SelectedItem.Value.ToString();
+                        Multimedia multi = dataContext.Multimedias.Single(p => p.TenMT == fileName);
                         sanPham_Multimedia.Multimedia = multi;
 
                         //Lưu sanPham_Multimedia vào CSDL
@@ -201,8 +205,7 @@ namespace vBay
                 Multimedia image = new Multimedia();
                 image.TenMT = fileName;
                 image.DungLuong = FileUpload_HinhAnhMinhHoa.PostedFile.ContentLength;
-                image.FileName = fileName;
-                image.LinkURL = fileUrl;                
+                image.LinkURL = fileUrl;
 
                 //  4. Lưu biến Multimedia vừa được tạo vào CSDL
                 dataContext.Multimedias.InsertOnSubmit(image);
