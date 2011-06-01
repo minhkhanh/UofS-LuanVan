@@ -10,51 +10,60 @@
 namespace vBay {
     
     
-    public partial class SiteMaster {
+    public partial class WUCDateSelect {
         
         /// <summary>
-        /// HeadContent control.
+        /// drlMonth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
+        protected global::System.Web.UI.WebControls.DropDownList drlMonth;
         
         /// <summary>
-        /// Menu1 control.
+        /// drlDay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu Menu1;
+        protected global::System.Web.UI.WebControls.DropDownList drlDay;
         
         /// <summary>
-        /// WUCDangNhapNhanh1 control.
+        /// txbYear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::vBay.WUCDangNhapNhanh WUCDangNhapNhanh1;
+        protected global::System.Web.UI.WebControls.TextBox txbYear;
         
         /// <summary>
-        /// MainContent control.
+        /// CustomValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator1;
         
         /// <summary>
-        /// ContentPlaceHolderGo control.
+        /// hidFlag control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolderGo;
+        protected global::System.Web.UI.WebControls.HiddenField hidFlag;
+        
+        /// <summary>
+        /// lblErrMess control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblErrMess;
     }
 }

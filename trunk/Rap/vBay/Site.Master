@@ -1,10 +1,13 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="vBay.SiteMaster" %>
 
+<%@ Register src="WUC/WUCDangNhapNhanh.ascx" tagname="WUCDangNhapNhanh" tagprefix="uc1" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head runat="server">
     <title></title>
     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../JQuery/engine1/jquery.js"></script>
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -26,7 +29,8 @@
             </div>
             <!-- navbar end-->
             <div class="loginbar">
-                Login Here
+                <uc1:WUCDangNhapNhanh ID="WUCDangNhapNhanh1" runat="server" />
+                <!-- Login Here -->
             </div>
             <!-- loginbar end-->
         </div>
@@ -65,6 +69,10 @@
         <!-- footer end-->
     </div>
     <!-- page end-->
+        
+    
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderGo" runat="server">
+    </asp:ContentPlaceHolder>
         
     
     </form>

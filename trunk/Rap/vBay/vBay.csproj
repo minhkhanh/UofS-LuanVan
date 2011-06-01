@@ -92,6 +92,8 @@
     <Content Include="JQuery\engine1\style.css" />
     <Content Include="JQuery\engine1\triangle.png" />
     <Content Include="MainContent.aspx" />
+    <Content Include="PasswordRecovering.aspx" />
+    <Content Include="SigningUp.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -100,6 +102,7 @@
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="App_Themes\ThemeNormal\styleNormal.css" />
     <Content Include="ThongKeManager.aspx" />
+    <Content Include="UserProfile.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -112,6 +115,10 @@
     <Content Include="WebForm4Test.aspx" />
     <Content Include="WebForm4TestChiTietSanPham.aspx" />
     <Content Include="WUC\MaintentSanPham.ascx" />
+    <Content Include="WUC\WUCThongTinTaiKhoan.ascx" />
+    <Content Include="WUC\WUCDateSelect.ascx" />
+    <Content Include="WUC\WUCDangKy.ascx" />
+    <Content Include="WUC\WUCDangNhapNhanh.ascx" />
     <Content Include="WUC\TrangThongKeBaoCaoManager.ascx" />
     <Content Include="WUC\WUCBinhLuanSanPham.ascx" />
     <Content Include="WUC\WUCChiTietSanPham.ascx" />
@@ -150,7 +157,21 @@
     <Compile Include="MainContent.aspx.designer.cs">
       <DependentUpon>MainContent.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PasswordRecovering.aspx.cs">
+      <DependentUpon>PasswordRecovering.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PasswordRecovering.aspx.designer.cs">
+      <DependentUpon>PasswordRecovering.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SigningUp.aspx.cs">
+      <DependentUpon>SigningUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SigningUp.aspx.designer.cs">
+      <DependentUpon>SigningUp.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -164,6 +185,13 @@
     </Compile>
     <Compile Include="ThongKeManager.aspx.designer.cs">
       <DependentUpon>ThongKeManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile.aspx.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserProfile.aspx.designer.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm4Test.aspx.cs">
       <DependentUpon>WebForm4Test.aspx</DependentUpon>
@@ -185,6 +213,34 @@
     </Compile>
     <Compile Include="WUC\MaintentSanPham.ascx.designer.cs">
       <DependentUpon>MaintentSanPham.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WUC\WUCThongTinTaiKhoan.ascx.cs">
+      <DependentUpon>WUCThongTinTaiKhoan.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WUC\WUCThongTinTaiKhoan.ascx.designer.cs">
+      <DependentUpon>WUCThongTinTaiKhoan.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WUC\WUCDateSelect.ascx.cs">
+      <DependentUpon>WUCDateSelect.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WUC\WUCDateSelect.ascx.designer.cs">
+      <DependentUpon>WUCDateSelect.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WUC\WUCDangKy.ascx.cs">
+      <DependentUpon>WUCDangKy.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WUC\WUCDangKy.ascx.designer.cs">
+      <DependentUpon>WUCDangKy.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WUC\WUCDangNhapNhanh.ascx.cs">
+      <DependentUpon>WUCDangNhapNhanh.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WUC\WUCDangNhapNhanh.ascx.designer.cs">
+      <DependentUpon>WUCDangNhapNhanh.ascx</DependentUpon>
     </Compile>
     <Compile Include="WUC\TrangThongKeBaoCaoManager.ascx.cs">
       <DependentUpon>TrangThongKeBaoCaoManager.ascx</DependentUpon>
@@ -265,7 +321,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>1872</DevelopmentServerPort>
+          <DevelopmentServerPort>3855</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
