@@ -102,6 +102,8 @@
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="App_Themes\ThemeNormal\styleNormal.css" />
     <Content Include="ThongKeManager.aspx" />
+    <Content Include="TimKiemCoBan.aspx" />
+    <Content Include="TimKiemNangCao.aspx" />
     <Content Include="UserProfile.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -124,6 +126,8 @@
     <Content Include="WUC\WUCChiTietSanPham.ascx" />
     <Content Include="WUC\WUCListSanPham.ascx" />
     <Content Include="WUC\WUCThongTinSanPhamVaShop.ascx" />
+    <Content Include="WUC\WUCTimKiemCoBan.ascx" />
+    <Content Include="WUC\WUCTimKiemNangCao.ascx" />
     <Content Include="xemchitietsanpham.aspx" />
     <Content Include="xemdanhsachsanpham.aspx" />
   </ItemGroup>
@@ -185,6 +189,20 @@
     </Compile>
     <Compile Include="ThongKeManager.aspx.designer.cs">
       <DependentUpon>ThongKeManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TimKiemCoBan.aspx.cs">
+      <DependentUpon>TimKiemCoBan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TimKiemCoBan.aspx.designer.cs">
+      <DependentUpon>TimKiemCoBan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TimKiemNangCao.aspx.cs">
+      <DependentUpon>TimKiemNangCao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TimKiemNangCao.aspx.designer.cs">
+      <DependentUpon>TimKiemNangCao.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserProfile.aspx.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>
@@ -276,6 +294,20 @@
     </Compile>
     <Compile Include="WUC\WUCThongTinSanPhamVaShop.ascx.designer.cs">
       <DependentUpon>WUCThongTinSanPhamVaShop.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WUC\WUCTimKiemCoBan.ascx.cs">
+      <DependentUpon>WUCTimKiemCoBan.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WUC\WUCTimKiemCoBan.ascx.designer.cs">
+      <DependentUpon>WUCTimKiemCoBan.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WUC\WUCTimKiemNangCao.ascx.cs">
+      <DependentUpon>WUCTimKiemNangCao.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WUC\WUCTimKiemNangCao.ascx.designer.cs">
+      <DependentUpon>WUCTimKiemNangCao.ascx</DependentUpon>
     </Compile>
     <Compile Include="xemchitietsanpham.aspx.cs">
       <DependentUpon>xemchitietsanpham.aspx</DependentUpon>
