@@ -49,8 +49,8 @@ p
     background-color: #fff;
     margin: 20px auto 0px auto;
     position:relative;
-    /*height:auto;*/
-    min-height: 1100px;
+    height:auto;
+    min-height: 800px;
 }
 
 .header
