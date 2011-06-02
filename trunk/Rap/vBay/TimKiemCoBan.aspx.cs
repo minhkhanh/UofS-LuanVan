@@ -7,14 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace vBay
 {
-    public partial class SigningUp : System.Web.UI.Page
+    public partial class TimKiemCoBan : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack == false)
-            {
-                //WUCDangKy1.
-            }
+
         }
     }
 }
