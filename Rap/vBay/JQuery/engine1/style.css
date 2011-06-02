@@ -8,11 +8,11 @@
 /*	overflow: hidden; */	
 	position:relative; 
 	width:643px;
-	height:356px;
+	height:350px;
 	margin:0 auto;
 	z-index:100;
 	border:10px solid #FFFFFF;
-	top: -1px;
+	top: 5px;
 	left: 1px;
 }
 * html #wowslider-container1{
