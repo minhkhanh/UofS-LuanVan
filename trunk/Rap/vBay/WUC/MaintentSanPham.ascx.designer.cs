@@ -7,8 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace vBay
-{
+namespace vBay {
     
     
     public partial class SanPhamMoiNhat {
@@ -95,6 +94,15 @@ namespace vBay
         protected global::System.Web.UI.WebControls.Image wows8;
         
         /// <summary>
+        /// tenSanPhamHyperLinka1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLinka1;
+        
+        /// <summary>
         /// ImagineSP1 control.
         /// </summary>
         /// <remarks>
@@ -104,13 +112,22 @@ namespace vBay
         protected global::System.Web.UI.WebControls.Image ImagineSP1;
         
         /// <summary>
-        /// tenSanPhamHyperLink1 control.
+        /// tenSanPhamHyperLinkb1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLink1;
+        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLinkb1;
+        
+        /// <summary>
+        /// tenSanPhamHyperLinka2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLinka2;
         
         /// <summary>
         /// ImagineSP2 control.
@@ -122,13 +139,22 @@ namespace vBay
         protected global::System.Web.UI.WebControls.Image ImagineSP2;
         
         /// <summary>
-        /// tenSanPhamHyperLink2 control.
+        /// tenSanPhamHyperLinkb2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLink2;
+        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLinkb2;
+        
+        /// <summary>
+        /// tenSanPhamHyperLinka3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLinka3;
         
         /// <summary>
         /// ImagineSP3 control.
@@ -140,13 +166,22 @@ namespace vBay
         protected global::System.Web.UI.WebControls.Image ImagineSP3;
         
         /// <summary>
-        /// tenSanPhamHyperLink3 control.
+        /// tenSanPhamHyperLinkb3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLink3;
+        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLinkb3;
+        
+        /// <summary>
+        /// tenSanPhamHyperLinka4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLinka4;
         
         /// <summary>
         /// ImagineSP4 control.
@@ -158,13 +193,22 @@ namespace vBay
         protected global::System.Web.UI.WebControls.Image ImagineSP4;
         
         /// <summary>
-        /// tenSanPhamHyperLink4 control.
+        /// tenSanPhamHyperLinkb4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLink4;
+        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLinkb4;
+        
+        /// <summary>
+        /// tenSanPhamHyperLinka5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLinka5;
         
         /// <summary>
         /// ImagineSP5 control.
@@ -176,13 +220,22 @@ namespace vBay
         protected global::System.Web.UI.WebControls.Image ImagineSP5;
         
         /// <summary>
-        /// tenSanPhamHyperLink5 control.
+        /// tenSanPhamHyperLinkb5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLink5;
+        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLinkb5;
+        
+        /// <summary>
+        /// tenSanPhamHyperLinka6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLinka6;
         
         /// <summary>
         /// ImagineSP6 control.
@@ -194,13 +247,22 @@ namespace vBay
         protected global::System.Web.UI.WebControls.Image ImagineSP6;
         
         /// <summary>
-        /// tenSanPhamHyperLink6 control.
+        /// tenSanPhamHyperLinkb6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLink6;
+        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLinkb6;
+        
+        /// <summary>
+        /// tenSanPhamHyperLinka7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLinka7;
         
         /// <summary>
         /// ImagineSP7 control.
@@ -212,13 +274,22 @@ namespace vBay
         protected global::System.Web.UI.WebControls.Image ImagineSP7;
         
         /// <summary>
-        /// tenSanPhamHyperLink7 control.
+        /// tenSanPhamHyperLinkb7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLink7;
+        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLinkb7;
+        
+        /// <summary>
+        /// tenSanPhamHyperLinka8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLinka8;
         
         /// <summary>
         /// ImagineSP8 control.
@@ -230,13 +301,22 @@ namespace vBay
         protected global::System.Web.UI.WebControls.Image ImagineSP8;
         
         /// <summary>
-        /// tenSanPhamHyperLink8 control.
+        /// tenSanPhamHyperLinkb8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLink8;
+        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLinkb8;
+        
+        /// <summary>
+        /// tenSanPhamHyperLinka9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLinka9;
         
         /// <summary>
         /// ImagineSP9 control.
@@ -248,12 +328,12 @@ namespace vBay
         protected global::System.Web.UI.WebControls.Image ImagineSP9;
         
         /// <summary>
-        /// tenSanPhamHyperLink9 control.
+        /// tenSanPhamHyperLinkb9 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLink9;
+        protected global::System.Web.UI.WebControls.HyperLink tenSanPhamHyperLinkb9;
     }
 }

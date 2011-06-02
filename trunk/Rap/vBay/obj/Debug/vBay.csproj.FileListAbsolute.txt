@@ -3,3 +3,8 @@ E:\KHTN\Nam 3 10-11\Phat Trien UD Web\0812234\Rap\vBay\bin\vBay.dll
 E:\KHTN\Nam 3 10-11\Phat Trien UD Web\0812234\Rap\vBay\bin\vBay.pdb
 E:\KHTN\Nam 3 10-11\Phat Trien UD Web\0812234\Rap\vBay\obj\Debug\vBay.dll
 E:\KHTN\Nam 3 10-11\Phat Trien UD Web\0812234\Rap\vBay\obj\Debug\vBay.pdb
+C:\Users\Nguyen Dinh Luyen\Desktop\VBay\vBay\bin\vBay.dll
+C:\Users\Nguyen Dinh Luyen\Desktop\VBay\vBay\bin\vBay.pdb
+C:\Users\Nguyen Dinh Luyen\Desktop\VBay\vBay\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nguyen Dinh Luyen\Desktop\VBay\vBay\obj\Debug\vBay.dll
+C:\Users\Nguyen Dinh Luyen\Desktop\VBay\vBay\obj\Debug\vBay.pdb

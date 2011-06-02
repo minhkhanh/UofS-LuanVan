@@ -30,66 +30,101 @@ namespace vBay
                 {                    
                     case 0:
                         {
-                            wows0.ImageUrl = i.Multimedia.LinkURL;                                                  
+                            wows0.ImageUrl = i.Multimedia.LinkURL;
                             ImagineSP1.ImageUrl = i.Multimedia.LinkURL;
-                            tenSanPhamHyperLink1.Text = i.TenSanPham;                            
-                            tenSanPhamHyperLink1.NavigateUrl = "#";
+                            tenSanPhamHyperLinkb1.Text = i.TenSanPham;
+
+                            // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
+                            tenSanPhamHyperLinka1.NavigateUrl = "#"; // Gán cho hình
+                            tenSanPhamHyperLinkb1.NavigateUrl = "#"; // Gán cho chữ
                             break;
                         }
                     case 1:
                         {
                             wows1.ImageUrl = i.Multimedia.LinkURL;
                             ImagineSP2.ImageUrl = i.Multimedia.LinkURL;
-                            tenSanPhamHyperLink2.Text = i.TenSanPham;                            
+                            tenSanPhamHyperLinkb2.Text = i.TenSanPham;
+
+                            // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
+                            tenSanPhamHyperLinka2.NavigateUrl = "#"; // Gán cho hình
+                            tenSanPhamHyperLinkb2.NavigateUrl = "#"; // Gán cho chữ
                             break;
                         }
                     case 2:
                         {
                             wows2.ImageUrl = i.Multimedia.LinkURL;
                             ImagineSP3.ImageUrl = i.Multimedia.LinkURL;
-                            tenSanPhamHyperLink3.Text = i.TenSanPham;
+                            tenSanPhamHyperLinkb3.Text = i.TenSanPham;
+
+                            // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
+                            tenSanPhamHyperLinka3.NavigateUrl = "#"; // Gán cho hình
+                            tenSanPhamHyperLinkb3.NavigateUrl = "#"; // Gán cho chữ
                             break;
                         }
                     case 3:
                         {
                             wows3.ImageUrl = i.Multimedia.LinkURL;
                             ImagineSP4.ImageUrl = i.Multimedia.LinkURL;
-                            tenSanPhamHyperLink4.Text = i.TenSanPham;
+                            tenSanPhamHyperLinkb4.Text = i.TenSanPham;
+
+                            // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
+                            tenSanPhamHyperLinka4.NavigateUrl = "#"; // Gán cho hình
+                            tenSanPhamHyperLinkb4.NavigateUrl = "#"; // Gán cho chữ
                             break;
                         }
                     case 4:
                         {
                             wows4.ImageUrl = i.Multimedia.LinkURL;
                             ImagineSP5.ImageUrl = i.Multimedia.LinkURL;
-                            tenSanPhamHyperLink5.Text = i.TenSanPham;
+                            tenSanPhamHyperLinkb5.Text = i.TenSanPham;
+
+                            // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
+                            tenSanPhamHyperLinka5.NavigateUrl = "#"; // Gán cho hình
+                            tenSanPhamHyperLinkb5.NavigateUrl = "#"; // Gán cho chữ
                             break;
                         }
                     case 5:
                         {
                             wows5.ImageUrl = i.Multimedia.LinkURL;
                             ImagineSP6.ImageUrl = i.Multimedia.LinkURL;
-                            tenSanPhamHyperLink6.Text = i.TenSanPham;
+                            tenSanPhamHyperLinkb6.Text = i.TenSanPham;
+
+                            // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
+                            tenSanPhamHyperLinka6.NavigateUrl = "#"; // Gán cho hình
+                            tenSanPhamHyperLinkb6.NavigateUrl = "#"; // Gán cho chữ
                             break;
                         }
                     case 6:
                         {
                             wows6.ImageUrl = i.Multimedia.LinkURL;
                             ImagineSP7.ImageUrl = i.Multimedia.LinkURL;
-                            tenSanPhamHyperLink7.Text = i.TenSanPham;
+                            tenSanPhamHyperLinkb7.Text = i.TenSanPham;
+
+                            // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
+                            tenSanPhamHyperLinka7.NavigateUrl = "#"; // Gán cho hình
+                            tenSanPhamHyperLinkb7.NavigateUrl = "#"; // Gán cho chữ
                             break;
                         }
                     case 7:
                         {
                             wows7.ImageUrl = i.Multimedia.LinkURL;
                             ImagineSP8.ImageUrl = i.Multimedia.LinkURL;
-                            tenSanPhamHyperLink8.Text = i.TenSanPham;
+                            tenSanPhamHyperLinkb8.Text = i.TenSanPham;
+
+                            // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
+                            tenSanPhamHyperLinka8.NavigateUrl = "#"; // Gán cho hình
+                            tenSanPhamHyperLinkb8.NavigateUrl = "#"; // Gán cho chữ
                             break;
                         }
                     case 8:
                         {
                             wows8.ImageUrl = i.Multimedia.LinkURL;
                             ImagineSP9.ImageUrl = i.Multimedia.LinkURL;
-                            tenSanPhamHyperLink9.Text = i.TenSanPham;
+                            tenSanPhamHyperLinkb9.Text = i.TenSanPham;
+
+                            // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
+                            tenSanPhamHyperLinka9.NavigateUrl = "#"; // Gán cho hình
+                            tenSanPhamHyperLinkb9.NavigateUrl = "#"; // Gán cho chữ
                             break;
                         }
                     case 9:

@@ -53,6 +53,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="App_Themes\ThemeSunny\styleSunny.css" />
+    <Content Include="ChiTietMotSanPhamManager.aspx" />
     <Content Include="Images\icon_oval.jpg" />
     <Content Include="Images\NavFirstPage.gif" />
     <Content Include="Images\NavFirstPageDisabled.gif" />
@@ -91,6 +92,7 @@
     <Content Include="JQuery\engine1\script.js" />
     <Content Include="JQuery\engine1\style.css" />
     <Content Include="JQuery\engine1\triangle.png" />
+    <Content Include="LoaiSanPhamManager.aspx" />
     <Content Include="MainContent.aspx" />
     <Content Include="PasswordRecovering.aspx" />
     <Content Include="SigningUp.aspx" />
@@ -116,6 +118,8 @@
     </Content>
     <Content Include="WebForm4Test.aspx" />
     <Content Include="WebForm4TestChiTietSanPham.aspx" />
+    <Content Include="WUC\ChiTietMotSanPhamManager.ascx" />
+    <Content Include="WUC\LoaiSanPhamManager.ascx" />
     <Content Include="WUC\MaintentSanPham.ascx" />
     <Content Include="WUC\WUCThongTinTaiKhoan.ascx" />
     <Content Include="WUC\WUCDateSelect.ascx" />
@@ -139,6 +143,13 @@
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ChiTietMotSanPhamManager.aspx.cs">
+      <DependentUpon>ChiTietMotSanPhamManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChiTietMotSanPhamManager.aspx.designer.cs">
+      <DependentUpon>ChiTietMotSanPhamManager.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DataEntity.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -153,6 +164,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LoaiSanPhamManager.aspx.cs">
+      <DependentUpon>LoaiSanPhamManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoaiSanPhamManager.aspx.designer.cs">
+      <DependentUpon>LoaiSanPhamManager.aspx</DependentUpon>
     </Compile>
     <Compile Include="MainContent.aspx.cs">
       <DependentUpon>MainContent.aspx</DependentUpon>
@@ -224,6 +242,20 @@
     </Compile>
     <Compile Include="WebForm4TestChiTietSanPham.aspx.designer.cs">
       <DependentUpon>WebForm4TestChiTietSanPham.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WUC\ChiTietMotSanPhamManager.ascx.cs">
+      <DependentUpon>ChiTietMotSanPhamManager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WUC\ChiTietMotSanPhamManager.ascx.designer.cs">
+      <DependentUpon>ChiTietMotSanPhamManager.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WUC\LoaiSanPhamManager.ascx.cs">
+      <DependentUpon>LoaiSanPhamManager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WUC\LoaiSanPhamManager.ascx.designer.cs">
+      <DependentUpon>LoaiSanPhamManager.ascx</DependentUpon>
     </Compile>
     <Compile Include="WUC\MaintentSanPham.ascx.cs">
       <DependentUpon>MaintentSanPham.ascx</DependentUpon>

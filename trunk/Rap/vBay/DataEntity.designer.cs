@@ -120,7 +120,7 @@ namespace vBay
     #endregion
 		
 		public DataEntityDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["DauGiaConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["DauGiaConnectionString1"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -5505,7 +5505,7 @@ namespace vBay
 		
 		private System.Nullable<double> _GiaKhoiDiem;
 		
-		private System.Nullable<double> _GiaHienTai;
+		private System.Nullable<float> _GiaHienTai;
 		
 		private System.Nullable<System.DateTime> _NgayDang;
 		
@@ -5545,7 +5545,7 @@ namespace vBay
     partial void OnTenSanPhamChanged();
     partial void OnGiaKhoiDiemChanging(System.Nullable<double> value);
     partial void OnGiaKhoiDiemChanged();
-    partial void OnGiaHienTaiChanging(System.Nullable<double> value);
+    partial void OnGiaHienTaiChanging(System.Nullable<float> value);
     partial void OnGiaHienTaiChanged();
     partial void OnNgayDangChanging(System.Nullable<System.DateTime> value);
     partial void OnNgayDangChanged();
@@ -5723,8 +5723,8 @@ namespace vBay
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaHienTai", DbType="Float")]
-		public System.Nullable<double> GiaHienTai
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaHienTai", DbType="Real")]
+		public System.Nullable<float> GiaHienTai
 		{
 			get
 			{

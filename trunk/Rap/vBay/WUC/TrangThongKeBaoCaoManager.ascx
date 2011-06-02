@@ -13,7 +13,7 @@
 <p class="headerSanPham"> <font face= "Calibri" color= "red" size = "5pt"><b>THỐNG KÊ BÁO CÁO</b></font></p>
 <p style="margin-left: 8px">
 <font face= "Calibri" color= "green" size = "3pt"> 
-<b>Tháng&nbsp; :</b></font>
+<b>&nbsp; Tháng&nbsp; :</b></font>
 <asp:DropDownList ID="DropDownDanhSachThang" runat="server" 
                   style="margin-left: 14px" 
                   Font-Italic="False" 
