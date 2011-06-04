@@ -51,6 +51,8 @@ p
     position:relative;
     height:auto;
     min-height: 800px;
+    /*height:auto;*/
+    min-height: 1600px;
 }
 
 .header

@@ -9,7 +9,7 @@
 <script type="text/javascript">    
 </script>
 
-<asp:Panel ID="PanelThongke" runat="server" Width = "750px" Height = "812px">
+
 <p class="headerSanPham"> <font face= "Calibri" color= "red" size = "5pt"><b>THỐNG KÊ BÁO CÁO</b></font></p>
 <p style="margin-left: 8px">
 <font face= "Calibri" color= "green" size = "3pt"> 
@@ -59,8 +59,8 @@
     <asp:Button ID="BtCapNhat" runat="server" Text="Cập nhật" onclick="BtCapNhat_Click" 
         Width="77px" Font-Bold="True" Font-Names="Century Schoolbook,12pt" 
         ForeColor="Red" />&nbsp;</p>
-
-
+         
+<asp:Panel ID="PanelThongke" runat="server" ScrollBars="Auto">
 <p style="margin-left: 16px">Tổng doanh thu :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
      <asp:Label ID="LabelDoanhThu" runat="server" Font-Bold="True" Font-Size="13pt"/>&nbsp;VND</p>
     &nbsp;&nbsp;&nbsp;&nbsp;Tổng số sản phẩm giao dịch thành công :&nbsp;
@@ -70,9 +70,11 @@
 <p>&nbsp;&nbsp;&nbsp; Tổng số lần giao dịch thành công :&nbsp;
 <asp:Label ID="LabelTongSoLanGiaoDichThanhCong" runat="server" Font-Bold="True" Font-Size="13pt"/>&nbsp; lần </p>
 
+
 <asp:GridView ID="gridViewThongTinChiTiet" runat="server" CellPadding="4" 
     ForeColor="#333333" style="margin-left: 173px; text-align: justify;" 
-    GridLines="None">
+    GridLines="None" AllowPaging="True" 
+        onpageindexchanging="gridViewThongTinChiTiet_PageIndexChanging">
     <AlternatingRowStyle BackColor="White" />
     <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
     <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" 
@@ -90,7 +92,9 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;Tổng số lần giao dịch :&nbsp;<asp:Label ID="LabelTongSoLanGiaoDich" runat="server" Font-Bold="True" 
     Font-Size="13pt"/>&nbsp; lần </p>
 <asp:GridView ID="gridViewCacLanGiaoDich" runat="server" CellPadding="4" 
-    ForeColor="#333333" GridLines="None" style="margin-left: 173px" >
+    ForeColor="#333333" GridLines="None" style="margin-left: 173px" 
+        AllowPaging="True" 
+        onpageindexchanging="gridViewCacLanGiaoDich_PageIndexChanging" >
     <AlternatingRowStyle BackColor="White" />
     <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
     <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" 
@@ -103,6 +107,6 @@
     <SortedDescendingCellStyle BackColor="#FCF6C0" />
     <SortedDescendingHeaderStyle BackColor="#820000" />
 </asp:GridView>
-<p> </p>
+<p></p>
 </asp:Panel>
 

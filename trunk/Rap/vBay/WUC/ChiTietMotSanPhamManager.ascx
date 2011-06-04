@@ -16,7 +16,7 @@
                   Font-Names="Bodoni MT Condensed" 
                   Font-Overline="False" 
                   ForeColor="Black" 
-                  Font-Size="13pt" style="margin-left: 16px"/>                              
+                  Font-Size="13pt" style="margin-left: 12px"/>                              
 <asp:LinqDataSource ID="DanhSachSanPham" runat="server" 
                     ContextTypeName="vBay.DataEntityDataContext" 
                     EntityTypeName="" 
@@ -38,18 +38,23 @@
               DataKeyNames="MaComment">    
     <AlternatingRowStyle BackColor="White" />
     <Columns>        
-       <asp:TemplateField HeaderText="Tên tài khoản">
-            <ItemTemplate>                
+       <asp:TemplateField HeaderText="Tên tài khoản"  SortExpression= "aspnet_User.UserName" >
+            <ItemTemplate>                                
                 <%# Eval("aspnet_User.UserName")%>                    
             </ItemTemplate>
             <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
             <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" />
         </asp:TemplateField>                
-        <asp:BoundField DataField="NoiDungComment" HeaderText="Nội dung Commnent" 
-            SortExpression="NoiDungComment" >
-        <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-        <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" />
-        </asp:BoundField>
+        
+        <asp:TemplateField HeaderText="Nội dung comment" SortExpression="NoiDungComment" >
+            <ItemTemplate>                                
+                <asp:TextBox ID="textNoiDungComment" runat="server" ReadOnly="True" width = "250px" Height = "50px" TextMode="multiline"
+                    Text='<%# Eval("NoiDungComment") %>'></asp:TextBox>                
+            </ItemTemplate>
+            <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+            <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" />
+        </asp:TemplateField>                
+        
         <asp:BoundField DataField="NgayComment" HeaderText="Ngày Comment" 
             SortExpression="NgayComment" >
         <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
@@ -90,7 +95,7 @@
     DataKeyNames="MaChiTietDauGia">
     <AlternatingRowStyle BackColor="White" />
     <Columns>        
-       <asp:TemplateField HeaderText="Tên tài khoản">
+       <asp:TemplateField HeaderText="Tên tài khoản" SortExpression= "aspnet_User.UserName">
             <ItemTemplate>                
                 <%# Eval("aspnet_User.UserName")%>                    
             </ItemTemplate>

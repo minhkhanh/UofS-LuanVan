@@ -18,12 +18,13 @@ namespace vBay
                 SuaPhi();                 
                 TextBoxThayDoiMucPhi.Visible = false;
                 BtCapNhat.Visible = true;
+                
             }
             else
             {
                 MucPhiDauGia();
                 LoadAllDropDownList();                
-                TextBoxThayDoiMucPhi.Visible = false;                
+                TextBoxThayDoiMucPhi.Visible = false;               
             }
         }
 
@@ -81,6 +82,10 @@ namespace vBay
                                                         select new { DauGia.ChiTietDauGia.aspnet_User.UserName,DauGia.ChiTietDauGia.SanPham.TenSanPham,DauGia.GiaKhopLenh,DauGia.ChiTietDauGia.ThoiGianGiaoDich};                
                 gridViewThongTinChiTiet.DataSource = chiTietCacTaiKhoanKhopLenhTheoNam;                                                
                 gridViewThongTinChiTiet.DataBind();
+                gridViewThongTinChiTiet.HeaderRow.Cells[0].Text = "Tên tài khoản";
+                gridViewThongTinChiTiet.HeaderRow.Cells[1].Text = "Tên sản phẩm";
+                gridViewThongTinChiTiet.HeaderRow.Cells[2].Text = "Ngày giao dịch";
+                gridViewThongTinChiTiet.HeaderRow.Cells[3].Text = "Thời gian giao dịch";
                 //Đếm số sản phẩm (số giao dịch) được thực hiện thành công trong 1 tháng
                 LabelSoSanPhamDuocGiaoDich.Text = chiTietCacTaiKhoanKhopLenhTheoNam.Count().ToString();
                 LabelTongSoLanGiaoDichThanhCong.Text = chiTietCacTaiKhoanKhopLenhTheoNam.Count().ToString();                                
@@ -103,6 +108,10 @@ namespace vBay
                                                           select new { DauGia.ChiTietDauGia.aspnet_User.UserName, DauGia.ChiTietDauGia.SanPham.TenSanPham, DauGia.GiaKhopLenh, DauGia.ChiTietDauGia.ThoiGianGiaoDich };                
                 gridViewThongTinChiTiet.DataSource = chiTietCacTaiKhoanKhopLenhTheoThang;
                 gridViewThongTinChiTiet.DataBind();
+                gridViewThongTinChiTiet.HeaderRow.Cells[0].Text = "Tên tài khoản";
+                gridViewThongTinChiTiet.HeaderRow.Cells[1].Text = "Tên sản phẩm";
+                gridViewThongTinChiTiet.HeaderRow.Cells[2].Text = "Ngày giao dịch";
+                gridViewThongTinChiTiet.HeaderRow.Cells[3].Text = "Thời gian giao dịch";
                 //Đếm số sản phẩm (số giao dịch) được thực hiện thành công trong 1 năm
                 LabelSoSanPhamDuocGiaoDich.Text = chiTietCacTaiKhoanKhopLenhTheoThang.Count().ToString();
                 LabelTongSoLanGiaoDichThanhCong.Text = chiTietCacTaiKhoanKhopLenhTheoThang.Count().ToString();                                
@@ -129,6 +138,10 @@ namespace vBay
                                                           select new { DauGia.ChiTietDauGia.aspnet_User.UserName, DauGia.ChiTietDauGia.SanPham.TenSanPham, DauGia.GiaKhopLenh, DauGia.ChiTietDauGia.ThoiGianGiaoDich };                
                 gridViewThongTinChiTiet.DataSource = chiTietCacTaiKhoanKhopLenhTheoQuy;                
                 gridViewThongTinChiTiet.DataBind();
+                gridViewThongTinChiTiet.HeaderRow.Cells[0].Text = "Tên tài khoản";
+                gridViewThongTinChiTiet.HeaderRow.Cells[1].Text = "Tên sản phẩm";
+                gridViewThongTinChiTiet.HeaderRow.Cells[2].Text = "Ngày giao dịch";
+                gridViewThongTinChiTiet.HeaderRow.Cells[3].Text = "Thời gian giao dịch";
                 //Đếm số sản phẩm (số giao dịch) được thực hiện thành công trong quý
                 LabelSoSanPhamDuocGiaoDich.Text = chiTietCacTaiKhoanKhopLenhTheoQuy.Count().ToString();
                 LabelTongSoLanGiaoDichThanhCong.Text = chiTietCacTaiKhoanKhopLenhTheoQuy.Count().ToString();                                
@@ -144,6 +157,7 @@ namespace vBay
         
         protected void ThongTinChiTietCacLanGiaoDich()
         {
+            
             string stringYear = DropDownDanhSachNam.SelectedValue.ToString();
             int year = Convert.ToInt32(stringYear);           
             DataEntityDataContext data = new DataEntityDataContext();
@@ -154,7 +168,11 @@ namespace vBay
                                                 where DauGia.ThoiGianGiaoDich.Value.Year == year
                                                 select new {DauGia.aspnet_User.UserName,DauGia.SanPham.TenSanPham,DauGia.GiaGiaoDich,DauGia.ThoiGianGiaoDich };                
                 gridViewCacLanGiaoDich.DataSource = chiTietCacGiaoDichTheoNam;
-                gridViewCacLanGiaoDich.DataBind();               
+                gridViewCacLanGiaoDich.DataBind();
+                gridViewCacLanGiaoDich.HeaderRow.Cells[0].Text = "Tên tài khoản";
+                gridViewCacLanGiaoDich.HeaderRow.Cells[1].Text = "Tên sản phẩm";
+                gridViewCacLanGiaoDich.HeaderRow.Cells[2].Text = "Ngày giao dịch";
+                gridViewCacLanGiaoDich.HeaderRow.Cells[3].Text = "Thời gian giao dịch";            
                 //Đếm số lần giao dịch trong năm
                 LabelTongSoLanGiaoDich.Text = chiTietCacGiaoDichTheoNam.Count().ToString();                
             }
@@ -168,6 +186,10 @@ namespace vBay
                                                   select new { DauGia.aspnet_User.UserName, DauGia.SanPham.TenSanPham, DauGia.GiaGiaoDich, DauGia.ThoiGianGiaoDich };                
                 gridViewCacLanGiaoDich.DataSource = chiTietCacGiaoDichTheoThang;
                 gridViewCacLanGiaoDich.DataBind();
+                gridViewCacLanGiaoDich.HeaderRow.Cells[0].Text = "Tên tài khoản";
+                gridViewCacLanGiaoDich.HeaderRow.Cells[1].Text = "Tên sản phẩm";
+                gridViewCacLanGiaoDich.HeaderRow.Cells[2].Text = "Ngày giao dịch";
+                gridViewCacLanGiaoDich.HeaderRow.Cells[3].Text = "Thời gian giao dịch";
                 //Đếm số lần giao dịch trong tháng
                 LabelTongSoLanGiaoDich.Text = chiTietCacGiaoDichTheoThang.Count().ToString();
             }
@@ -186,10 +208,15 @@ namespace vBay
                                                         select new { DauGia.aspnet_User.UserName, DauGia.SanPham.TenSanPham, DauGia.GiaGiaoDich, DauGia.ThoiGianGiaoDich };                
                 gridViewCacLanGiaoDich.DataSource = chiTietCacTaiKhoanGiaoDichTheoQuy;
                 gridViewCacLanGiaoDich.DataBind();
+                gridViewCacLanGiaoDich.HeaderRow.Cells[0].Text = "Tên tài khoản";
+                gridViewCacLanGiaoDich.HeaderRow.Cells[1].Text = "Tên sản phẩm";
+                gridViewCacLanGiaoDich.HeaderRow.Cells[2].Text = "Ngày giao dịch";
+                gridViewCacLanGiaoDich.HeaderRow.Cells[3].Text = "Thời gian giao dịch";             
                 //Đếm số lần giao dịch trong quý
                 LabelTongSoLanGiaoDich.Text = chiTietCacTaiKhoanGiaoDichTheoQuy.Count().ToString();
             }        
         }
+        
         protected void MucPhiDauGia()
         {
             DataEntityDataContext data = new DataEntityDataContext();
@@ -243,5 +270,17 @@ namespace vBay
             else
                 return true;
         }
+
+        protected void gridViewCacLanGiaoDich_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {            
+            gridViewCacLanGiaoDich.PageIndex = e.NewPageIndex;
+            ThongTinChiTietCacLanGiaoDich();
+        }        
+
+        protected void gridViewThongTinChiTiet_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gridViewThongTinChiTiet.PageIndex = e.NewPageIndex;
+            TongThuNhapSoSanPham();
+        }        
     }
 }
