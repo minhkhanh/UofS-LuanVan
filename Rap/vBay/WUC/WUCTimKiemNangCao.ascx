@@ -5,21 +5,9 @@
     {
         width: 35px;
     }
-    .style10
-    {
-        width: 109px;
-    }
-    .style13
-    {
-        width: 117px;
-    }
     .style15
     {
         width: 46px;
-    }
-    .style16
-    {
-        width: 349px;
     }
     .style17
     {
@@ -35,7 +23,8 @@
     }
 </style>
 
-<asp:Panel ID="Panel1" runat="server" Width="630" Height="500" ScrollBars="Auto">
+<asp:Panel ID="Panel1" runat="server" Width="630px" Height="440px" 
+    ScrollBars="Auto">
 
 <asp:Label ID="Label1" runat="server" Text="Tìm Kiếm Sản Phẩm Nâng Cao" 
         Font-Size="20pt"></asp:Label>
@@ -204,8 +193,37 @@
 <asp:Label ID="lbKetQua" runat="server" Text="Label"></asp:Label>
 
 
-<asp:GridView ID="gvDSSanPham" runat="server" AllowPaging="True" onpageindexchanging="gvDSSanPham_PageIndexChanging" 
-    >
-</asp:GridView>
+    <br />
+    <asp:GridView ID="gvDSSanPham" runat="server" AllowPaging="True" 
+        AutoGenerateColumns="False" onpageindexchanging="gvDSSanPham_PageIndexChanging" 
+        onrowdatabound="gvDSSanPham_RowDataBound" CellPadding="4" 
+        ForeColor="#333333" GridLines="None">
+        <AlternatingRowStyle BackColor="White" />
+        <Columns>
+            <asp:BoundField HeaderText="STT" />
+            <asp:BoundField DataField="TenSanPham" HeaderText="Tên Sản Phẩm" />
+            <asp:BoundField DataField="TenLoaiSanPham" HeaderText="Loại Sản Phẩm" />
+            <asp:BoundField DataField="HoTen" HeaderText="Người Đăng" />
+            <asp:BoundField DataField="GiaKhoiDiem" HeaderText="Giá Khởi Điểm" />
+            <asp:BoundField DataField="GiaHienTai" HeaderText="Giá Hiện Tại" />
+            <asp:BoundField DataField="NgayDang" HeaderText="Ngày Đăng" />
+            <asp:BoundField DataField="NgayHetHan" HeaderText="Ngày Hết Hạn" />
+            <asp:BoundField DataField="TenTinhTrangSanPham" HeaderText="Tình Trạng" />
+            <asp:HyperLinkField DataNavigateUrlFields="MaSanPham" 
+                DataNavigateUrlFormatString="../xemchitietsanpham.aspx?MaSanPham={0}" 
+                HeaderText="Chi Tiết" Text="Chi Tiết" />
+        </Columns>
+        <EditRowStyle BackColor="#7C6F57" />
+        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#E3EAEB" />
+        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+        <SortedAscendingCellStyle BackColor="#F8FAFA" />
+        <SortedAscendingHeaderStyle BackColor="#246B61" />
+        <SortedDescendingCellStyle BackColor="#D4DFE1" />
+        <SortedDescendingHeaderStyle BackColor="#15524A" />
+    </asp:GridView>
+    <br />
 
 </asp:Panel>

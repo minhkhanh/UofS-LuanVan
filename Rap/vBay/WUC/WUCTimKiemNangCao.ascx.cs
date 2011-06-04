@@ -4,11 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 namespace vBay.WUC
 {
     public partial class WUCTimKiemNangCao : System.Web.UI.UserControl
     {
+        int stt;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -22,10 +24,23 @@ namespace vBay.WUC
             HienThiDSSanPham();
         }
 
+
+        protected void gvDSSanPham_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Cells[0].Text = (++stt).ToString();
+
+            }
+        }
+
         protected void gvDSSanPham_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-
+            stt = e.NewPageIndex * 10;
+            gvDSSanPham.PageIndex = e.NewPageIndex;
+            HienThiDSSanPham();
         }
+
 
         void HienThiDSLoaiSanPham()
         {
@@ -56,6 +71,7 @@ namespace vBay.WUC
                         join ttsp in db.TinhTrangSanPhams on sp.MaTinhTrangSanPham equals ttsp.MaTinhTrangSanPham
                         select new
                         {
+                            sp.MaSanPham,
                             sp.TenSanPham,
                             lsp.TenLoaiSanPham,
                             tk.ThongTinTaiKhoan.HoTen,
@@ -141,6 +157,8 @@ namespace vBay.WUC
                         select sp;
             }
 
+
+
             gvDSSanPham.DataSource = query;
             gvDSSanPham.DataBind();
         }
@@ -200,5 +218,13 @@ namespace vBay.WUC
                 return true;
             return false;
         }
+
+        
+
+        
+
+        
+
+        
     }
 }
