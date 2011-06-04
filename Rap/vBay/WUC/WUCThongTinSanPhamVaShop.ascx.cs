@@ -13,7 +13,7 @@ namespace vBay.WUC
         {
             DataEntityDataContext dataContext = new DataEntityDataContext();
             int id;
-            int.TryParse(Request["idSanPham"], out id);
+            int.TryParse(Request["MaSanPham"], out id);
             var sp = (from a in dataContext.SanPhams
                       where (a.MaSanPham == id)
                       select new { a.MaSanPham, a.TenSanPham, a.GiaKhoiDiem, a.GiaHienTai, a.MaTaiKhoan, a.MoTaSanPham}
