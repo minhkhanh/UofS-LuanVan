@@ -47,7 +47,6 @@
             <!-- sidebar end-->
 
             <div class="content">
-                This is content
                 <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
             </div>
             <!-- content end-->

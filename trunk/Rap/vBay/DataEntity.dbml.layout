@@ -2,374 +2,746 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17.25, 29" name="DataEntity">
   <DataContextMoniker Name="/DataEntityDataContext" />
   <nestedChildShapes>
+<<<<<<< .mine
+    <classShape Id="dbf96a3f-b44f-41ff-801d-f6e1b1e7488c" absoluteBounds="0.75, 12.625, 2, 1.4248478190104166">
+=======
     <classShape Id="f7dedbe7-c11b-4da8-9378-079958b3c85f" absoluteBounds="0.75, 12.875, 2, 1.5785953776041666">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/aspnet_Application" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="87aec02a-9bbe-4fb1-b2f6-c304978669de" absoluteBounds="0.765, 13.085, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="5b3d9e4a-e79a-49e9-9d0f-e2ec438faecc" absoluteBounds="0.765, 13.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="d623c827-59df-4493-8566-edc053acf332" absoluteBounds="3.5, 16.125, 2, 1.0961531575520844">
+=======
     <classShape Id="382aa7fa-3935-4651-9506-dd20d0e57014" absoluteBounds="9.5, 24.75, 2, 1.1939925130208309">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/TinhTrangSanPham" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="c250d8ad-f409-4eee-9cea-549faaa9e71e" absoluteBounds="3.515, 16.585, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="7bffc849-a99e-447f-930f-3ff22acab327" absoluteBounds="9.515, 25.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="27df223e-216e-4dd6-a817-fbfae0369fb8" absoluteBounds="9.25, 9.125, 2, 4.2187524414062487">
+=======
     <classShape Id="9babd350-96cb-456e-bdf1-e6aaca581eca" absoluteBounds="9.25, 13.5, 2, 4.8477197265624987">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/aspnet_Membership" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="94a6208f-fec0-49d6-8de7-9d4e2f3d91d7" absoluteBounds="9.265, 9.585, 1.9700000000000002, 3.65875244140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="ac9b97db-9505-4ced-9ded-c139f5b7ae0e" absoluteBounds="9.265, 13.96, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="6500dbf0-8109-4809-9eb7-2af7abc4991a" absoluteBounds="3.5, 11.5, 2, 1.4248478190104166">
+=======
     <classShape Id="693d48d4-4023-49d6-b949-67e37c3565e1" absoluteBounds="3.5, 11.625, 2, 1.5785953776041666">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/aspnet_Path" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="94f4e15c-5fc5-407a-a4cb-07276d018841" absoluteBounds="3.515, 11.96, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="b574a18a-d1f8-4cda-8d30-e460381da842" absoluteBounds="3.515, 12.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="bc7c0500-9302-4d1c-8747-18b13675ba51" absoluteBounds="6.25, 11.625, 2, 1.2605004882812487">
+=======
     <classShape Id="8247dbdf-f36a-43e4-8617-525aea8b74c6" absoluteBounds="6.25, 11.75, 2, 1.3862939453124987">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/aspnet_PersonalizationAllUser" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="f245a5d3-4c15-40e0-a6d7-d436fe8c6d08" absoluteBounds="6.265, 12.085, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="e76bbba1-76b7-4fda-b19e-ffc7342084d1" absoluteBounds="6.265, 12.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="820dd343-9495-4801-be9b-672b805950eb" absoluteBounds="6.25, 8.375, 2, 1.5891951497395827">
+=======
     <classShape Id="f3f4863d-5e7a-4e3b-b834-c5fedc4ac97e" absoluteBounds="6.25, 8.625, 2, 1.7708968098958344">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/aspnet_PersonalizationPerUser" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="d6cb5ac0-ba2d-42ac-a50f-eebf193244ba" absoluteBounds="6.265, 8.835, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="ae1998e6-00bc-4d00-8496-580519fb050e" absoluteBounds="6.265, 9.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="caf6fa36-1811-4985-892b-9cef948a21da" absoluteBounds="6.25, 5.625, 2, 1.5891951497395827">
+=======
     <classShape Id="fa4135ab-26cb-40ae-b45d-5bd5f0a2801b" absoluteBounds="9.25, 19.875, 2, 1.7708968098958309">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/aspnet_Profile" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="b9c085fc-6372-46b8-8625-6b4f293424e3" absoluteBounds="6.265, 6.085, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="625a7f2b-7842-4efa-a46b-a9a70bd194d4" absoluteBounds="9.265, 20.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="d615c253-2ab4-46c1-97f8-a229f8c0c445" absoluteBounds="3.5, 13.625, 2, 1.5891951497395844">
+=======
     <classShape Id="3952a844-ae3e-4712-b5eb-debc402e1954" absoluteBounds="3.5, 14, 2, 1.7708968098958344">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/aspnet_Role" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="23f2b712-2271-4a22-bcc7-62f5dce69445" absoluteBounds="3.515, 14.085, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="2404faa2-9ec6-42af-a440-ab4517dea8a5" absoluteBounds="3.515, 14.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="de897af6-5fcc-454f-b29f-cfba6c510501" absoluteBounds="11.75, 1.5, 2, 1.2605004882812505">
+=======
     <classShape Id="d0503540-5110-4d5c-9d0d-44231ce0ce70" absoluteBounds="3.75, 3.75, 2, 1.3862939453125005">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/aspnet_SchemaVersion" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="8d25bfc5-56e0-49bc-90c5-fabd1f334fa2" absoluteBounds="11.765, 1.96, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="6e23eeb5-a204-49e4-a203-5b2de0c511f0" absoluteBounds="3.765, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="e86be9d3-1d5e-43be-8ea1-6d85a7233cc0" absoluteBounds="3.5, 8.25, 2, 2.2465844726562487">
+=======
     <classShape Id="6e74c878-d870-49df-981f-7a2008331d35" absoluteBounds="6.5, 16.5, 2, 2.5401025390625023">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/aspnet_User" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="23629750-0114-4ae4-b095-faef3f2eb695" absoluteBounds="3.515, 8.71, 1.9700000000000002, 1.68658447265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="1d58b401-c318-4025-8425-49f7048a2f0d" absoluteBounds="6.515, 16.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="3959fe61-0e78-4346-9c8c-c8745a69d4df" absoluteBounds="6.25, 13.875, 2, 1.0961531575520844">
+=======
     <classShape Id="9950cdb7-39d3-46d6-8d96-61ad9e22d8ce" absoluteBounds="6.25, 14.25, 2, 1.1939925130208344">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/aspnet_UsersInRole" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="6ab2764b-17e5-47c4-8dd8-2de579d45c4a" absoluteBounds="6.265, 14.335, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="bb1f6c53-89d0-4b5b-a6c2-a1f569368207" absoluteBounds="6.265, 14.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="241d9c03-e8a5-4a44-8aa8-c882e9545f95" absoluteBounds="11.75, 9.5, 2, 3.2326684570312523">
+=======
     <classShape Id="7e78f114-8a84-49f7-a279-05b1d396f0cf" absoluteBounds="6.75, 0.75, 2, 3.6939111328124996">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/aspnet_WebEvent_Event" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="238c77fb-a8ac-47b7-8e9b-9972cfd90ae9" absoluteBounds="11.765, 9.96, 1.9700000000000002, 2.67266845703125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="4ad34be9-5f3d-4c74-8e4e-5a0accaf6857" absoluteBounds="6.765, 1.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="0e58fbc3-7026-487a-8744-6f27b651ace4" absoluteBounds="9.25, 3.5, 2, 1.7535424804687505">
+=======
     <classShape Id="e03b9a27-20d1-40a9-a927-b7e87c221497" absoluteBounds="12.25, 13.75, 2, 1.9631982421874987">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/ChiTietDauGia" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="9f7f752f-82ff-4497-af2d-c0f71ce1efd8" absoluteBounds="9.265, 3.96, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="2212af42-5ea4-4a14-b66a-346dceb74d5d" absoluteBounds="12.265, 14.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="e99f05cf-dec8-4f50-96c1-fe45791bce22" absoluteBounds="14.5, 6.625, 2, 1.2605004882812505">
+=======
     <classShape Id="8d153709-cd05-4cb9-b830-6e749c327db7" absoluteBounds="3.5, 0.875, 2, 1.3862939453124998">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/ChiTietPhanQuyen" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="fe27adef-b7c3-4954-834c-d62d0ee7b34c" absoluteBounds="14.515, 7.085, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="8012e9d4-0d14-4b8a-9683-2a9c81437a2d" absoluteBounds="3.515, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="dcb79bd8-a4a5-4dbe-877b-8810794c01a0" absoluteBounds="9.25, 6.625, 2, 1.5891951497395827">
+=======
     <classShape Id="78d42b93-c671-463c-a24f-652314edda5b" absoluteBounds="12.25, 16.875, 2, 1.7708968098958309">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/Comment" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="06148bfa-4ee7-475a-ac99-d4bb9b7de038" absoluteBounds="9.265, 7.085, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="c0943ad2-9fe8-4bb1-82da-780fb0996a92" absoluteBounds="12.265, 17.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="d5cbb601-56d2-4da5-8259-636c96c75c96" absoluteBounds="12, 3.75, 2, 1.2605004882812505">
+=======
     <classShape Id="834e52eb-3498-48bd-9a94-5d0f0ca43c72" absoluteBounds="15, 14, 2, 1.3862939453124987">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/DauGiaThanhCong" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="eaf4bcfc-4dd7-4a1b-8f4e-c5603ea7acd9" absoluteBounds="12.015, 4.21, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="20d22872-5e38-45a3-8dab-56dc03781919" absoluteBounds="15.015, 14.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="0f885069-2d27-4ad3-b29f-9e15b6b07475" absoluteBounds="14.75, 1.5, 2, 1.0961531575520833">
+=======
     <classShape Id="30138b2b-3f6f-4e8c-91c9-6ad6ee681916" absoluteBounds="0.75, 6.75, 2, 1.1939925130208344">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/GiaoDien" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="adedefbf-f1f7-4ed7-a3a1-bd3bbe72df89" absoluteBounds="14.765, 1.96, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="a13aef61-8c22-4b1a-93d5-cb2cbc650ef0" absoluteBounds="0.765, 7.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="4266e735-3949-4493-bcef-73f74d40aa0a" absoluteBounds="1.5, 4.875, 2, 1.0961531575520844">
+=======
     <classShape Id="7e8367b5-d0a8-44f2-b568-ce3b871b2fd9" absoluteBounds="1, 20.25, 2, 1.1939925130208309">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/GioiTinh" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="624f4948-0588-4711-9911-a0945e89a1c6" absoluteBounds="1.5150000000000001, 5.335, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="76d71272-567d-4bd0-95ad-5ecd9d6e3ef0" absoluteBounds="1.0150000000000001, 20.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="3241975c-c53e-4261-b53b-243bd9c1ec31" absoluteBounds="0.75, 18.25, 2, 1.0961531575520809">
+=======
     <classShape Id="8bdadd70-38ef-4bcb-a979-302941fa278a" absoluteBounds="6.75, 27.125, 2, 1.1939925130208309">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/LoaiMultimedia" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="abc7e7f8-cc55-467e-8db0-ebfcf996bc1c" absoluteBounds="0.765, 18.71, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="1f3c2995-4df3-406d-9b6b-b713589f589b" absoluteBounds="6.765, 27.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="4a2d70f2-c9eb-4ca5-a28f-443ca9546b78" absoluteBounds="3.5, 2.25, 2, 1.0961531575520835">
+=======
     <classShape Id="41fbde88-75b5-46bb-822a-f5046e45530d" absoluteBounds="9.5, 22.75, 2, 1.1939925130208309">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/LoaiSanPham" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="512152e3-3a25-446c-a8bd-96d88e45485d" absoluteBounds="3.515, 2.71, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="503cab19-9598-4128-ac20-e46138e85717" absoluteBounds="9.515, 23.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="739910e3-ccfd-4b02-a719-0408c44c97c2" absoluteBounds="11.75, 6.75, 2, 1.0961531575520844">
+=======
     <classShape Id="594ad659-4675-41b3-85e5-8f0ed0151fdc" absoluteBounds="0.75, 1, 2, 1.1939925130208335">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/LoaiTaiKhoan" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="a07e25dd-50ea-463f-b42b-3fe45970e017" absoluteBounds="11.765, 7.21, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="fd6ab175-5eab-469b-b711-97a0bcba117e" absoluteBounds="0.765, 1.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="06b6ca43-b6b5-4a74-b896-3767d0294d2f" absoluteBounds="3.5, 17.875, 2, 1.7535424804687523">
+=======
     <classShape Id="7057dd8f-c838-419c-b4a6-8cbaa170b95a" absoluteBounds="9.5, 26.75, 2, 1.9631982421875023">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/Multimedia" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="03c9035d-b34d-485f-9c0f-000585b6b82e" absoluteBounds="3.515, 18.335, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="1431847a-ae6e-4279-be49-83c9d75c8f3e" absoluteBounds="9.515, 27.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="a50b0d1e-48e1-4035-9fec-e9b09cbbcf55" absoluteBounds="11.75, 14.75, 2, 1.0961531575520844">
+=======
     <classShape Id="108ec968-b3f2-4f2a-9e5d-c7cf7024d2b1" absoluteBounds="0.75, 4, 2, 1.193992513020834">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/PhanQuyen" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="b5aa031c-1604-4eb0-b549-c60d896f6a9a" absoluteBounds="11.765, 15.21, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="28fa734b-9ef8-4ee6-a0a8-62032e8c2b6c" absoluteBounds="0.765, 4.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="36274719-b78a-46ba-9e49-f64915918b37" absoluteBounds="6.25, 2.125, 2, 2.5752791341145831">
+=======
     <classShape Id="693944cb-c06c-4ad2-92d7-2cb504ef43ec" absoluteBounds="12.25, 20.25, 2, 2.9247054036458309">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/SanPham" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="6af94055-a20b-45e5-b89a-0e617a5e89b8" absoluteBounds="6.265, 2.585, 1.9700000000000002, 2.015279134114583" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="09fd3605-afc7-44fc-ad11-bae7ead79bdf" absoluteBounds="12.265, 20.71, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="b58d2840-08c2-494f-9326-2df1ea045a0f" absoluteBounds="9, 0.75, 2, 1.26050048828125">
+=======
     <classShape Id="0801b065-ce6c-4b23-b3d3-5470dd5dd256" absoluteBounds="15, 21, 2, 1.3862939453125023">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/SanPham_Multimedia" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="85f842a5-7e34-4094-83fb-7ff59a7676d5" absoluteBounds="9.015, 1.21, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="88f0f423-b070-47d0-b0e9-dd211c35aef0" absoluteBounds="15.015, 21.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="689cd0fb-ba7f-45f8-99f0-bfe16df2892c" absoluteBounds="14.75, 3.5, 2, 2.2465844726562505">
+=======
     <classShape Id="29efe6b4-2d28-490f-9cc4-2d98c0f3b824" absoluteBounds="8.75, 5.75, 2, 2.5401025390625005">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/TaiKhoan" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="484180c4-0b09-4547-807a-17d33ff9a528" absoluteBounds="14.765, 3.96, 1.9700000000000002, 1.68658447265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="34f283e3-15b6-4f62-87dd-c43cb3e1c123" absoluteBounds="8.765, 6.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="4a4b6af4-1ea2-4691-93e3-ec2fd96bdac4" absoluteBounds="14.75, 9.5, 2, 1.2605004882812487">
+=======
     <classShape Id="f941e29d-704a-4f87-9083-5614d59ef3bf" absoluteBounds="0.75, 8.75, 2, 1.3862939453124987">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/THAMSO" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="232db52f-08ba-4c92-a71f-bbce08000488" absoluteBounds="14.765, 9.96, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="93fb28d4-1306-4e64-8b54-791423c7ee0c" absoluteBounds="0.765, 9.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="b9293dac-772f-402d-a42e-ba95041fbccb" absoluteBounds="0.75, 7.375, 2, 1.2605004882812496">
+=======
     <classShape Id="5be59428-89a9-4fad-bdaa-2840c80b82c6" absoluteBounds="3.75, 17.5, 2, 1.3862939453125023">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/ThongTinDauGia" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="a6709f28-8245-47b7-94f5-57666aa4718a" absoluteBounds="0.765, 7.835, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="ef43833c-e19b-4d95-8fff-f6b5efbeb6ad" absoluteBounds="3.765, 17.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
+<<<<<<< .mine
+    <classShape Id="9bb34946-2dc0-4504-a1b3-bb7c2a2dc877" absoluteBounds="0.75, 9.375, 2, 2.0822371419270844">
+=======
     <classShape Id="3a952093-dbad-4454-95ac-9b20bee1b9ba" absoluteBounds="3.75, 19.625, 2, 2.3478011067708309">
+>>>>>>> .r36
       <DataClassMoniker Name="/DataEntityDataContext/ThongTinTaiKhoan" />
       <nestedChildShapes>
+<<<<<<< .mine
+        <elementListCompartment Id="aed2a157-727e-4417-8e26-546c6e555400" absoluteBounds="0.765, 9.835, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+=======
         <elementListCompartment Id="c1e536f2-66f7-4c37-948c-fdb9d95054e8" absoluteBounds="3.765, 20.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+>>>>>>> .r36
       </nestedChildShapes>
     </classShape>
     <associationConnector edgePoints="[(2.75 : 13.71875); (5.79166666666667 : 13.71875 : JumpStart); (5.95833333333333 : 13.71875 : JumpEnd); (9.25 : 13.71875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataEntityDataContext/aspnet_Application/aspnet_Application_aspnet_Membership" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="dbf96a3f-b44f-41ff-801d-f6e1b1e7488c" />
+        <classShapeMoniker Id="27df223e-216e-4dd6-a817-fbfae0369fb8" />
+=======
         <classShapeMoniker Id="f7dedbe7-c11b-4da8-9378-079958b3c85f" />
         <classShapeMoniker Id="9babd350-96cb-456e-bdf1-e6aaca581eca" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 13.0392976888021); (3.5 : 13.0392976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataEntityDataContext/aspnet_Application/aspnet_Application_aspnet_Path" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="dbf96a3f-b44f-41ff-801d-f6e1b1e7488c" />
+        <classShapeMoniker Id="6500dbf0-8109-4809-9eb7-2af7abc4991a" />
+=======
         <classShapeMoniker Id="f7dedbe7-c11b-4da8-9378-079958b3c85f" />
         <classShapeMoniker Id="693d48d4-4023-49d6-b949-67e37c3565e1" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 12.4431469726562); (5.79166666666667 : 12.4431469726562 : JumpStart); (5.95833333333333 : 12.4431469726562 : JumpEnd); (6.25 : 12.4431469726562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataEntityDataContext/aspnet_Path/aspnet_Path_aspnet_PersonalizationAllUser" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="6500dbf0-8109-4809-9eb7-2af7abc4991a" />
+        <classShapeMoniker Id="bc7c0500-9302-4d1c-8747-18b13675ba51" />
+=======
         <classShapeMoniker Id="693d48d4-4023-49d6-b949-67e37c3565e1" />
         <classShapeMoniker Id="8247dbdf-f36a-43e4-8617-525aea8b74c6" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(4.5 : 11.625); (4.5 : 9.51044840494792); (6.25 : 9.51044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataEntityDataContext/aspnet_Path/aspnet_Path_aspnet_PersonalizationPerUser" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="6500dbf0-8109-4809-9eb7-2af7abc4991a" />
+        <classShapeMoniker Id="820dd343-9495-4801-be9b-672b805950eb" />
+=======
         <classShapeMoniker Id="693d48d4-4023-49d6-b949-67e37c3565e1" />
         <classShapeMoniker Id="f3f4863d-5e7a-4e3b-b834-c5fedc4ac97e" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 14.2267976888021); (3.5 : 14.2267976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataEntityDataContext/aspnet_Application/aspnet_Application_aspnet_Role" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="dbf96a3f-b44f-41ff-801d-f6e1b1e7488c" />
+        <classShapeMoniker Id="d615c253-2ab4-46c1-97f8-a229f8c0c445" />
+=======
         <classShapeMoniker Id="f7dedbe7-c11b-4da8-9378-079958b3c85f" />
         <classShapeMoniker Id="3952a844-ae3e-4712-b5eb-debc402e1954" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.5 : 17.4238598632813); (9.25 : 17.4238598632813)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataEntityDataContext/aspnet_User/aspnet_User_aspnet_Membership" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="e86be9d3-1d5e-43be-8ea1-6d85a7233cc0" />
+        <classShapeMoniker Id="27df223e-216e-4dd6-a817-fbfae0369fb8" />
+=======
         <classShapeMoniker Id="6e74c878-d870-49df-981f-7a2008331d35" />
         <classShapeMoniker Id="9babd350-96cb-456e-bdf1-e6aaca581eca" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(6.5 : 16.5); (6.125 : 16.125); (5.875 : 16.125); (5.875 : 10.7722580382111); (6.2513612283153 : 10.3958968098958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataEntityDataContext/aspnet_User/aspnet_User_aspnet_PersonalizationPerUser" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="e86be9d3-1d5e-43be-8ea1-6d85a7233cc0" />
+        <classShapeMoniker Id="820dd343-9495-4801-be9b-672b805950eb" />
+=======
         <classShapeMoniker Id="6e74c878-d870-49df-981f-7a2008331d35" />
         <classShapeMoniker Id="f3f4863d-5e7a-4e3b-b834-c5fedc4ac97e" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(7.5 : 19.0401025390625); (7.5 : 20.7604484049479); (7.94791916666667 : 20.7604484049479 : JumpStart); (8.11458583333333 : 20.7604484049479 : JumpEnd); (9.25 : 20.7604484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataEntityDataContext/aspnet_User/aspnet_User_aspnet_Profile" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="e86be9d3-1d5e-43be-8ea1-6d85a7233cc0" />
+        <classShapeMoniker Id="caf6fa36-1811-4985-892b-9cef948a21da" />
+=======
         <classShapeMoniker Id="6e74c878-d870-49df-981f-7a2008331d35" />
         <classShapeMoniker Id="fa4135ab-26cb-40ae-b45d-5bd5f0a2801b" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(1.75 : 14.4535953776042); (1.75 : 17.0000025); (6.5 : 17.0000025)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataEntityDataContext/aspnet_Application/aspnet_Application_aspnet_User" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="dbf96a3f-b44f-41ff-801d-f6e1b1e7488c" />
+        <classShapeMoniker Id="e86be9d3-1d5e-43be-8ea1-6d85a7233cc0" />
+=======
         <classShapeMoniker Id="f7dedbe7-c11b-4da8-9378-079958b3c85f" />
         <classShapeMoniker Id="6e74c878-d870-49df-981f-7a2008331d35" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 14.8469962565104); (5.79166666666667 : 14.8469962565104 : JumpStart); (5.95833333333333 : 14.8469962565104 : JumpEnd); (6.25 : 14.8469962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataEntityDataContext/aspnet_Role/aspnet_Role_aspnet_UsersInRole" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="d615c253-2ab4-46c1-97f8-a229f8c0c445" />
+        <classShapeMoniker Id="3959fe61-0e78-4346-9c8c-c8745a69d4df" />
+=======
         <classShapeMoniker Id="3952a844-ae3e-4712-b5eb-debc402e1954" />
         <classShapeMoniker Id="9950cdb7-39d3-46d6-8d96-61ad9e22d8ce" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(7.4062525 : 16.5); (7.4062525 : 15.4439925130208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataEntityDataContext/aspnet_User/aspnet_User_aspnet_UsersInRole" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="e86be9d3-1d5e-43be-8ea1-6d85a7233cc0" />
+        <classShapeMoniker Id="3959fe61-0e78-4346-9c8c-c8745a69d4df" />
+=======
         <classShapeMoniker Id="6e74c878-d870-49df-981f-7a2008331d35" />
         <classShapeMoniker Id="9950cdb7-39d3-46d6-8d96-61ad9e22d8ce" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.5 : 18.2632332011719); (9 : 18.2632332011719); (9 : 18.5977197265625); (11.7916666666667 : 18.5977197265625 : JumpStart); (11.9583333333333 : 18.5977197265625 : JumpEnd); (12 : 18.5977197265625); (12 : 16.625); (13.25 : 16.625); (13.25 : 15.7131982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataEntityDataContext/aspnet_User/aspnet_User_ChiTietDauGia" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="e86be9d3-1d5e-43be-8ea1-6d85a7233cc0" />
+        <classShapeMoniker Id="0e58fbc3-7026-487a-8744-6f27b651ace4" />
+=======
         <classShapeMoniker Id="6e74c878-d870-49df-981f-7a2008331d35" />
         <classShapeMoniker Id="e03b9a27-20d1-40a9-a927-b7e87c221497" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.5 : 18.4414697265625); (8.91666666666667 : 18.4414697265625 : JumpStart); (9.08333333333333 : 18.4414697265625 : JumpEnd); (11.7916666666667 : 18.4414697265625 : JumpStart); (12.0833333333333 : 18.4414697265625 : JumpEnd); (12.25 : 18.4414697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataEntityDataContext/aspnet_User/aspnet_User_Comment" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="e86be9d3-1d5e-43be-8ea1-6d85a7233cc0" />
+        <classShapeMoniker Id="dcb79bd8-a4a5-4dbe-877b-8810794c01a0" />
+=======
         <classShapeMoniker Id="6e74c878-d870-49df-981f-7a2008331d35" />
         <classShapeMoniker Id="78d42b93-c671-463c-a24f-652314edda5b" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(14.25 : 14.6931469726562); (15 : 14.6931469726562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataEntityDataContext/ChiTietDauGia/ChiTietDauGia_DauGiaThanhCong" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="0e58fbc3-7026-487a-8744-6f27b651ace4" />
+        <classShapeMoniker Id="d5cbb601-56d2-4da5-8259-636c96c75c96" />
+=======
         <classShapeMoniker Id="e03b9a27-20d1-40a9-a927-b7e87c221497" />
         <classShapeMoniker Id="834e52eb-3498-48bd-9a94-5d0f0ca43c72" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 1.59699625651042); (3.04166666666667 : 1.59699625651042 : JumpStart); (3.20833333333333 : 1.59699625651042 : JumpEnd); (3.5 : 1.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataEntityDataContext/LoaiTaiKhoan/LoaiTaiKhoan_ChiTietPhanQuyen" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="739910e3-ccfd-4b02-a719-0408c44c97c2" />
+        <classShapeMoniker Id="e99f05cf-dec8-4f50-96c1-fe45791bce22" />
+=======
         <classShapeMoniker Id="594ad659-4675-41b3-85e5-8f0ed0151fdc" />
         <classShapeMoniker Id="8d153709-cd05-4cb9-b830-6e749c327db7" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.75 : 27.7219962565104); (9.5 : 27.7219962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataEntityDataContext/LoaiMultimedia/LoaiMultimedia_Multimedia" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="3241975c-c53e-4261-b53b-243bd9c1ec31" />
+        <classShapeMoniker Id="06b6ca43-b6b5-4a74-b896-3767d0294d2f" />
+=======
         <classShapeMoniker Id="8bdadd70-38ef-4bcb-a979-302941fa278a" />
         <classShapeMoniker Id="7057dd8f-c838-419c-b4a6-8cbaa170b95a" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 4.00091745577925); (3.125 : 3.62591745577925); (3.125 : 1.20474612825521); (3.5 : 1.20474612825521)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataEntityDataContext/PhanQuyen/PhanQuyen_ChiTietPhanQuyen" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="a50b0d1e-48e1-4035-9fec-e9b09cbbcf55" />
+        <classShapeMoniker Id="e99f05cf-dec8-4f50-96c1-fe45791bce22" />
+=======
         <classShapeMoniker Id="108ec968-b3f2-4f2a-9e5d-c7cf7024d2b1" />
         <classShapeMoniker Id="8d153709-cd05-4cb9-b830-6e749c327db7" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(12.25 : 20.25); (11.875 : 19.875); (11.875 : 16.0881982421875); (12.25 : 15.7131982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataEntityDataContext/SanPham/SanPham_ChiTietDauGia" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="36274719-b78a-46ba-9e49-f64915918b37" />
+        <classShapeMoniker Id="0e58fbc3-7026-487a-8744-6f27b651ace4" />
+=======
         <classShapeMoniker Id="693944cb-c06c-4ad2-92d7-2cb504ef43ec" />
         <classShapeMoniker Id="e03b9a27-20d1-40a9-a927-b7e87c221497" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(13.2812525 : 20.25); (13.2812525 : 18.6458968098958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataEntityDataContext/SanPham/SanPham_Comment" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="36274719-b78a-46ba-9e49-f64915918b37" />
+        <classShapeMoniker Id="dcb79bd8-a4a5-4dbe-877b-8810794c01a0" />
+=======
         <classShapeMoniker Id="693944cb-c06c-4ad2-92d7-2cb504ef43ec" />
         <classShapeMoniker Id="78d42b93-c671-463c-a24f-652314edda5b" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.0312525 : 19.0401025390625); (8.0312525 : 22.1979484049479); (12.25 : 22.1979484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataEntityDataContext/aspnet_User/aspnet_User_SanPham" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="e86be9d3-1d5e-43be-8ea1-6d85a7233cc0" />
+        <classShapeMoniker Id="36274719-b78a-46ba-9e49-f64915918b37" />
+=======
         <classShapeMoniker Id="6e74c878-d870-49df-981f-7a2008331d35" />
         <classShapeMoniker Id="693944cb-c06c-4ad2-92d7-2cb504ef43ec" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(11.5 : 22.9623527018229); (12.25 : 22.9623527018229)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataEntityDataContext/LoaiSanPham/LoaiSanPham_SanPham" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="4a2d70f2-c9eb-4ca5-a28f-443ca9546b78" />
+        <classShapeMoniker Id="36274719-b78a-46ba-9e49-f64915918b37" />
+=======
         <classShapeMoniker Id="41fbde88-75b5-46bb-822a-f5046e45530d" />
         <classShapeMoniker Id="693944cb-c06c-4ad2-92d7-2cb504ef43ec" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(11.5 : 27.7315991210938); (13.25 : 27.7315991210938); (13.25 : 23.1747054036458)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataEntityDataContext/Multimedia/Multimedia_SanPham" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="06b6ca43-b6b5-4a74-b896-3767d0294d2f" />
+        <classShapeMoniker Id="36274719-b78a-46ba-9e49-f64915918b37" />
+=======
         <classShapeMoniker Id="7057dd8f-c838-419c-b4a6-8cbaa170b95a" />
         <classShapeMoniker Id="693944cb-c06c-4ad2-92d7-2cb504ef43ec" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(11.5 : 25.3469962565104); (12.7187475 : 25.3469962565104); (12.7187475 : 23.1747054036458)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataEntityDataContext/TinhTrangSanPham/TinhTrangSanPham_SanPham" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="d623c827-59df-4493-8566-edc053acf332" />
+        <classShapeMoniker Id="36274719-b78a-46ba-9e49-f64915918b37" />
+=======
         <classShapeMoniker Id="382aa7fa-3935-4651-9506-dd20d0e57014" />
         <classShapeMoniker Id="693944cb-c06c-4ad2-92d7-2cb504ef43ec" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(14.25 : 21.6931469726563); (15 : 21.6931469726563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataEntityDataContext/SanPham/SanPham_SanPham_Multimedia" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="36274719-b78a-46ba-9e49-f64915918b37" />
+        <classShapeMoniker Id="b58d2840-08c2-494f-9326-2df1ea045a0f" />
+=======
         <classShapeMoniker Id="693944cb-c06c-4ad2-92d7-2cb504ef43ec" />
         <classShapeMoniker Id="0801b065-ce6c-4b23-b3d3-5470dd5dd256" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(11.5 : 27.2095470605469); (13.1666666666667 : 27.2095470605469 : JumpStart); (13.3333333333333 : 27.2095470605469 : JumpEnd); (16 : 27.2095470605469); (16 : 22.3862939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataEntityDataContext/Multimedia/Multimedia_SanPham_Multimedia" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="06b6ca43-b6b5-4a74-b896-3767d0294d2f" />
+        <classShapeMoniker Id="b58d2840-08c2-494f-9326-2df1ea045a0f" />
+=======
         <classShapeMoniker Id="7057dd8f-c838-419c-b4a6-8cbaa170b95a" />
         <classShapeMoniker Id="0801b065-ce6c-4b23-b3d3-5470dd5dd256" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.75 : 18.1931469726563); (6.5 : 18.1931469726563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataEntityDataContext/ThongTinDauGia/ThongTinDauGia_aspnet_User" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="b9293dac-772f-402d-a42e-ba95041fbccb" />
+        <classShapeMoniker Id="e86be9d3-1d5e-43be-8ea1-6d85a7233cc0" />
+=======
         <classShapeMoniker Id="5be59428-89a9-4fad-bdaa-2840c80b82c6" />
         <classShapeMoniker Id="6e74c878-d870-49df-981f-7a2008331d35" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.75 : 21.3666247558594); (6.9687475 : 21.3666247558594); (6.9687475 : 19.0401025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataEntityDataContext/ThongTinTaiKhoan/ThongTinTaiKhoan_aspnet_User" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="9bb34946-2dc0-4504-a1b3-bb7c2a2dc877" />
+        <classShapeMoniker Id="e86be9d3-1d5e-43be-8ea1-6d85a7233cc0" />
+=======
         <classShapeMoniker Id="3a952093-dbad-4454-95ac-9b20bee1b9ba" />
         <classShapeMoniker Id="6e74c878-d870-49df-981f-7a2008331d35" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(3 : 20.8469962565104); (3.75 : 20.8469962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataEntityDataContext/GioiTinh/GioiTinh_ThongTinTaiKhoan" />
       <nodes>
+<<<<<<< .mine
+        <classShapeMoniker Id="4266e735-3949-4493-bcef-73f74d40aa0a" />
+        <classShapeMoniker Id="9bb34946-2dc0-4504-a1b3-bb7c2a2dc877" />
+=======
         <classShapeMoniker Id="7e8367b5-d0a8-44f2-b568-ce3b871b2fd9" />
         <classShapeMoniker Id="3a952093-dbad-4454-95ac-9b20bee1b9ba" />
+>>>>>>> .r36
       </nodes>
     </associationConnector>
   </nestedChildShapes>

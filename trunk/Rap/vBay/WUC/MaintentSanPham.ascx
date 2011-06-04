@@ -48,7 +48,7 @@
     {
         margin: 0 auto;
         text-align: center;
-        height:inherit;
+        position:inherit;
     } 
     .noiDungSanPham
    { 

@@ -94,6 +94,7 @@ p
 	height:inherit;
 	margin:10px 10px;
 	min-height:500px;
+	position:relative;
 }
 
 .footer
