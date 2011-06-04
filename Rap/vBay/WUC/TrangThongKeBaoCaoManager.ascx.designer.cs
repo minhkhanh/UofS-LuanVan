@@ -7,20 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace vBay
-{
+namespace vBay {
     
     
     public partial class TrangThongKeBaoCaoManager {
-        
-        /// <summary>
-        /// PanelThongke control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelThongke;
         
         /// <summary>
         /// DropDownDanhSachThang control.
@@ -84,6 +74,15 @@ namespace vBay
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtCapNhat;
+        
+        /// <summary>
+        /// PanelThongke control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelThongke;
         
         /// <summary>
         /// LabelDoanhThu control.
