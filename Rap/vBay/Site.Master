@@ -15,6 +15,10 @@
     <form runat="server">
     <div class="page">
         <div class="header">
+            <div id="logo">
+                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="Images/logo.png" PostBackUrl="~/Default.aspx" />
+            </div>
+            <!-- logo end-->
             <div class="navbar">
                 <asp:Menu ID="Menu1" runat="server" StaticSubMenuIndent="16px" 
                     CssClass="navbarmenu" IncludeStyleBlock="False" Orientation="Horizontal">
@@ -61,7 +65,7 @@
         <div class="footer">  
             <div class="info" >
                 <p>Auction Web</p>
-                <p>Copy right 2011 @ Group E4 All rights reservered</p>
+                <p>Copyright 2011 @ Group E4 All rights reservered</p>
             </div>
             <!-- info end-->
         </div>
