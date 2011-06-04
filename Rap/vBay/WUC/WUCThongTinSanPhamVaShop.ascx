@@ -178,13 +178,15 @@
         margin: 0;
         color: #2769A7;
     }
-    .summary_info span.info
-    {
+    .summary_info span.info {
         display: block;
         height: 1%;
+        left: auto;
         margin-left: 60px;
-        vertical-align: top;
+        position: relative;
         text-transform: capitalize;
+        top: auto;
+        vertical-align: top;
     }
     .detail_product .desc .note
     {
