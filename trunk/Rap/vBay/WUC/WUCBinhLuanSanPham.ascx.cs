@@ -27,18 +27,17 @@ namespace vBay.WUC
         }
         private bool IsLogin()
         {
-            return true;
+            return Page.User.Identity.IsAuthenticated;
         }
         private Guid GetUserId()
         {
-            //return "5a01104a-dc94-4b37-85dd-ee444082d8f7";
-            Guid id;
-            Guid.TryParse("5a01104a-dc94-4b37-85dd-ee444082d8f7", out id);
-            return id;
-            //Guid g;
-            //DataEntityDataContext dt = new DataEntityDataContext();
-            //dt.aspnet_Users
-            //Page.User.Identity
+            DataEntityDataContext dt = new DataEntityDataContext();
+            var user = (from u in dt.aspnet_Users
+                        where u.UserName == Page.User.Identity.Name
+                        select new { u.UserId }).FirstOrDefault();
+
+            if (user != null) return user.UserId;
+            return new Guid("0");
         }
         private void UpdateLoginStatus()
         {
@@ -53,11 +52,11 @@ namespace vBay.WUC
                            select new { u.ThongTinTaiKhoan.Avatar }).FirstOrDefault();
                 if (user != null && user.Avatar != null && user.Avatar != "")
                 {
-                    imgAvatar.ImageUrl = Page.Request.ApplicationPath + user.Avatar;
+                    imgAvatar.ImageUrl = user.Avatar;
                 }
                 else
                 {
-                    imgAvatar.ImageUrl = Page.Request.ApplicationPath + @"Avatars/AvatarDefaul.jpg";
+                    imgAvatar.ImageUrl = "..Avatars/AvatarDefaul.jpg";
                 }
             } 
             else
@@ -65,7 +64,7 @@ namespace vBay.WUC
                 panelPost.Visible = false;
                 panelReqLogin.Visible = true;
             }
-            if (Request["idSanPham"]==null)
+            if (Request["MaSanPham"]==null)
             {
                 panelPost.Visible = false;
                 panelReqLogin.Visible = false;
@@ -75,7 +74,7 @@ namespace vBay.WUC
         {
             DataEntityDataContext dataContext = new DataEntityDataContext();
             int id;
-            int.TryParse(Request["idSanPham"], out id);
+            int.TryParse(Request["MaSanPham"], out id);
             var comment = from c in dataContext.Comments
                           join u in dataContext.aspnet_Users on c.MaTaiKhoan equals u.UserId
                           join t in dataContext.ThongTinTaiKhoans on u.MaThongTinTaiKhoan equals t.MaThongTinTaiKhoan 
@@ -95,11 +94,11 @@ namespace vBay.WUC
             Image img = (Image)e.Item.FindControl("imgUser");
             if (dt.Avatar!=null && dt.Avatar != "")
             {
-                img.ImageUrl = Page.Request.ApplicationPath + dt.Avatar;
+                img.ImageUrl = dt.Avatar;
             }
             else
             {
-                img.ImageUrl = Page.Request.ApplicationPath + @"Avatars/AvatarDefaul.jpg";
+                img.ImageUrl = "../Avatars/AvatarDefaul.jpg";
             }
             Label lb = (Label)e.Item.FindControl("lbTenNguoiComment");
             lb.Text = dt.HoTen;
@@ -138,13 +137,13 @@ namespace vBay.WUC
 
         protected void buttComment_Click(object sender, EventArgs e)
         {
-            if (txtComment.Text.Length <= 0 || Request["idSanPham"]==null)
+            if (txtComment.Text.Length <= 0 || Request["MaSanPham"]==null)
             {
                 return;
             }
             Comment cm = new Comment();
             int id;
-            int.TryParse(Request["idSanPham"], out id);
+            int.TryParse(Request["MaSanPham"], out id);
             cm.MaSanPham = id;
             cm.MaTaiKhoan = GetUserId();
             cm.NgayComment = DateTime.Now;
