@@ -23,8 +23,7 @@
     }
 </style>
 
-<asp:Panel ID="Panel1" runat="server" Width="630px" Height="440px" 
-    ScrollBars="Auto">
+
 
 <asp:Label ID="Label1" runat="server" Text="Tìm Kiếm Sản Phẩm Nâng Cao" 
         Font-Size="20pt"></asp:Label>
@@ -191,9 +190,10 @@
 <br />
 
 <asp:Label ID="lbKetQua" runat="server" Text="Label"></asp:Label>
-
-
+    
     <br />
+    <asp:Panel ID="Panel1" runat="server" Width="630px" Height="440px" 
+    ScrollBars="Auto">
     <asp:GridView ID="gvDSSanPham" runat="server" AllowPaging="True" 
         AutoGenerateColumns="False" onpageindexchanging="gvDSSanPham_PageIndexChanging" 
         onrowdatabound="gvDSSanPham_RowDataBound" CellPadding="4" 

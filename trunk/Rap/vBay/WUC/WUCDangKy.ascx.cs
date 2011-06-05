@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Configuration;
 using System.Web.Security;
+using Recaptcha;
 
 namespace vBay
 {
@@ -123,6 +124,8 @@ namespace vBay
 
         protected void CreateUserWizard1_CreatedUser(object sender, EventArgs e)
         {
+           
+
             DataEntityDataContext dc = new DataEntityDataContext();
 
             aspnet_User currUser = dc.aspnet_Users.Single(i => i.UserName == CreateUserWizard1.UserName);
@@ -146,6 +149,11 @@ namespace vBay
 
         protected void CreateUserWizard1_CreatingUser(object sender, LoginCancelEventArgs e)
         {
+            RecaptchaControl myCaptcha =  (RecaptchaControl)CreateUserWizard1.CreateUserStep.ContentTemplateContainer.FindControl("recaptcha");
+            myCaptcha.Validate();
+            if (!myCaptcha.IsValid)
+                e.Cancel = true;
+
             string errMess = "";
 
             if (DOBSelect.IsValid == false && DOBSelect.IsIgnored == false)
