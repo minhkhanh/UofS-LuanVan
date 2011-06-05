@@ -11,7 +11,13 @@ namespace vBay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ListViewDataItem ld = new ListViewDataItem(0, 0);
+            ld.DataItem = "0";
+            ListView1.Items.Add(ld);
+            ld = new ListViewDataItem(1, 1);
+            ld.DataItem = "1";
+            ListView1.Items.Add(ld);
+            
         }
     }
 }

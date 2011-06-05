@@ -55,6 +55,21 @@ namespace vBay.WUC
             }
             lbDiemBanNguoiBan.Text = (infoDG.DiemTinCayBan != null) ? infoDG.DiemTinCayBan.ToString() : "#NA";
             lbDiemMuaNguoiBan.Text = (infoDG.DiemTinCayMua != null) ? infoDG.DiemTinCayMua.ToString() : "#NA";
+
+            var img = from spMul in dataContext.SanPham_Multimedias
+                      join mul in dataContext.Multimedias on spMul.MaMT equals mul.MaMT
+                      join loai in dataContext.LoaiMultimedias on mul.MaLoaiMT equals loai.MaLoaiMT
+                      where (spMul.MaSanPham == sp.MaSanPham) && (loai.TenLoaiMT == "Picture")
+                      select new { mul.LinkURL };
+            repImages.DataSource = img;
+            repImages.DataBind();
+        }
+
+        protected void repImages_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            dynamic dt = e.Item.DataItem as dynamic;
+            Image img = (Image)e.Item.FindControl("repImage");
+            img.ImageUrl = dt.LinkURL;
         }
     }
 }

@@ -1,5 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WUCThongTinSanPhamVaShop.ascx.cs"
     Inherits="vBay.WUC.WUCThongTinSanPhamVaShop" %>
+
+<script src="../Scripts/jquery-1.6.1.min.js" type="text/javascript"></script>
+
 <style type="text/css">
     *
     {
@@ -213,9 +216,77 @@
     {
         margin: 10px 0;
     }
+/* Detail */
+
+.detail_product .wrapper_pic{float:left;width:306px}
+.detail_product .pic{width:300px;height:300px;margin-bottom:10px;padding:2px;border:1px solid #e8e8e8;overflow:hidden}
+.detail_product .pic #thumb_big{width:300px;height:300px}
+.detail_product .pic #slideshow {
+    position:relative;
+    height:350px;
+}
+
+.detail_product .pic #slideshow IMG {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:8;
+    opacity:0.0;
+}
+
+.detail_product .pic #slideshow IMG.active {
+    z-index:10;
+    opacity:1.0;
+}
+
+.detail_product .pic #slideshow IMG.last-active {
+    z-index:9;
+}
 </style>
 <div class="left_content_shop">
     <div class="detail_product">
+        <div class="wrapper_pic">
+            <div class="pic">
+                <a id="slideshow">
+                    <script type="text/javascript">
+                        function slideSwitch() {
+                            var $active = $('#slideshow IMG.active');
+
+                            if ($active.length == 0) $active = $('#slideshow IMG:last');
+
+                            // use this to pull the images in the order they appear in the markup
+                            var $next = $active.next().length ? $active.next(): $('#slideshow IMG:first');
+
+                            // uncomment the 3 lines below to pull the images in random order
+
+                            // var $sibs  = $active.siblings();
+                            // var rndNum = Math.floor(Math.random() * $sibs.length );
+                            // var $next  = $( $sibs[ rndNum ] );
+
+
+                            $active.addClass('last-active');
+
+                            $next.css({ opacity: 0.0 })
+                                .addClass('active')
+                                .animate({ opacity: 1.0 }, 1000, function () {
+                                    $active.removeClass('active last-active');
+                                });
+                            }
+
+                        $(function () {
+                            setInterval("slideSwitch()", 5000);
+                        });
+                    </script>
+                    <asp:Repeater ID="repImages" runat="server" 
+                    onitemdatabound="repImages_ItemDataBound">
+                        <ItemTemplate>
+                            <asp:Image ID="repImage" runat="server" Width=300 Height=300 />
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </a>
+            </div>
+        </div>
+
         <div class="desc">
             <h1 class="product_name">
                 <asp:Label ID="lbTenSanPham" runat="server" Text="Test website dau gia"></asp:Label>
