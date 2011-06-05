@@ -120,7 +120,7 @@ namespace vBay
     #endregion
 		
 		public DataEntityDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["DauGia"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["DauGiaConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

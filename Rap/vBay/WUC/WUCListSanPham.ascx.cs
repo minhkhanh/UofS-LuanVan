@@ -64,7 +64,7 @@ namespace vBay.WUC
         {
             DataEntityDataContext datacontext = new DataEntityDataContext();
             int id;
-            int.TryParse(Request["idLoai"], out id);
+            int.TryParse(Request["MaLoai"], out id);
             var sp =
                 from b in datacontext.SanPhams
                 join c in datacontext.Multimedias on b.MaHinhMoTa equals c.MaMT
@@ -156,7 +156,7 @@ namespace vBay.WUC
             set { pathChiTietSanPham = value; }
         }
 
-        protected bool bXemTatCaSanPham = false;
+        protected bool bXemTatCaSanPham = true;
         public bool XemTatCaSanPham
         {
             get { return bXemTatCaSanPham; }

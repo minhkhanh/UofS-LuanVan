@@ -13,12 +13,12 @@ namespace vBay {
     public partial class xemdanhsachsanpham {
         
         /// <summary>
-        /// grviewSanPham control.
+        /// WUCListSanPham1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grviewSanPham;
+        protected global::vBay.WUC.WUCListSanPham WUCListSanPham1;
     }
 }
