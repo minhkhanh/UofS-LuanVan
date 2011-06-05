@@ -17,7 +17,7 @@
 </style>
 
 
-<asp:Panel ID="Panel1" runat="server" ScrollBars="Auto" Height="500" Width="630">
+
 
 <asp:Label ID="Label2" runat="server" Text="Tìm Kiếm Sản Phẩm Cơ Bản" 
         Font-Size="20pt"></asp:Label>
@@ -30,6 +30,8 @@
 <br />
 <asp:Label ID="lbKetQua" runat="server" Text=""></asp:Label>
     <br />
+
+<asp:Panel ID="Panel1" runat="server" ScrollBars="Auto" Height="500" Width="630">
     <asp:DataList ID="dlDSSanPham" runat="server" 
         onitemdatabound="dlDSSanPham_ItemDataBound" 
         BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" 

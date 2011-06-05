@@ -1,5 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WUCDangKy.ascx.cs" Inherits="vBay.WUCDangKy" %>
 <%@ Register src="WUCDateSelect.ascx" tagname="WUCDateSelect" tagprefix="uc1" %>
+<%@ Register TagPrefix="recaptcha" Namespace="Recaptcha" Assembly="Recaptcha" %>
+
 <style type="text/css">
     .style3
     {
@@ -134,6 +136,15 @@
                             <br />
                             <asp:Button ID="Button1" runat="server" Text="Up" onclick="Button1_Click" />
                         </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            Captcha</td>
+                        <td class="style3">
+                             <recaptcha:RecaptchaControl ID="recaptcha" runat="server" 
+                                PublicKey = "6LfL-sQSAAAAAM6gzAinlkFKkNgew8Ph7D6uw6Z7"
+                                PrivateKey = "6LfL-sQSAAAAAG06cvgXZfhQiOp3gYhbdVbFF439"/>
+                            </td>
                     </tr>
                     <tr>
                         <td align="center" colspan="2" style="color:Red;">
