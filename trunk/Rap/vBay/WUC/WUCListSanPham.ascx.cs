@@ -71,13 +71,13 @@ namespace vBay.WUC
                 where ((b.MaLoaiSanPham == id) && (XemTatCaSanPham || (!XemTatCaSanPham && b.NgayHetHan >= DateTime.Now)))
                 select new { b.MaSanPham, b.TenSanPham, b.GiaHienTai, b.NgayHetHan, c.LinkURL };
 
-            m_iTotalPages = (sp.Count() % m_iNumPerPage == 0) ? sp.Count() / m_iNumPerPage : sp.Count() / m_iNumPerPage + 1;
+            m_iTotalPages = (sp.Count() % NumPerPage == 0) ? sp.Count() / NumPerPage : sp.Count() / NumPerPage + 1;
             if (m_iCurrentPage >= m_iTotalPages && m_iTotalPages > 0)
             {
                 m_iCurrentPage = m_iTotalPages - 1;
             }
 
-            sp = sp.Skip(m_iNumPerPage * m_iCurrentPage).Take(m_iNumPerPage);
+            sp = sp.Skip(NumPerPage * m_iCurrentPage).Take(NumPerPage);
             lblCurrentPage.Text = (m_iCurrentPage+1).ToString();
             lblTotalPages.Text = m_iTotalPages.ToString();
             ddPage.Items.Clear();
@@ -97,7 +97,7 @@ namespace vBay.WUC
             imgMoTa.ImageUrl = Page.Request.ApplicationPath + dt.LinkURL;
             HyperLink hpl = (HyperLink)e.Item.FindControl("hlTieuDe");
             hpl.Text = dt.TenSanPham;
-            hpl.NavigateUrl = PathChiTietSanPham + "?idSanPham=" + dt.MaSanPham;
+            hpl.NavigateUrl = PathChiTietSanPham + "?MaSanPham=" + dt.MaSanPham;
             Label lb = (Label)e.Item.FindControl("lbGiaDau");
             lb.Text = ((double)dt.GiaHienTai).ToString();
             lb = (Label)e.Item.FindControl("lbTimeOut");
@@ -127,11 +127,15 @@ namespace vBay.WUC
             return str;
         }
 
-        private int m_iNumPerPage = 5;
+        //private int NumPerPage = 5;
         public int NumPerPage
         {
-            get { return m_iNumPerPage; }
-            set { m_iNumPerPage = value; }
+            get {
+                int i = 0;
+                int.TryParse(WebConfigurationManager.AppSettings.Get("NumsPerPage"), out i);
+                if (i <= 0) i = 5;
+                return i; }
+            //set { NumPerPage = value; }
         }
 
         private int m_iCurrentPage = 0;
@@ -149,7 +153,7 @@ namespace vBay.WUC
             //set { m_iTotalPages = value; }
         }
 
-        protected string pathChiTietSanPham = "";
+        protected string pathChiTietSanPham = "../xemchitietsanpham.aspx";
         public string PathChiTietSanPham
         {
             get { return pathChiTietSanPham; }
