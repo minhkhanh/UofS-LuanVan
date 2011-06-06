@@ -25,8 +25,12 @@
     {
         height: 44px;
     }
-    </style>
+</style>
 
+<asp:ScriptManager ID="scriptManager" runat="server">
+</asp:ScriptManager>
+<asp:UpdatePanel ID="updateComment" runat="server">
+    <ContentTemplate>
 <asp:DataList ID="dataListSP" runat="server" style="margin-right: 7px" 
     Width="532px" onitemdatabound="dataListSP_ItemDataBound">
     <ItemTemplate>
@@ -110,3 +114,6 @@
     </tr>
 
 </table>
+
+</ContentTemplate>
+</asp:UpdatePanel>

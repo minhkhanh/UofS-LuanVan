@@ -78,61 +78,70 @@
         height:inherit;
     }
 </style>
-<div class="comment_product">
-    <h3>
-        Bình luận</h3>
-    <div class="list_comment_product">
-    <div id="listComment">
-        <asp:DataList ID="dataListComment" runat="server" OnItemDataBound="listComment_ItemDataBound"
-            Width="730px">
-            <ItemTemplate>
-                <div class="comment_post clearfix" >
-                    <div class="avatar_min">
-                        <asp:Image ID="imgUser" runat="server" Height="60px" Width="50px"  />
-                    </div>
-                    <div class="info_comment">
-                        <h4>
-                            <asp:Label ID="lbTenNguoiComment" runat="server" ForeColor="#3366FF" Text="Label"></asp:Label>
-                        </h4>
-                        <span class="update_time">
-                            <asp:Label ID="lbThoiDiemComment" runat="server" Text="Label"></asp:Label>
-                        </span>
-                        <p>
-                            <asp:Label ID="lbComment" runat="server" Text="Label"></asp:Label>
-                        </p>
-                    </div>
+<asp:ScriptManager ID="scriptManager" runat="server">
+</asp:ScriptManager>
+<asp:UpdatePanel ID="updateComment" runat="server">
+    <ContentTemplate>
+        <div class="comment_product">
+            <h3>
+                Bình luận</h3>
+            <div class="list_comment_product">
+                <div ID="listComment">
+                    <asp:DataList ID="dataListComment" runat="server" 
+                        OnItemDataBound="listComment_ItemDataBound" Width="730px">
+                        <ItemTemplate>
+                            <div class="comment_post clearfix">
+                                <div class="avatar_min">
+                                    <asp:Image ID="imgUser" runat="server" Height="60px" Width="50px" />
+                                </div>
+                                <div class="info_comment">
+                                    <h4>
+                                        <asp:Label ID="lbTenNguoiComment" runat="server" ForeColor="#3366FF" 
+                                            Text="Label"></asp:Label>
+                                    </h4>
+                                    <span class="update_time">
+                                    <asp:Label ID="lbThoiDiemComment" runat="server" Text="Label"></asp:Label>
+                                    </span>
+                                    <p>
+                                        <asp:Label ID="lbComment" runat="server" Text="Label"></asp:Label>
+                                    </p>
+                                </div>
+                            </div>
+                        </ItemTemplate>
+                    </asp:DataList>
                 </div>
-            </ItemTemplate>
-        </asp:DataList>
-    </div>
-    </div>
-    <div class="post_comment">
-        <asp:Panel ID="panelPost" runat="server">
+            </div>
+            <div class="post_comment">
+                <asp:Panel ID="panelPost" runat="server">
+                    <div class="typing_row">
+                        <div class="type_left">
+                            <asp:Image ID="imgAvatar" runat="server" Height="60px" Width="50px" />
+                        </div>
+                        <div class="type_right">
+                            <asp:TextBox ID="txtComment" runat="server" ClientIDMode="Static" 
+                                onkeypress="textcommentchange(event)" TextMode="MultiLine"></asp:TextBox>
+                        </div>
+                        <div class="clear">
+                        </div>
+                    </div>
+                    <div class="typing_row">
+                        <div class="type_right">
+                            <asp:Button ID="buttComment" runat="server" ClientIDMode="Static" 
+                                Enabled="False" OnClick="buttComment_Click" Text="" />
+                        </div>
+                        <div class="clear">
+                        </div>
+                    </div>
+                </asp:Panel>
+                <asp:Panel ID="panelReqLogin" runat="server">
+                    <div ID="reqlogin">
+                        đăng nhập để có thể bình luận cho sản phẩm!</div>
+                </asp:Panel>
+            </div>
+        </div>
+    </ContentTemplate>
+</asp:UpdatePanel>
 
-            <div class="typing_row">
-                <div class="type_left">
-                    <asp:Image ID="imgAvatar" runat="server" Height="60px" Width="50px" />
-                </div>
-                <div class="type_right">
-                    <asp:TextBox ID="txtComment" runat="server" TextMode="MultiLine"
-                            onkeypress="textcommentchange(event)" ClientIDMode="Static"></asp:TextBox>
-                </div>
-                <div class="clear"></div>
-            </div>
-            <div class="typing_row">
-                <div class="type_right">
-                    <asp:Button ID="buttComment" runat="server" Text="" ClientIDMode="Static"
-                            OnClick="buttComment_Click" Enabled="False" />
-                </div>
-                <div class="clear"></div>
-            </div>
-        </asp:Panel>
-        <asp:Panel ID="panelReqLogin" runat="server">
-            <div id="reqlogin">
-                đăng nhập để có thể bình luận cho sản phẩm!</div>
-        </asp:Panel>
-    </div>
-</div>
 <script type="text/javascript">
     function textcommentchange(event) {
         if (document.getElementById("txtComment").value == "") {
