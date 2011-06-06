@@ -160,6 +160,7 @@
     <Compile Include="ChiTietMotSanPhamManager.aspx.designer.cs">
       <DependentUpon>ChiTietMotSanPhamManager.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Class\Task.cs" />
     <Compile Include="DataEntity.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

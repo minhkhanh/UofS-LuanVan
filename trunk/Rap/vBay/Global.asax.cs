@@ -9,17 +9,17 @@ namespace vBay
 {
     public class Global : System.Web.HttpApplication
     {
-
+        Task _task;
         void Application_Start(object sender, EventArgs e)
         {
             // Code that runs on application startup
-
+            _task = new Task(5000);
         }
 
         void Application_End(object sender, EventArgs e)
         {
             //  Code that runs on application shutdown
-
+            _task.Stop();
         }
 
         void Application_Error(object sender, EventArgs e)
