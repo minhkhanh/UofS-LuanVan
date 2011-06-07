@@ -192,7 +192,7 @@
 <asp:Label ID="lbKetQua" runat="server" Text="Label"></asp:Label>
     
     <br />
-    <asp:Panel ID="Panel1" runat="server" Width="630px" Height="440px" 
+    <asp:Panel ID="Panel1" runat="server" Width="630px" Height="500px" 
     ScrollBars="Auto">
     <asp:GridView ID="gvDSSanPham" runat="server" AllowPaging="True" 
         AutoGenerateColumns="False" onpageindexchanging="gvDSSanPham_PageIndexChanging" 

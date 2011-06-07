@@ -37,11 +37,7 @@ p
 /* PRIMARY LAYOUT ELEMENTS   
 ----------------------------------------------------------*/
 
-.page, .header, .main, .sidebar, .content, .footer
-{
-	border:2px solid #F00;
-	
-}
+
 
 .page
 {
@@ -50,6 +46,8 @@ p
     position:relative;
     height:auto;
     min-height: 800px;
+    
+    
 }
 
 .header
@@ -59,6 +57,8 @@ p
     height:200px;
     position:relative;
     background-image:url('../Images/header.png');
+    
+    border:2px solid #0F0;
 }
 
 .main
@@ -66,18 +66,10 @@ p
 	position:relative;
 	float:left;
     width:100%;
-    min-height:500px;
+    min-height:700px;
     height:auto;
-}
-
-.siderbar
-{
-	float:left;
-	width:200px;
-	min-height:500px;
-	margin:5px 5px;
-	height: inherit;
-	position:relative;
+    
+    border:2px solid #F00;
 }
 
 .content
@@ -86,9 +78,25 @@ p
 	width:750px;
 	height:inherit;
 	margin:10px 10px;
-	min-height:500px;
+	min-height:700px;
 	position:relative;
+	
+	border:2px solid #F00;
 }
+
+.siderbar
+{
+	float:left;
+	width:200px;
+	min-height:700px;
+	margin:5px 5px;
+	height: inherit;
+	position:relative;
+	
+	border:2px solid #F00;
+}
+
+
 
 .contentuc
 {
@@ -109,6 +117,8 @@ p
     float:left;
     position:relative;
     background-image:url('../Images/footer.png');
+    
+    border:2px solid #00F;
 }
 
 
