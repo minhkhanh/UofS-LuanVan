@@ -27,7 +27,7 @@ namespace vBay
 
             foreach(var lsp in query)
             {
-                MenuItem mi = new MenuItem(lsp.TenLoaiSanPham, lsp.MaLoaiSanPham.ToString(), null, "TimKiemCoBan.aspx"); //can phai lam them
+                MenuItem mi = new MenuItem(lsp.TenLoaiSanPham, lsp.MaLoaiSanPham.ToString(), null, "xemdanhsachsanpham.aspx?MaLoai="+lsp.MaLoaiSanPham.ToString()); //can phai lam them
                 menuDSLoaiSanPham.Items.Add(mi);
             }
         }
