@@ -131,6 +131,7 @@
     <Content Include="WUC\ChiTietMotSanPhamManager.ascx" />
     <Content Include="WUC\LoaiSanPhamManager.ascx" />
     <Content Include="WUC\MaintentSanPham.ascx" />
+    <Content Include="WUC\WUCSanPhamCungLoai.ascx" />
     <Content Include="WUC\WUCThongTinTaiKhoan.ascx" />
     <Content Include="WUC\WUCDateSelect.ascx" />
     <Content Include="WUC\WUCDangKy.ascx" />
@@ -274,6 +275,13 @@
     </Compile>
     <Compile Include="WUC\MaintentSanPham.ascx.designer.cs">
       <DependentUpon>MaintentSanPham.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WUC\WUCSanPhamCungLoai.ascx.cs">
+      <DependentUpon>WUCSanPhamCungLoai.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WUC\WUCSanPhamCungLoai.ascx.designer.cs">
+      <DependentUpon>WUCSanPhamCungLoai.ascx</DependentUpon>
     </Compile>
     <Compile Include="WUC\WUCThongTinTaiKhoan.ascx.cs">
       <DependentUpon>WUCThongTinTaiKhoan.ascx</DependentUpon>
