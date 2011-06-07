@@ -11,7 +11,25 @@ namespace vBay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            HienThiDSLoaiSanPham();
+        }
 
+        void HienThiDSLoaiSanPham()
+        {
+            DataEntityDataContext db = new DataEntityDataContext();
+
+            var query = (from lsp in db.LoaiSanPhams
+                         select new
+                         {
+                             lsp.MaLoaiSanPham,
+                             lsp.TenLoaiSanPham
+                         }).Take(10);
+
+            foreach(var lsp in query)
+            {
+                MenuItem mi = new MenuItem(lsp.TenLoaiSanPham, lsp.MaLoaiSanPham.ToString(), null, "TimKiemCoBan.aspx"); //can phai lam them
+                menuDSLoaiSanPham.Items.Add(mi);
+            }
         }
     }
 }

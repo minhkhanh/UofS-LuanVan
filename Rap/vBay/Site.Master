@@ -43,8 +43,9 @@
         <div class="main">
             <div class="siderbar">
                 This is sidebar
-                <div class="sidebarmenu">
-                    This is sidebar menu
+                <div class="sidebar1">
+                    <asp:Menu ID="menuDSLoaiSanPham" runat="server" CssClass="navbarmenu">
+                    </asp:Menu>
                 </div>
                 <!-- sidebarmenu end-->
             </div>
