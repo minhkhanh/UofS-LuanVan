@@ -46,7 +46,6 @@ p
 .page
 {
     width: 1000px;
-    background-color: #fff;
     margin: 20px auto 0px auto;
     position:relative;
     height:auto;
@@ -78,12 +77,7 @@ p
 	min-height:500px;
 	margin:5px 5px;
 	height: inherit;
-}
-
-.contentuc
-{
-    height: inherit;
-    width: 691px;
+	position:relative;
 }
 
 .content
@@ -95,6 +89,14 @@ p
 	min-height:500px;
 	position:relative;
 }
+
+.contentuc
+{
+    height: inherit;
+    width: 691px;
+}
+
+
 
 .footer
 {	
