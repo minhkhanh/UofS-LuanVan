@@ -11,7 +11,8 @@ namespace vBay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            HienThiDSLoaiSanPham();
+            if(!IsPostBack)
+                HienThiDSLoaiSanPham();
         }
 
         void HienThiDSLoaiSanPham()
