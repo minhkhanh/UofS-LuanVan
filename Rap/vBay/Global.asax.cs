@@ -13,7 +13,7 @@ namespace vBay
         void Application_Start(object sender, EventArgs e)
         {
             // Code that runs on application startup
-            _task = new Task(5000);
+            _task = new Task(50000);
         }
 
         void Application_End(object sender, EventArgs e)
