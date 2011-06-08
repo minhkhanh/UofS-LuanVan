@@ -96,7 +96,7 @@
     <Content Include="JQuery\engine1\style.css" />
     <Content Include="JQuery\engine1\triangle.png" />
     <Content Include="LoaiSanPhamManager.aspx" />
-    <Content Include="MainContent.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="PasswordRecovering.aspx" />
     <Content Include="Scripts\jquery-1.6.1.js" />
     <Content Include="Scripts\jquery-1.6.1.min.js" />
@@ -107,7 +107,6 @@
     <Content Include="Scripts\jquery.simpleslider.1.0.1.js" />
     <Content Include="SigningUp.aspx" />
     <Content Include="Styles\Site.css" />
-    <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
@@ -168,13 +167,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataEntity.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -185,12 +177,12 @@
     <Compile Include="LoaiSanPhamManager.aspx.designer.cs">
       <DependentUpon>LoaiSanPhamManager.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MainContent.aspx.cs">
-      <DependentUpon>MainContent.aspx</DependentUpon>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MainContent.aspx.designer.cs">
-      <DependentUpon>MainContent.aspx</DependentUpon>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="PasswordRecovering.aspx.cs">
       <DependentUpon>PasswordRecovering.aspx</DependentUpon>
@@ -414,7 +406,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>3855</DevelopmentServerPort>
+          <DevelopmentServerPort>2179</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

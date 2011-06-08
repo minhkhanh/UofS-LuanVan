@@ -79,6 +79,22 @@ namespace vBay.WUC
                 Response.Redirect(TrangKhongCoQuyenTruyCap);
                 return;
             }
+            if (txtGiaCaoHon.Text.Length <= 0 || Request["MaSanPham"] == null)
+            {
+                return;
+            }
+            ChiTietDauGia cm = new ChiTietDauGia();
+            int id;
+            int.TryParse(Request["MaSanPham"], out id);
+            var sp = from b in data
+            cm.MaSanPham = id;
+            cm.MaTaiKhoan = GetUserId();
+            cm.ThoiGianGiaoDich = DateTime.Now;
+            cm.NoiDungComment = txtComment.Text;
+            DataEntityDataContext dt = new DataEntityDataContext();
+            dt.Comments.InsertOnSubmit(cm);
+            dt.SubmitChanges();
+            txtComment.Text = "";
         }
         private bool KiemTraCoQuyenMua()
         {
@@ -87,6 +103,16 @@ namespace vBay.WUC
         public string TrangKhongCoQuyenTruyCap
         {
             get { return "../Default.aspx"; }
+        }
+        private Guid GetUserId()
+        {
+            DataEntityDataContext dt = new DataEntityDataContext();
+            var user = (from u in dt.aspnet_Users
+                        where u.UserName == Page.User.Identity.Name
+                        select new { u.UserId }).FirstOrDefault();
+
+            if (user != null) return user.UserId;
+            return new Guid("0");
         }
     }
 }

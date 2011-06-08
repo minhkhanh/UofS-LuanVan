@@ -10,15 +10,15 @@
 namespace vBay {
     
     
-    public partial class _Default {
+    public partial class WebForm1 {
         
         /// <summary>
-        /// ButtonChooseTheme control.
+        /// MaintentSanPham1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonChooseTheme;
+        protected global::vBay.SanPhamMoiNhat MaintentSanPham1;
     }
 }

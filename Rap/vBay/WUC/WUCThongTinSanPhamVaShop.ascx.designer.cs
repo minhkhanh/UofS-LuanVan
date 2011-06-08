@@ -49,22 +49,22 @@ namespace vBay.WUC {
         protected global::System.Web.UI.WebControls.Label lbGiaHienTai;
         
         /// <summary>
-        /// lbGiaCaoHon control.
+        /// txtGiaCaoHon control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox lbGiaCaoHon;
+        protected global::System.Web.UI.WebControls.TextBox txtGiaCaoHon;
         
         /// <summary>
-        /// CompareValidator1 control.
+        /// rangeValidation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
+        protected global::System.Web.UI.WebControls.RangeValidator rangeValidation;
         
         /// <summary>
         /// lbSoLanDatGia control.
