@@ -49,6 +49,15 @@ namespace vBay {
         protected global::vBay.WUCDangNhapNhanh WUCDangNhapNhanh1;
         
         /// <summary>
+        /// WUCTimKiem1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::vBay.WUC.UCTimKiem WUCTimKiem1;
+        
+        /// <summary>
         /// menuDSLoaiSanPham control.
         /// </summary>
         /// <remarks>

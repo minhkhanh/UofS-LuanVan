@@ -3,12 +3,14 @@
 
 body   
 {
-    background: #b6b7bc;
     font-size: .80em;
     font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
     margin: 0px;
     padding: 0px;
     color: #696969;
+    
+    background-image:url('../Images/BodyTile.png');
+    
 }
 
 a:link, a:visited
@@ -42,7 +44,7 @@ p
 .page
 {
     width: 1000px;
-    margin: 20px auto 0px auto;
+    margin: 0px auto 0px auto;
     position:relative;
     height:auto;
     min-height: 800px;
@@ -58,7 +60,8 @@ p
     position:relative;
     background-image:url('../Images/header.png');
     
-    border:2px solid #0F0;
+    border:2px solid #000;
+    border-bottom:none;
 }
 
 .main
@@ -69,7 +72,9 @@ p
     min-height:700px;
     height:auto;
     
-    border:2px solid #F00;
+	background: #F0F0F0;
+    
+    border:2px solid #000;
 }
 
 .content
@@ -77,9 +82,10 @@ p
 	float:left;
 	width:750px;
 	height:inherit;
-	margin:10px 10px;
+	margin:5px 5px 5px 5px;
 	min-height:700px;
 	position:relative;
+	padding:5px;
 	
 	border:2px solid #F00;
 }
@@ -88,7 +94,7 @@ p
 {
 	float:left;
 	width:200px;
-	min-height:700px;
+	min-height:200px;
 	margin:5px 5px;
 	height: inherit;
 	position:relative;
@@ -118,7 +124,8 @@ p
     position:relative;
     background-image:url('../Images/footer.png');
     
-    border:2px solid #00F;
+    border:2px solid #000;
+    border-top:none;
 }
 
 
@@ -185,8 +192,7 @@ p
 	border:1px solid #F00;
 	min-height:100px;
 	min-width:200px;
-    width: 427px;
-    height: 66px;
+    
 }
 
 /* INFO BAR   
@@ -194,19 +200,11 @@ p
 .info
 {
 	position:absolute;
-	left:300px;
+	left:350px;
 	top:20px;
 }
 
-/* SIDEBAR MENU  
-----------------------------------------------------------*/
 
-.sidebarmenu
-{
-	border:2px solid #FF0;
-	min-width:320;
-	min-height:500px;
-}
 
 /* LOGO 
 ----------------------------------------------------------*/
@@ -227,12 +225,17 @@ p
 
 .sidebar1
 {
+	border:2px solid #FF0;
+	min-width:200px;
+	min-height:200px;
 	
 }
 
 .sidebarmenu
 {
 	padding: 0px 0px 0px 0px;
+	table-layout:fixed;
+	width:200px;
 }
 
 .sidebarmenu ul
@@ -267,4 +270,17 @@ p
     background-color: #465c71;
     color: #cfdbe6;
     text-decoration: none;
+}
+
+/* SEARCH BAR   
+----------------------------------------------------------*/
+.searchbar
+{
+	position:absolute;
+	left:700px;
+	top:170px;
+	
+	min-height:10px;
+	min-width:10px;
+
 }
