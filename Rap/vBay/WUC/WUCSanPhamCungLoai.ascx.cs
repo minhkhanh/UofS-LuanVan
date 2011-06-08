@@ -25,8 +25,16 @@ namespace vBay.WUC
             HyperLink img = (HyperLink)e.Item.FindControl("hypSanPham");
             img.ImageUrl = data.LinkURL;
             img.NavigateUrl = LinkChiTietSanPham + "?MaSanPham=" + data.MaSanPham;
+            img = (HyperLink)e.Item.FindControl("hypTenSanPham");
+            img.NavigateUrl = LinkChiTietSanPham + "?MaSanPham=" + data.MaSanPham;
+            img.Text = data.TenSanPham;
             Label lbPrice = (Label)e.Item.FindControl("lbGiaSanPham");
-            lbPrice.Text = data.GiaHienTai.ToString();
+            if (data.GiaHienTai == null || data.GiaHienTai < data.GiaKhoiDiem)
+            {
+                lbPrice.Text = data.GiaKhoiDiem.ToString();
+            }
+            else lbPrice.Text = data.GiaHienTai.ToString();
+            
         }
         private void BindData()
         {
@@ -41,8 +49,8 @@ namespace vBay.WUC
             var sp =
                 from b in datacontext.SanPhams
                 join c in datacontext.Multimedias on b.MaHinhMoTa equals c.MaMT
-                where ((b.MaLoaiSanPham == loai.MaLoaiSanPham) && (b.NgayHetHan >= DateTime.Now))
-                select new { b.MaSanPham, b.GiaKhoiDiem, b.GiaHienTai, c.LinkURL };
+                where ((b.MaLoaiSanPham == loai.MaLoaiSanPham) && (b.MaSanPham!=id) && (b.NgayHetHan >= DateTime.Now))
+                select new { b.MaSanPham, b.TenSanPham, b.GiaKhoiDiem, b.GiaHienTai, c.LinkURL };
 
             if (sp == null) return;
             int num = sp.Count();
@@ -65,7 +73,7 @@ namespace vBay.WUC
         }
         public string LinkChiTietSanPham
         {
-            get { return ""; }
+            get { return "../xemchitietsanpham.aspx"; }
         }
     }
 }

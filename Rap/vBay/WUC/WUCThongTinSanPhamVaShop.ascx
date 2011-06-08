@@ -16,7 +16,7 @@
     .clearfix
     {
         display: block;
-        zoom: 1;
+
     }
     .clearfix::after
     {
@@ -62,11 +62,6 @@
         margin: 0;
         padding: 0;
     }
-    .left_content_shop
-    {
-        float: left;
-        width: 730px;
-    }
     .detail_product
     {
         float: left;
@@ -78,13 +73,7 @@
         float: right;
         width: 420px;
     }
-    #wrapper .product_name
-    {
-        height: 28px;
-        text-transform: lowercase;
-        word-wrap: break-word;
-        overflow: hidden;
-    }
+
     .detail_product .product_name
     {
         height: auto !important;
@@ -106,13 +95,17 @@
         color: #333;
         font-size: 12px;
     }
-    .detail_product .desc a.btn_order
+    .detail_product .desc .option .delta
+    {
+        margin-right: 50px;
+    }
+    .detail_product .desc .btn_order
     {
         display: block;
         background: url(../Images/btn_order.jpg) no-repeat;
         width: 116px;
         height: 32px;
-        margin: 0 0 0 8px;
+        margin: 15px 8px 8px 32px;
         cursor: pointer;
         text-indent: -9999px;
     }
@@ -120,14 +113,22 @@
     {
         display: inline;
         float: left;
-        width: 120px;
-        margin-left: 8px;
+        width: 120px;        
     }
     .detail_product .desc .option .ex
     {
         color: #06C;
         font-size: 14px;
+        font-weight: bold;     
+    }
+    .detail_product .desc .option .exp
+    {
+        color: #06C;
+        font-size: 14px;
         font-weight: bold;
+        float: left;
+        width: 99px;
+        margin-left: 2px;
     }
     .summary_info
     {
@@ -256,7 +257,10 @@
 
                             // use this to pull the images in the order they appear in the markup
                             var $next = $active.next().length ? $active.next(): $('#slideshow IMG:first');
-
+                            if ($next.attr('id') == $active.attr('id')) {
+                                $next.css({ opacity: 1.0 });
+                                return;
+                            }
                             // uncomment the 3 lines below to pull the images in random order
 
                             // var $sibs  = $active.siblings();
@@ -280,7 +284,7 @@
                     <asp:Repeater ID="repImages" runat="server" 
                     onitemdatabound="repImages_ItemDataBound">
                         <ItemTemplate>
-                            <asp:Image ID="repImage" runat="server" Width=300 Height=300 />
+                            <asp:Image ID="repImage" runat="server" Width="300" Height="300" />
                         </ItemTemplate>
                     </asp:Repeater>
                 </a>
@@ -291,22 +295,43 @@
             <h1 class="product_name">
                 <asp:Label ID="lbTenSanPham" runat="server" Text="Test website dau gia"></asp:Label>
             </h1>
-            <span class="option"><span class="label">Giá khởi đầu</span> <strong class="price ex">
-                <asp:Label ID="lbGiaKhoiDau" runat="server" Text="0"></asp:Label>
-            </strong></span><span class="option"><span class="label">Giá hiện tại</span> <strong
-                class="price ex">
-                <asp:Label ID="lbGiaHienTai" runat="server" Text="0"></asp:Label>
-            </strong></span><span class="option"><span class="label">Số lần đặt giá</span> <strong
-                class="price ex">
-                <asp:Label ID="lbSoLanDatGia" runat="server" Text="0"></asp:Label>
-            </strong></span><span class="option"><span class="label">Thời gian còn</span> <strong
-                class="price ex">
+            <span class="option">
+                <span class="label">Giá khởi đầu</span> 
+                <strong class="price ex">
+                    <asp:Label ID="lbGiaKhoiDau" runat="server" Text="0"></asp:Label>
+                </strong>
+            </span>
+            <span class="option">
+                <span class="label">Giá hiện tại</span> 
+                <strong class="price exp">
+                    <asp:Label ID="lbGiaHienTai" runat="server" Text="0"></asp:Label>
+                </strong>                
+                <span class="delta">
+                    <span class="dauCong">+</span>
+                    <span class="txtGiaCaoHon">
+                        <asp:TextBox ID="lbGiaCaoHon" runat="server" Text="0"></asp:TextBox>
+                    </span>
+                    <span class="validation">
+                        <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="x"></asp:CompareValidator>
+                    </span>
+                </span>
+            </span>
+            <span class="option">
+                <span class="label">Số lần đặt giá</span> 
+                <strong class="price ex">
+                    <asp:Label ID="lbSoLanDatGia" runat="server" Text="0"></asp:Label>
+                </strong>
+            </span>
+            <span class="option">
+                <span class="label">Thời gian còn</span> 
+                <strong class="price ex">
                 <asp:Label ID="lbThoiGianCon" runat="server" Text="0"></asp:Label>
-            </strong></span>
+                </strong>
+            </span>
             <div class="clear">
             </div>
-            <a rel="nofollow" id="btn_checkout" class="btn_order" style="cursor: pointer" target="_self"
-                href="?flag=1">Đặt mua</a>
+            <asp:Button ID="btn_checkout" runat="server" Text="" CssClass="btn_order" 
+                ClientIDMode="Static" onclick="btn_checkout_Click" />
             <div class="summary_info">
                 <div class="summary_info_box clearfix">
                     <h3>
@@ -350,7 +375,7 @@
             </p>
         </div>
     </div>
-    <!--detail product-->
+
     <div class="full_description clear">
         <h3>
             Mô tả chi tiết sản phẩm</h3>
