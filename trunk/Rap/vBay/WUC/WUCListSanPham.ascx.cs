@@ -26,6 +26,7 @@ namespace vBay.WUC
             UpdateStatusButton();
             UpdateImageButton();            
         }
+
         private void UpdateImageButton()
         {
             btnFirst.ImageUrl = (btnFirst.Enabled) ? btnFirst.ImageUrl.Remove(btnFirst.ImageUrl.IndexOf("Page") + 4) + ".gif" : btnFirst.ImageUrl.Remove(btnFirst.ImageUrl.IndexOf("Page") + 4) + "Disabled.gif";

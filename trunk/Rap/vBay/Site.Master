@@ -2,6 +2,8 @@
 
 <%@ Register src="WUC/WUCDangNhapNhanh.ascx" tagname="WUCDangNhapNhanh" tagprefix="uc1" %>
 
+<%@ Register src="WUC/WUCTimKiem.ascx" tagname="WUCTimKiem" tagprefix="uc2" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head runat="server">
@@ -37,13 +39,19 @@
                 <!-- Login Here -->
             </div>
             <!-- loginbar end-->
+            <div class="searchbar">
+                
+                <uc2:WUCTimKiem ID="WUCTimKiem1" runat="server" />
+                
+            </div>
+            <!-- searchbar end-->
         </div>
         <!-- header end-->
 
         <div class="main">
             <div class="siderbar">
-                This is sidebar
                 <div class="sidebar1">
+                    <span style="font-size:20px;">Danh mục</span>
                     <asp:Menu ID="menuDSLoaiSanPham" runat="server" CssClass="navbarmenu">
                     </asp:Menu>
                 </div>

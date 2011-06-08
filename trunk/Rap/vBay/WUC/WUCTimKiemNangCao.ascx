@@ -27,6 +27,9 @@
 
 <asp:Label ID="Label1" runat="server" Text="Tìm Kiếm Sản Phẩm Nâng Cao" 
         Font-Size="20pt"></asp:Label>
+        <br />
+        <asp:HyperLink ID="HyperLink1" runat="server" 
+            NavigateUrl="~/TimKiemCoBan.aspx">Chuyển sang Tìm Kiếm Cơ Bản</asp:HyperLink>
 <br />
 
     <br />
@@ -192,12 +195,12 @@
 <asp:Label ID="lbKetQua" runat="server" Text="Label"></asp:Label>
     
     <br />
-    <asp:Panel ID="Panel1" runat="server" Width="630px" Height="500px" 
+    <asp:Panel ID="Panel1" runat="server" Width="730px" Height="570px" 
     ScrollBars="Auto">
     <asp:GridView ID="gvDSSanPham" runat="server" AllowPaging="True" 
         AutoGenerateColumns="False" onpageindexchanging="gvDSSanPham_PageIndexChanging" 
         onrowdatabound="gvDSSanPham_RowDataBound" CellPadding="4" 
-        ForeColor="#333333" GridLines="None">
+        ForeColor="#333333" GridLines="None" Width="720px">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:BoundField HeaderText="STT" />

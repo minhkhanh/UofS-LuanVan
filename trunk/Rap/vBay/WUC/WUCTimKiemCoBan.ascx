@@ -16,11 +16,16 @@
     }
 </style>
 
-
-
+<asp:ScriptManager ID="scriptManager" runat="server">
+</asp:ScriptManager>
+<asp:UpdatePanel ID="updateComment" runat="server">
+    <ContentTemplate>
 
 <asp:Label ID="Label2" runat="server" Text="Tìm Kiếm Sản Phẩm Cơ Bản" 
         Font-Size="20pt"></asp:Label>
+        <br />
+        <asp:HyperLink ID="HyperLink1" runat="server" 
+            NavigateUrl="~/TimKiemNangCao.aspx">Chuyển sang Tìm Kiếm Nâng Cao</asp:HyperLink>
 <br />
 <asp:Label ID="Label1" runat="server" Text="Tên Sản Phẩm"></asp:Label>
 <asp:TextBox ID="tbTenSanPham" runat="server" style="margin-left:10px;"></asp:TextBox>
@@ -31,11 +36,11 @@
 <asp:Label ID="lbKetQua" runat="server" Text=""></asp:Label>
     <br />
 
-<asp:Panel ID="Panel1" runat="server" ScrollBars="Auto" Height="500" Width="630">
+
     <asp:DataList ID="dlDSSanPham" runat="server" 
         onitemdatabound="dlDSSanPham_ItemDataBound" 
         BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" 
-        CellPadding="2" ForeColor="Black">
+        CellPadding="2" ForeColor="Black" Width="720px">
         <AlternatingItemStyle BackColor="PaleGoldenrod" />
         <FooterStyle BackColor="Tan" />
         <HeaderStyle BackColor="Tan" Font-Bold="True" />
@@ -48,24 +53,17 @@
                     <td class="style3">
                         Tên Sản Phẩm</td>
                     <td class="style4">
-                        <asp:Label ID="lbTenSanPham" runat="server" 
-                            Text='<%# DataBinder.Eval(Container, "DataItem.TenSanPham") %>' 
-                            Font-Size="14pt"></asp:Label>
-                    </td>
-                    <td>
-                        <asp:HyperLink ID="hlChiTiet" runat="server">Chi Tiết</asp:HyperLink>
+                        <asp:HyperLink ID="hlTenSanPham" runat="server" Font-Size="14pt" 
+                            Text='<%# DataBinder.Eval(Container, "DataItem.TenSanPham") %>'></asp:HyperLink>
                     </td>
                 </tr>
                 <tr>
                     <td class="style3">
                         Người Đăng</td>
                     <td class="style4">
-                        <asp:Label ID="lbNguoiDang" runat="server" 
-                            Text='<%# DataBinder.Eval(Container, "DataItem.HoTen") %>' 
-                            Font-Size="14pt"></asp:Label>
+                        <asp:Label ID="lbNguoiDang" runat="server" Font-Size="14pt" 
+                            Text='<%# DataBinder.Eval(Container, "DataItem.HoTen") %>'></asp:Label>
                     </td>
-                    <td>
-                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="style3">
@@ -75,8 +73,6 @@
                             Text='<%# DataBinder.Eval(Container, "DataItem.GiaKhoiDiem") %>' 
                             Font-Size="14pt"></asp:Label>
                     </td>
-                    <td>
-                        &nbsp;</td>
                 </tr>
             </table>
         </ItemTemplate>
@@ -87,4 +83,53 @@
     </asp:DataList>
     <br />
 
-</asp:Panel>
+
+<table width="100%">
+
+    <tr>
+
+        <td>(Trang
+
+            <asp:label id="lblCurrentPage" Runat="server"></asp:label>&nbsp;/&nbsp;
+
+            <asp:label id="lblTotalPages" Runat="server"></asp:label>)
+
+        </td>
+
+        <td valign="top" align="right">
+
+            Trang
+
+            <asp:DropDownList id="ddPage" runat="server"
+
+                AutoPostBack="true" onselectedindexchanged="ddPage_SelectedIndexChanged"></asp:DropDownList>
+
+        </td> 
+
+        <td align="right"> 
+
+            <asp:imagebutton id="btnFirst" Runat="server" Enabled="false" 
+
+                ImageUrl = "~/Images/NavFirstPageDisabled.gif" onclick="btnFirst_Click" /> 
+
+            <asp:imagebutton id="btnPrevious" Runat="server" Enabled="false"
+
+               ImageUrl="~/Images/NavPreviousPageDisabled.gif" 
+                onclick="btnPrevious_Click" /> 
+
+            <asp:imagebutton id="btnNext" Runat="server" Enabled="false"
+
+               ImageUrl="~/Images/NavNextPageDisabled.gif" onclick="btnNext_Click" /> 
+
+            <asp:imagebutton id="btnLast" Runat="server" Enabled="false" 
+
+               ImageUrl="~/Images/NavLastPageDisabled.gif" onclick="btnLast_Click" /> 
+
+        </td> 
+
+    </tr>
+
+</table>
+
+</ContentTemplate>
+</asp:UpdatePanel>
