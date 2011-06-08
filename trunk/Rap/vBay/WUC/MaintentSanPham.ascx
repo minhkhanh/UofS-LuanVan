@@ -51,8 +51,7 @@
         background-color:white;
         margin: 0 auto;
         width: 627px;
-        height: 440px;                
-        border: 1px solid #8080FF;	
+        height: 440px;                        
         position:inherit;
     }
     .noiDungSanPhamTieuBieu
@@ -61,8 +60,7 @@
         background-color:white;
         margin: 0 auto;
         width: 627px;
-        height: 440px;                
-        border: 1px solid #8080FF;	
+        height: 440px;                        
         position:inherit;
     }
     .dataListSanPhamMoiDang
@@ -70,6 +68,18 @@
         width: 592px;
         margin: 28px auto 0 auto;
     }
+    .noiDungSanPhamMoiDang, .noiDungSanPhamTieuBieu
+    {
+        margin: 0 auto;
+        width: 0 auto;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+    }
+    #wowslider-container1
+    {
+       background-color : #fff;  
+    }
+        
 </style>
 <script type="text/javascript" src="../JQuery/engine1/jquery.js"></script>
 <div class = "mainSanPham">

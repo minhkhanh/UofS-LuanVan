@@ -41,8 +41,8 @@ namespace vBay
                             tenSanPhamHyperLinkb1.Text = i.TenSanPham;
 
                             // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
-                            tenSanPhamHyperLinka1.NavigateUrl = "#"; // Gán cho hình
-                            tenSanPhamHyperLinkb1.NavigateUrl = "#"; // Gán cho chữ
+                            tenSanPhamHyperLinka1.NavigateUrl = TrangChiTietSanPham + "?MaSanPham="+i.MaSanPham.ToString() ; // Gán cho hình
+                            tenSanPhamHyperLinkb1.NavigateUrl = TrangChiTietSanPham +"?MaSanPham=" + i.MaSanPham.ToString(); // Gán cho chữ
                             break;
                         }
                     case 1:
@@ -55,8 +55,8 @@ namespace vBay
                             tenSanPhamHyperLinkb2.Text = i.TenSanPham;
 
                             // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
-                            tenSanPhamHyperLinka2.NavigateUrl = "#"; // Gán cho hình
-                            tenSanPhamHyperLinkb2.NavigateUrl = "#"; // Gán cho chữ
+                            tenSanPhamHyperLinka2.NavigateUrl = TrangChiTietSanPham + "?MaSanPham="+i.MaSanPham.ToString() ; // Gán cho hình
+                            tenSanPhamHyperLinkb2.NavigateUrl = TrangChiTietSanPham + "?MaSanPham="+i.MaSanPham.ToString() ; // Gán cho chữ
                             break;
                         }
                     case 2:
@@ -69,8 +69,8 @@ namespace vBay
                             tenSanPhamHyperLinkb3.Text = i.TenSanPham;
 
                             // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
-                            tenSanPhamHyperLinka3.NavigateUrl = "#"; // Gán cho hình
-                            tenSanPhamHyperLinkb3.NavigateUrl = "#"; // Gán cho chữ
+                            tenSanPhamHyperLinka3.NavigateUrl = TrangChiTietSanPham + "?MaSanPham="+i.MaSanPham.ToString() ; // Gán cho hình
+                            tenSanPhamHyperLinkb3.NavigateUrl = TrangChiTietSanPham + "?MaSanPham="+i.MaSanPham.ToString() ; // Gán cho chữ
                             break;
                         }
                     case 3:
@@ -83,8 +83,8 @@ namespace vBay
                             tenSanPhamHyperLinkb4.Text = i.TenSanPham;
 
                             // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
-                            tenSanPhamHyperLinka4.NavigateUrl = "#"; // Gán cho hình
-                            tenSanPhamHyperLinkb4.NavigateUrl = "#"; // Gán cho chữ
+                            tenSanPhamHyperLinka4.NavigateUrl = TrangChiTietSanPham + "?MaSanPham="+i.MaSanPham.ToString() ; // Gán cho hình
+                            tenSanPhamHyperLinkb4.NavigateUrl = TrangChiTietSanPham + "?MaSanPham="+i.MaSanPham.ToString() ; // Gán cho chữ
                             break;
                         }
                     case 4:
@@ -97,8 +97,8 @@ namespace vBay
                             tenSanPhamHyperLinkb5.Text = i.TenSanPham;
 
                             // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
-                            tenSanPhamHyperLinka5.NavigateUrl = "#"; // Gán cho hình
-                            tenSanPhamHyperLinkb5.NavigateUrl = "#"; // Gán cho chữ
+                            tenSanPhamHyperLinka5.NavigateUrl = TrangChiTietSanPham + "?MaSanPham="+i.MaSanPham.ToString() ; // Gán cho hình
+                            tenSanPhamHyperLinkb5.NavigateUrl = TrangChiTietSanPham + "?MaSanPham="+i.MaSanPham.ToString() ; // Gán cho chữ
                             break;
                         }
                     case 5:
@@ -111,8 +111,8 @@ namespace vBay
                             tenSanPhamHyperLinkb6.Text = i.TenSanPham;
 
                             // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
-                            tenSanPhamHyperLinka6.NavigateUrl = "#"; // Gán cho hình
-                            tenSanPhamHyperLinkb6.NavigateUrl = "#"; // Gán cho chữ
+                            tenSanPhamHyperLinka6.NavigateUrl = TrangChiTietSanPham + "?MaSanPham="+i.MaSanPham.ToString() ; // Gán cho hình
+                            tenSanPhamHyperLinkb6.NavigateUrl = TrangChiTietSanPham + "?MaSanPham="+i.MaSanPham.ToString() ; // Gán cho chữ
                             break;
                         }
                     case 6:
@@ -125,8 +125,8 @@ namespace vBay
                             tenSanPhamHyperLinkb7.Text = i.TenSanPham;
 
                             // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
-                            tenSanPhamHyperLinka7.NavigateUrl = "#"; // Gán cho hình
-                            tenSanPhamHyperLinkb7.NavigateUrl = "#"; // Gán cho chữ
+                            tenSanPhamHyperLinka7.NavigateUrl = TrangChiTietSanPham + "?MaSanPham="+i.MaSanPham.ToString() ; // Gán cho hình
+                            tenSanPhamHyperLinkb7.NavigateUrl = TrangChiTietSanPham + "?MaSanPham="+i.MaSanPham.ToString() ; // Gán cho chữ
                             break;
                         }
                     case 7:
@@ -139,8 +139,8 @@ namespace vBay
                             tenSanPhamHyperLinkb8.Text = i.TenSanPham;
 
                             // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
-                            tenSanPhamHyperLinka8.NavigateUrl = "#"; // Gán cho hình
-                            tenSanPhamHyperLinkb8.NavigateUrl = "#"; // Gán cho chữ
+                            tenSanPhamHyperLinka8.NavigateUrl = TrangChiTietSanPham + "?MaSanPham="+i.MaSanPham.ToString() ; // Gán cho hình
+                            tenSanPhamHyperLinkb8.NavigateUrl = TrangChiTietSanPham + "?MaSanPham="+i.MaSanPham.ToString() ; // Gán cho chữ
                             break;
                         }
                     case 8:
@@ -153,8 +153,8 @@ namespace vBay
                             tenSanPhamHyperLinkb9.Text = i.TenSanPham;
 
                             // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
-                            tenSanPhamHyperLinka9.NavigateUrl = "#"; // Gán cho hình
-                            tenSanPhamHyperLinkb9.NavigateUrl = "#"; // Gán cho chữ
+                            tenSanPhamHyperLinka9.NavigateUrl = TrangChiTietSanPham + "?MaSanPham="+i.MaSanPham.ToString() ; // Gán cho hình
+                            tenSanPhamHyperLinkb9.NavigateUrl = TrangChiTietSanPham + "?MaSanPham="+i.MaSanPham.ToString() ; // Gán cho chữ
                             break;
                         }
                     case 9:
@@ -162,8 +162,11 @@ namespace vBay
                 }
                 thuTu++;
             }        
-        }                
-        
+        }
+        public string TrangChiTietSanPham
+        {
+            get { return "../xemchitietsanpham.aspx"; }
+        }
         protected void SanPhamDauGiaNhieuNhat()
         {
             int thuTu = 0; 
@@ -191,8 +194,8 @@ namespace vBay
                             tenSanPhamHyperLinkb10.Text = i.sp.TenSanPham;
                             
                             // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
-                            tenSanPhamHyperLinka10.NavigateUrl = "#"; // Gán cho hình
-                            tenSanPhamHyperLinkb10.NavigateUrl = "#"; // Gán cho chữ
+                            tenSanPhamHyperLinka10.NavigateUrl = TrangChiTietSanPham + "?MaSanPham="+i.sp.MaSanPham.ToString() ; // Gán cho hình
+                            tenSanPhamHyperLinkb10.NavigateUrl = TrangChiTietSanPham + "?MaSanPham=" + i.sp.MaSanPham.ToString(); // Gán cho chữ
                             break;
                         }
                     case 1:
@@ -204,8 +207,8 @@ namespace vBay
                             tenSanPhamHyperLinkb11.Text = i.sp.TenSanPham;
                             
                             // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
-                            tenSanPhamHyperLinka11.NavigateUrl = "#"; // Gán cho hình
-                            tenSanPhamHyperLinkb11.NavigateUrl = "#"; // Gán cho chữ
+                            tenSanPhamHyperLinka11.NavigateUrl = TrangChiTietSanPham + "?MaSanPham=" + i.sp.MaSanPham.ToString(); // Gán cho hình
+                            tenSanPhamHyperLinkb11.NavigateUrl = TrangChiTietSanPham + "?MaSanPham=" + i.sp.MaSanPham.ToString(); // Gán cho chữ
                             break;
                         }
                     case 2:
@@ -217,8 +220,8 @@ namespace vBay
                             tenSanPhamHyperLinkb12.Text = i.sp.TenSanPham;
                            
                             // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
-                            tenSanPhamHyperLinka12.NavigateUrl = "#"; // Gán cho hình
-                            tenSanPhamHyperLinkb12.NavigateUrl = "#"; // Gán cho chữ
+                            tenSanPhamHyperLinka12.NavigateUrl = TrangChiTietSanPham + "?MaSanPham=" + i.sp.MaSanPham.ToString(); // Gán cho hình
+                            tenSanPhamHyperLinkb12.NavigateUrl = TrangChiTietSanPham + "?MaSanPham=" + i.sp.MaSanPham.ToString(); // Gán cho chữ
                             break;
                         }
                     case 3:
@@ -230,8 +233,8 @@ namespace vBay
                             tenSanPhamHyperLinkb13.Text = i.sp.TenSanPham;
                             
                             // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
-                            tenSanPhamHyperLinka13.NavigateUrl = "#"; // Gán cho hình
-                            tenSanPhamHyperLinkb13.NavigateUrl = "#"; // Gán cho chữ
+                            tenSanPhamHyperLinka13.NavigateUrl = TrangChiTietSanPham + "?MaSanPham=" + i.sp.MaSanPham.ToString(); // Gán cho hình
+                            tenSanPhamHyperLinkb13.NavigateUrl = TrangChiTietSanPham + "?MaSanPham=" + i.sp.MaSanPham.ToString(); // Gán cho chữ
                             break;
                         }
                     case 4:
@@ -243,8 +246,8 @@ namespace vBay
                             tenSanPhamHyperLinkb14.Text = i.sp.TenSanPham;
                             
                             // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
-                            tenSanPhamHyperLinka14.NavigateUrl = "#"; // Gán cho hình
-                            tenSanPhamHyperLinkb14.NavigateUrl = "#"; // Gán cho chữ
+                            tenSanPhamHyperLinka14.NavigateUrl = TrangChiTietSanPham + "?MaSanPham=" + i.sp.MaSanPham.ToString(); // Gán cho hình
+                            tenSanPhamHyperLinkb14.NavigateUrl = TrangChiTietSanPham + "?MaSanPham=" + i.sp.MaSanPham.ToString(); // Gán cho chữ
                             break;
                         }
                     case 5:
@@ -256,8 +259,8 @@ namespace vBay
                             tenSanPhamHyperLinkb15.Text = i.sp.TenSanPham;
                             
                             // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
-                            tenSanPhamHyperLinka15.NavigateUrl = "#"; // Gán cho hình
-                            tenSanPhamHyperLinkb15.NavigateUrl = "#"; // Gán cho chữ
+                            tenSanPhamHyperLinka15.NavigateUrl = TrangChiTietSanPham + "?MaSanPham=" + i.sp.MaSanPham.ToString(); // Gán cho hình
+                            tenSanPhamHyperLinkb15.NavigateUrl = TrangChiTietSanPham + "?MaSanPham=" + i.sp.MaSanPham.ToString(); // Gán cho chữ
                             break;
                         }
                     case 6:
@@ -269,8 +272,8 @@ namespace vBay
                             tenSanPhamHyperLinkb16.Text = i.sp.TenSanPham;
                             
                             // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
-                            tenSanPhamHyperLinka16.NavigateUrl = "#"; // Gán cho hình
-                            tenSanPhamHyperLinkb16.NavigateUrl = "#"; // Gán cho chữ
+                            tenSanPhamHyperLinka16.NavigateUrl = TrangChiTietSanPham + "?MaSanPham=" + i.sp.MaSanPham.ToString(); // Gán cho hình
+                            tenSanPhamHyperLinkb16.NavigateUrl = TrangChiTietSanPham + "?MaSanPham=" + i.sp.MaSanPham.ToString(); // Gán cho chữ
                             break;
                         }
                     case 7:
@@ -282,8 +285,8 @@ namespace vBay
                             tenSanPhamHyperLinkb17.Text = i.sp.TenSanPham;
 
                             // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
-                            tenSanPhamHyperLinka17.NavigateUrl = "#"; // Gán cho hình
-                            tenSanPhamHyperLinkb17.NavigateUrl = "#"; // Gán cho chữ
+                            tenSanPhamHyperLinka17.NavigateUrl = TrangChiTietSanPham + "?MaSanPham=" + i.sp.MaSanPham.ToString(); // Gán cho hình
+                            tenSanPhamHyperLinkb17.NavigateUrl = TrangChiTietSanPham + "?MaSanPham=" + i.sp.MaSanPham.ToString(); // Gán cho chữ
                             break;
                         }
                     case 8:
@@ -295,8 +298,8 @@ namespace vBay
                             tenSanPhamHyperLinkb18.Text = i.sp.TenSanPham;
 
                             // Vị trí chèn link theo từng sản phẩm để thêm chi tiết
-                            tenSanPhamHyperLinka18.NavigateUrl = "#"; // Gán cho hình
-                            tenSanPhamHyperLinkb18.NavigateUrl = "#"; // Gán cho chữ
+                            tenSanPhamHyperLinka18.NavigateUrl = TrangChiTietSanPham + "?MaSanPham=" + i.sp.MaSanPham.ToString(); // Gán cho hình
+                            tenSanPhamHyperLinkb18.NavigateUrl = TrangChiTietSanPham + "?MaSanPham="+i.sp.MaSanPham.ToString() ; // Gán cho chữ
                             break;
                         }
                 }

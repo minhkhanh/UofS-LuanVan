@@ -97,8 +97,13 @@
     }
     .detail_product .desc .option .delta
     {
-        margin-right: 50px;
+        margin-right: 5px;
     }
+    .detail_product .desc .option .delta .txtGiaCaoHon
+    {
+        margin: 0px, 0px, 0px, 0px;
+        text-align:center;
+    }    
     .detail_product .desc .btn_order
     {
         display: block;
@@ -127,7 +132,7 @@
         font-size: 14px;
         font-weight: bold;
         float: left;
-        width: 99px;
+        width: 115px;
         margin-left: 2px;
     }
     .summary_info
@@ -309,10 +314,13 @@
                 <span class="delta">
                     <span class="dauCong">+</span>
                     <span class="txtGiaCaoHon">
-                        <asp:TextBox ID="lbGiaCaoHon" runat="server" Text="0"></asp:TextBox>
+                        <asp:TextBox ID="txtGiaCaoHon" runat="server" Text="1" Width="91px"></asp:TextBox>
                     </span>
                     <span class="validation">
-                        <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="x"></asp:CompareValidator>
+                        <asp:RangeValidator ID="rangeValidation" runat="server" 
+                ErrorMessage="&lt;img src='../Images/icon_oval.jpg'/&gt;" 
+                ControlToValidate="lbGiaCaoHon" MinimumValue="1" 
+                Type="Integer" MaximumValue="100000"></asp:RangeValidator>
                     </span>
                 </span>
             </span>
