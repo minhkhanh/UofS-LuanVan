@@ -3,15 +3,20 @@
 
 <%@ Register src="WUCThongTinSanPhamVaShop.ascx" tagname="WUCThongTinSanPhamVaShop" tagprefix="uc2" %>
 
-<div>
+<%@ Register src="WUCSanPhamCungLoai.ascx" tagname="WUCSanPhamCungLoai" tagprefix="uc3" %>
 
-    <uc2:WUCThongTinSanPhamVaShop ID="WUCThongTinSanPhamVaShop1" runat="server" />
+<uc2:WUCThongTinSanPhamVaShop ID="WUCThongTinSanPhamVaShop1" runat="server" />
 
-</div>
 
-<div>
 <uc1:WUCBinhLuanSanPham ID="WUCBinhLuanSanPham1" runat="server" />
-</div>
+
+
+
+
+<uc3:WUCSanPhamCungLoai ID="WUCSanPhamCungLoai1" runat="server" />
+
+
+
 
 
 

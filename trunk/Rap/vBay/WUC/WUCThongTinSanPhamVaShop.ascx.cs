@@ -71,5 +71,22 @@ namespace vBay.WUC
             Image img = (Image)e.Item.FindControl("repImage");
             img.ImageUrl = dt.LinkURL;
         }
+
+        protected void btn_checkout_Click(object sender, EventArgs e)
+        {
+            if (!KiemTraCoQuyenMua())
+            {
+                Response.Redirect(TrangKhongCoQuyenTruyCap);
+                return;
+            }
+        }
+        private bool KiemTraCoQuyenMua()
+        {
+            return Page.User.Identity.IsAuthenticated;
+        }
+        public string TrangKhongCoQuyenTruyCap
+        {
+            get { return "../Default.aspx"; }
+        }
     }
 }

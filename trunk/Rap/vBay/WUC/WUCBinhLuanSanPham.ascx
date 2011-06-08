@@ -1,23 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WUCBinhLuanSanPham.ascx.cs"
     Inherits="vBay.WUC.WUCBinhLuanSanPham" %>
 <style type="text/css">
-    .style1
-    {
-        width: 99%;
-        height: 100px;
-        height:inherit;
-    }
-    
-    h4
-    {
-        display: block;
-        -webkit-margin-before: 1.33em;
-        -webkit-margin-after: 1.33em;
-        -webkit-margin-start: 0px;
-        -webkit-margin-end: 0px;
-        font-weight: bold;
-        height:inherit;
-    }
     body {
         color: #333333;
         font-family: Arial;
@@ -26,7 +9,11 @@
         text-align: left;
     }    
 /* Comment */
-.comment_product{position:relative;width:730px}
+.comment_product
+{
+    position:relative;
+    width:730px;
+}
 .comment_product h3{background:url(../Images/icon_oval.jpg) left 2px no-repeat;margin-bottom:6px;padding-left:18px;color:#333;font-size:13px;font-weight:bold}
 .list_comment_product{background:url(../Images/bg_full_description.jpg) left top repeat-x;margin-bottom:10px;padding-top:10px}
 .comment_post{position:relative;width:auto;padding:8px 0;border-bottom:1px solid #eaeaea}
@@ -51,24 +38,7 @@
 .post_comment .typing_row .type_left{float:left;width:50px;height:50px;margin-top:2px;margin-right:6px;padding:1px;border:1px solid #ddd}
 .post_comment .typing_row .type_right{float:right;padding:2px 0}
 .post_comment .typing_row .type_right #txtComment{display:block;background:#fff;width:646px;margin-bottom:5px;padding:5px 0px 5px 5px;height:50px;color:#333;font-size:12px;font-family:Arial;border:1px solid #97b3cb;overflow:auto}
-<%--.post_comment .typing_row .type_right #txtComment{float:right; color:#333;font-size:12px;font-family:Arial}--%>
 .post_comment .typing_row .type_right #buttComment{width:80px;height:24px;background:url(../Images/b_comment.jpg) no-repeat;border:0;cursor:pointer} 
-    .style2
-    {
-        width: 100%;
-        height: 77px;
-        height:inherit;
-    }
-    .style3
-    {
-        width: 50px;
-        height:inherit;
-    }
-    .style4
-    {
-        width: 568px;
-        height:inherit;
-    }
     
     #reqlogin
     {
@@ -77,7 +47,12 @@
         color: Red;
         height:inherit;
     }
+    .binhLuanSanPham
+    {
+        position:relative;
+    }
 </style>
+<div class="binhLuanSanPham">
 <asp:ScriptManager ID="scriptManager" runat="server">
 </asp:ScriptManager>
 <asp:UpdatePanel ID="updateComment" runat="server">
@@ -141,7 +116,6 @@
         </div>
     </ContentTemplate>
 </asp:UpdatePanel>
-
 <script type="text/javascript">
     function textcommentchange(event) {
         if (document.getElementById("txtComment").value == "") {
@@ -153,3 +127,4 @@
         //alert(document.getElementById("txtComment").value);        
     }
 </script>
+</div>

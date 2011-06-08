@@ -49,6 +49,24 @@ namespace vBay.WUC {
         protected global::System.Web.UI.WebControls.Label lbGiaHienTai;
         
         /// <summary>
+        /// lbGiaCaoHon control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox lbGiaCaoHon;
+        
+        /// <summary>
+        /// CompareValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
+        
+        /// <summary>
         /// lbSoLanDatGia control.
         /// </summary>
         /// <remarks>
@@ -65,6 +83,15 @@ namespace vBay.WUC {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbThoiGianCon;
+        
+        /// <summary>
+        /// btn_checkout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_checkout;
         
         /// <summary>
         /// lbHoTenNguoiBan control.
