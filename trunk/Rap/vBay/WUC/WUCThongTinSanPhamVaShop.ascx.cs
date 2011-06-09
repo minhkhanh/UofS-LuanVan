@@ -86,15 +86,18 @@ namespace vBay.WUC
             ChiTietDauGia cm = new ChiTietDauGia();
             int id;
             int.TryParse(Request["MaSanPham"], out id);
-            var sp = from b in data
-            cm.MaSanPham = id;
-            cm.MaTaiKhoan = GetUserId();
-            cm.ThoiGianGiaoDich = DateTime.Now;
-            cm.NoiDungComment = txtComment.Text;
-            DataEntityDataContext dt = new DataEntityDataContext();
-            dt.Comments.InsertOnSubmit(cm);
-            dt.SubmitChanges();
-            txtComment.Text = "";
+
+            //var sp = from b in data
+            //         select b;
+
+            //cm.MaSanPham = id;
+            //cm.MaTaiKhoan = GetUserId();
+            //cm.ThoiGianGiaoDich = DateTime.Now;
+            //cm.NoiDungComment = txtComment.Text;
+            //DataEntityDataContext dt = new DataEntityDataContext();
+            //dt.Comments.InsertOnSubmit(cm);
+            //dt.SubmitChanges();
+            //txtComment.Text = "";
         }
         private bool KiemTraCoQuyenMua()
         {

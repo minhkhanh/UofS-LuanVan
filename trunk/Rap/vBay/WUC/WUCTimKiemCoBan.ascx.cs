@@ -45,6 +45,8 @@ namespace vBay.WUC
 
         void HienThiDSSanPham()
         {
+            if (tbTenSanPham.Text.Trim() == "")
+                return;
             DataEntityDataContext db = new DataEntityDataContext();
             var query = from sp in db.SanPhams
                         join tk in db.aspnet_Users on sp.MaTaiKhoan equals tk.UserId

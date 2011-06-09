@@ -187,11 +187,11 @@ p
 .loginbar
 {
 	position:absolute;
-	left:546px;
+	left:500px;
 	top:36px;
 	border:1px solid #F00;
 	min-height:100px;
-	min-width:200px;
+	min-width:150px;
     
 }
 
