@@ -83,9 +83,9 @@ p
 	width:750px;
 	height:inherit;
 	margin:5px 5px 5px 5px;
-	min-height:700px;
+	min-height:500px;
 	position:relative;
-	padding:5px;
+	padding:10px;
 	
 	border:2px solid #F00;
 }
@@ -187,10 +187,10 @@ p
 .loginbar
 {
 	position:absolute;
-	left:500px;
-	top:36px;
+	left:490px;
+	top:20px;
 	border:1px solid #F00;
-	min-height:100px;
+	min-height:50px;
 	min-width:150px;
     
 }
