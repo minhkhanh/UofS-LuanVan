@@ -22,13 +22,13 @@ namespace vBay {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
         
         /// <summary>
-        /// ImageButton1 control.
+        /// ImageButton_Logo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton_Logo;
         
         /// <summary>
         /// Menu1 control.
@@ -55,7 +55,7 @@ namespace vBay {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::vBay.WUC.UCTimKiem WUCTimKiem1;
+        protected global::System.Web.UI.UserControl WUCTimKiem1;
         
         /// <summary>
         /// menuDSLoaiSanPham control.
