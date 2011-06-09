@@ -8,6 +8,9 @@ using System.Web.Configuration;
 using System.Web.Security;
 using Recaptcha;
 
+
+
+
 namespace vBay
 {
     public partial class WUCDangKy : System.Web.UI.UserControl
@@ -124,7 +127,6 @@ namespace vBay
 
         protected void CreateUserWizard1_CreatedUser(object sender, EventArgs e)
         {
-           
 
             DataEntityDataContext dc = new DataEntityDataContext();
 
@@ -145,6 +147,10 @@ namespace vBay
             currUser.ThongTinTaiKhoan = tttk;
 
             dc.SubmitChanges();
+
+            
+
+
         }
 
         protected void CreateUserWizard1_CreatingUser(object sender, LoginCancelEventArgs e)
@@ -180,5 +186,7 @@ namespace vBay
         {
             NoAvatarCheck.Checked = false;
         }
+
+        
     }
 }

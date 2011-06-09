@@ -95,6 +95,7 @@
     <Content Include="JQuery\engine1\script.js" />
     <Content Include="JQuery\engine1\style.css" />
     <Content Include="JQuery\engine1\triangle.png" />
+    <Content Include="LienHe.aspx" />
     <Content Include="LoaiSanPhamManager.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="PasswordRecovering.aspx" />
@@ -169,6 +170,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LienHe.aspx.cs">
+      <DependentUpon>LienHe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LienHe.aspx.designer.cs">
+      <DependentUpon>LienHe.aspx</DependentUpon>
     </Compile>
     <Compile Include="LoaiSanPhamManager.aspx.cs">
       <DependentUpon>LoaiSanPhamManager.aspx</DependentUpon>
