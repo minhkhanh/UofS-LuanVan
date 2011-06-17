@@ -11,8 +11,8 @@ namespace vBay
     public partial class UC_DangThongTinSanPham : System.Web.UI.UserControl
     {
         private DataEntityDataContext dataContext;
-        static private String staticImagePath = @"E:\Study At School\Workspace\eBay[08-06-2011]\Rap\vBay\imagine\";
-        static private String staticImageUrl = @"~/imagine/";        
+        static private String staticImagePath;
+        static private String staticImageUrl;
         static private bool isUploadedImage = false;
 
         protected void Page_Init(object sender, EventArgs e)
@@ -193,9 +193,13 @@ namespace vBay
                 fileName = fileName + fileExtent;
 
                 //      Xuất chuỗi Path đường dẫn dùng để lưu file xuống server
+                THAMSO thamSo = dataContext.THAMSOs.Single(p => p.TenThamSo == "ProductImagesUploadFolder");
+                staticImagePath = thamSo.GiaTri;
                 filePath = staticImagePath + fileName;
 
-                //      Xuất chuỗi Url dùng để load file lên page                
+                //      Xuất chuỗi Url dùng để load file lên page 
+                thamSo = dataContext.THAMSOs.Single(p => p.TenThamSo == "ProductImagesUploadUrl");
+                staticImageUrl = thamSo.GiaTri;
                 fileUrl = staticImageUrl + fileName;
 
                 //  2. Lưu file ảnh xuống server với fileName đã được chỉnh sửa
