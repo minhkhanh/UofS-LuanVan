@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="AdminDefault.aspx" />
     <Content Include="App_Themes\ThemeSunny\styleSunny.css" />
     <Content Include="ChiTietMotSanPhamManager.aspx" />
     <Content Include="Images\crying-racoon.gif" />
@@ -139,6 +140,7 @@
     </Content>
     <Content Include="WebForm4Test.aspx" />
     <Content Include="WebForm4TestChiTietSanPham.aspx" />
+    <Content Include="WUCThayDoiGiaoDienWebSite.ascx" />
     <Content Include="WUC\UC_ThayDoiLoaiNguoiDung.ascx" />
     <Content Include="WUC\WUCThayDoiGiaoDienWebSite.ascx" />
     <Content Include="WUC\UC_TheoDoiLichSuGiaoDich.ascx" />
@@ -169,6 +171,13 @@
     </Compile>
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDefault.aspx.cs">
+      <DependentUpon>AdminDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDefault.aspx.designer.cs">
+      <DependentUpon>AdminDefault.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminSite.master.cs">
       <DependentUpon>AdminSite.master</DependentUpon>

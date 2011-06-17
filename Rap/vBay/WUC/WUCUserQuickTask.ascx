@@ -43,7 +43,8 @@
                         </RoleGroups>
                     </asp:LoginView>
                     .
-                    <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                    <asp:LoginStatus ID="LoginStatus1" runat="server" 
+                        LogoutPageUrl="~/Default.aspx" />
                     .
                 </td>
             </tr>

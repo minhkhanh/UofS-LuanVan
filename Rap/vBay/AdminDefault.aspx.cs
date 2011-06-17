@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace vBay
 {
-    public partial class ThayDoiLoaiNguoiDung : System.Web.UI.Page
+    public partial class AdminDefault : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
