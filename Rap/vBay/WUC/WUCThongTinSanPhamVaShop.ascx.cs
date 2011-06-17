@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 
 namespace vBay.WUC
 {
@@ -13,24 +14,36 @@ namespace vBay.WUC
         {
             DataEntityDataContext dataContext = new DataEntityDataContext();
             int id;
+            btn_checkout.Enabled = false;
             int.TryParse(Request["MaSanPham"], out id);
             var sp = (from a in dataContext.SanPhams
                       where (a.MaSanPham == id)
-                      select new { a.MaSanPham, a.TenSanPham, a.GiaKhoiDiem, a.GiaHienTai, a.MaTaiKhoan, a.MoTaSanPham}
+                      select new { a.MaSanPham, a.TenSanPham, a.GiaKhoiDiem, a.GiaHienTai, a.MaTaiKhoan, a.MoTaSanPham, a.NgayHetHan}
                      ).FirstOrDefault();
 
             if (sp == null) return;
+            btn_checkout.Enabled = true;
             lbTenSanPham.Text = (sp.TenSanPham != null) ? sp.TenSanPham : "#NA";
             lbMoTaSanPham.Text = (sp.MoTaSanPham != null) ? sp.MoTaSanPham : "#NA";
             lbGiaKhoiDau.Text = sp.GiaKhoiDiem.ToString();
+            lbThoiGianCon.Text = GetTextTimeOut((DateTime)sp.NgayHetHan);
             if (sp.GiaHienTai == null || sp.GiaKhoiDiem >= sp.GiaHienTai)
             {
                 lbGiaHienTai.Text = "Chưa ai đặt giá";
             }
             else
             {
-                lbGiaHienTai.Text = sp.GiaKhoiDiem.ToString();
+                lbGiaHienTai.Text = sp.GiaHienTai.ToString();
             }
+            var sl = (from dg in dataContext.ChiTietDauGias
+                     where (dg.MaSanPham == sp.MaSanPham)
+                     group dg by dg.MaSanPham into soLuot
+                     select new { SoLuotDauGia = soLuot.Count() }
+                     ).FirstOrDefault();
+            if (sl!=null)
+            {
+                lbSoLanDatGia.Text = sl.SoLuotDauGia.ToString();
+            } 
             var info = (from a in dataContext.ThongTinTaiKhoans
                         join b in dataContext.aspnet_Users on a.MaThongTinTaiKhoan equals b.MaThongTinTaiKhoan
                       where (b.UserId == sp.MaTaiKhoan)
@@ -76,28 +89,64 @@ namespace vBay.WUC
         {
             if (!KiemTraCoQuyenMua())
             {
-                Response.Redirect(TrangKhongCoQuyenTruyCap);
+                Page.Response.Redirect(TrangKhongCoQuyenTruyCap);
                 return;
             }
             if (txtGiaCaoHon.Text.Length <= 0 || Request["MaSanPham"] == null)
             {
                 return;
             }
-            ChiTietDauGia cm = new ChiTietDauGia();
+            
             int id;
             int.TryParse(Request["MaSanPham"], out id);
+            DataEntityDataContext dataContext = new DataEntityDataContext();
+            var sp = (from a in dataContext.SanPhams
+                      where (a.MaSanPham == id)
+                      select new { a.MaSanPham, a.TenSanPham, a.GiaKhoiDiem, a.GiaHienTai, a.MaTaiKhoan, a.MoTaSanPham, a.NgayHetHan }
+                    ).FirstOrDefault();
 
+            if (sp == null || sp.NgayHetHan <= DateTime.Now)
+            {
+                Page.Response.Redirect(TrangKhongCoQuyenTruyCap);
+                return;
+            }
+            ChiTietDauGia cm = new ChiTietDauGia();
             //var sp = from b in data
             //         select b;
-
-            //cm.MaSanPham = id;
-            //cm.MaTaiKhoan = GetUserId();
-            //cm.ThoiGianGiaoDich = DateTime.Now;
-            //cm.NoiDungComment = txtComment.Text;
-            //DataEntityDataContext dt = new DataEntityDataContext();
-            //dt.Comments.InsertOnSubmit(cm);
-            //dt.SubmitChanges();
-            //txtComment.Text = "";
+            
+            cm.MaSanPham = sp.MaSanPham;
+            cm.MaTaiKhoan = GetUserId();
+            cm.ThoiGianGiaoDich = DateTime.Now;
+            float gia = 1;
+            float.TryParse(txtGiaCaoHon.Text, out gia);
+            cm.GiaGiaoDich = sp.GiaHienTai + gia;
+            SanPham sanPham = dataContext.SanPhams.Single(m => m.MaSanPham == sp.MaSanPham);
+            sanPham.GiaHienTai = sp.GiaHienTai + gia;
+            dataContext.ChiTietDauGias.InsertOnSubmit(cm);
+            dataContext.SubmitChanges();
+            this.Page_Load(this, e);
+        }
+        private string GetTextTimeOut(DateTime time)
+        {
+            TimeSpan t = time - DateTime.Now;
+            if (t.TotalSeconds < 0)
+            {
+                return "Đã hết hạn đấu giá";
+            }
+            string str = "";
+            if (t.Days > 0)
+            {
+                str += t.Days.ToString() + " ngày ";
+            }
+            if (t.Hours > 0)
+            {
+                str += t.Hours.ToString() + " giờ ";
+            }
+            if (t.Minutes > 0)
+            {
+                str += t.Minutes.ToString() + " phút ";
+            }
+            return str;
         }
         private bool KiemTraCoQuyenMua()
         {
@@ -105,7 +154,7 @@ namespace vBay.WUC
         }
         public string TrangKhongCoQuyenTruyCap
         {
-            get { return "../Default.aspx"; }
+            get { return "./Default.aspx"; }
         }
         private Guid GetUserId()
         {

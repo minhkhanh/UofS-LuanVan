@@ -319,7 +319,7 @@
                     <span class="validation">
                         <asp:RangeValidator ID="rangeValidation" runat="server" 
                 ErrorMessage="&lt;img src='../Images/icon_oval.jpg'/&gt;" 
-                ControlToValidate="lbGiaCaoHon" MinimumValue="1" 
+                ControlToValidate="txtGiaCaoHon" MinimumValue="1" 
                 Type="Integer" MaximumValue="100000"></asp:RangeValidator>
                     </span>
                 </span>
