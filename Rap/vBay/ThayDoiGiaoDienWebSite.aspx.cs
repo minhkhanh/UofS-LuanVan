@@ -10,7 +10,8 @@ namespace vBay
 {
     public partial class ThayDoiGiaoDienWebSite : System.Web.UI.Page
     {
-        private static String pageTurnBackIfNotSignedIn = "~/Default.aspx";
+        private static String pageTurnBackIfNotSignedIn = "~/Login.aspx";
+        private static String pageTurnBackIfNotAuthorized = "~/Stop.aspx";
 
         public void Page_PreInit()
         {
@@ -19,7 +20,7 @@ namespace vBay
             //  2. Kiểm tra: Nếu người dùng chưa đăng nhập (UserName == null hoặc là chuỗi rỗng)
             //      2.1. Respone sang trang pageTurnBackIfNotSignedIn
             //  3. Lấy danh sách các Role người dùng thuộc về và lưu vào mảng String[] danhSachRoles
-            //  4. Kiểm tra: Nếu người dùng thuộc User Administrator hoặc Manager => Response sang trang pageTurnBackIfNotSignedIn
+            //  4. Kiểm tra: Nếu người dùng không thuộc User Administrator hoặc Manager => Response sang trang pageTurnBackIfNotSignedIn
 
 
             //Tiến hành
@@ -49,7 +50,7 @@ namespace vBay
                 }
 
                 if (isAdmin == false && isManager == false)
-                    Response.Redirect(pageTurnBackIfNotSignedIn);
+                    Response.Redirect(pageTurnBackIfNotAuthorized);
 
             }
 
