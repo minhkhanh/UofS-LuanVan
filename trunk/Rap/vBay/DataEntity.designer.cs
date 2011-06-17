@@ -30,12 +30,12 @@ namespace vBay
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void Insertaspnet_Application(aspnet_Application instance);
-    partial void Updateaspnet_Application(aspnet_Application instance);
-    partial void Deleteaspnet_Application(aspnet_Application instance);
     partial void InsertTinhTrangSanPham(TinhTrangSanPham instance);
     partial void UpdateTinhTrangSanPham(TinhTrangSanPham instance);
     partial void DeleteTinhTrangSanPham(TinhTrangSanPham instance);
+    partial void Insertaspnet_Application(aspnet_Application instance);
+    partial void Updateaspnet_Application(aspnet_Application instance);
+    partial void Deleteaspnet_Application(aspnet_Application instance);
     partial void Insertaspnet_Membership(aspnet_Membership instance);
     partial void Updateaspnet_Membership(aspnet_Membership instance);
     partial void Deleteaspnet_Membership(aspnet_Membership instance);
@@ -149,19 +149,19 @@ namespace vBay
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<aspnet_Application> aspnet_Applications
-		{
-			get
-			{
-				return this.GetTable<aspnet_Application>();
-			}
-		}
-		
 		public System.Data.Linq.Table<TinhTrangSanPham> TinhTrangSanPhams
 		{
 			get
 			{
 				return this.GetTable<TinhTrangSanPham>();
+			}
+		}
+		
+		public System.Data.Linq.Table<aspnet_Application> aspnet_Applications
+		{
+			get
+			{
+				return this.GetTable<aspnet_Application>();
 			}
 		}
 		
@@ -379,6 +379,120 @@ namespace vBay
 			{
 				return this.GetTable<ThongTinTaiKhoan>();
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TinhTrangSanPham")]
+	public partial class TinhTrangSanPham : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaTinhTrangSanPham;
+		
+		private string _TenTinhTrangSanPham;
+		
+		private EntitySet<SanPham> _SanPhams;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaTinhTrangSanPhamChanging(int value);
+    partial void OnMaTinhTrangSanPhamChanged();
+    partial void OnTenTinhTrangSanPhamChanging(string value);
+    partial void OnTenTinhTrangSanPhamChanged();
+    #endregion
+		
+		public TinhTrangSanPham()
+		{
+			this._SanPhams = new EntitySet<SanPham>(new Action<SanPham>(this.attach_SanPhams), new Action<SanPham>(this.detach_SanPhams));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTinhTrangSanPham", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaTinhTrangSanPham
+		{
+			get
+			{
+				return this._MaTinhTrangSanPham;
+			}
+			set
+			{
+				if ((this._MaTinhTrangSanPham != value))
+				{
+					this.OnMaTinhTrangSanPhamChanging(value);
+					this.SendPropertyChanging();
+					this._MaTinhTrangSanPham = value;
+					this.SendPropertyChanged("MaTinhTrangSanPham");
+					this.OnMaTinhTrangSanPhamChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTinhTrangSanPham", DbType="NVarChar(50)")]
+		public string TenTinhTrangSanPham
+		{
+			get
+			{
+				return this._TenTinhTrangSanPham;
+			}
+			set
+			{
+				if ((this._TenTinhTrangSanPham != value))
+				{
+					this.OnTenTinhTrangSanPhamChanging(value);
+					this.SendPropertyChanging();
+					this._TenTinhTrangSanPham = value;
+					this.SendPropertyChanged("TenTinhTrangSanPham");
+					this.OnTenTinhTrangSanPhamChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TinhTrangSanPham_SanPham", Storage="_SanPhams", ThisKey="MaTinhTrangSanPham", OtherKey="MaTinhTrangSanPham")]
+		public EntitySet<SanPham> SanPhams
+		{
+			get
+			{
+				return this._SanPhams;
+			}
+			set
+			{
+				this._SanPhams.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_SanPhams(SanPham entity)
+		{
+			this.SendPropertyChanging();
+			entity.TinhTrangSanPham = this;
+		}
+		
+		private void detach_SanPhams(SanPham entity)
+		{
+			this.SendPropertyChanging();
+			entity.TinhTrangSanPham = null;
 		}
 	}
 	
@@ -625,120 +739,6 @@ namespace vBay
 		{
 			this.SendPropertyChanging();
 			entity.aspnet_Application = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TinhTrangSanPham")]
-	public partial class TinhTrangSanPham : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MaTinhTrangSanPham;
-		
-		private string _TenTinhTrangSanPham;
-		
-		private EntitySet<SanPham> _SanPhams;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaTinhTrangSanPhamChanging(int value);
-    partial void OnMaTinhTrangSanPhamChanged();
-    partial void OnTenTinhTrangSanPhamChanging(string value);
-    partial void OnTenTinhTrangSanPhamChanged();
-    #endregion
-		
-		public TinhTrangSanPham()
-		{
-			this._SanPhams = new EntitySet<SanPham>(new Action<SanPham>(this.attach_SanPhams), new Action<SanPham>(this.detach_SanPhams));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTinhTrangSanPham", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MaTinhTrangSanPham
-		{
-			get
-			{
-				return this._MaTinhTrangSanPham;
-			}
-			set
-			{
-				if ((this._MaTinhTrangSanPham != value))
-				{
-					this.OnMaTinhTrangSanPhamChanging(value);
-					this.SendPropertyChanging();
-					this._MaTinhTrangSanPham = value;
-					this.SendPropertyChanged("MaTinhTrangSanPham");
-					this.OnMaTinhTrangSanPhamChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTinhTrangSanPham", DbType="NVarChar(50)")]
-		public string TenTinhTrangSanPham
-		{
-			get
-			{
-				return this._TenTinhTrangSanPham;
-			}
-			set
-			{
-				if ((this._TenTinhTrangSanPham != value))
-				{
-					this.OnTenTinhTrangSanPhamChanging(value);
-					this.SendPropertyChanging();
-					this._TenTinhTrangSanPham = value;
-					this.SendPropertyChanged("TenTinhTrangSanPham");
-					this.OnTenTinhTrangSanPhamChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TinhTrangSanPham_SanPham", Storage="_SanPhams", ThisKey="MaTinhTrangSanPham", OtherKey="MaTinhTrangSanPham")]
-		public EntitySet<SanPham> SanPhams
-		{
-			get
-			{
-				return this._SanPhams;
-			}
-			set
-			{
-				this._SanPhams.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_SanPhams(SanPham entity)
-		{
-			this.SendPropertyChanging();
-			entity.TinhTrangSanPham = this;
-		}
-		
-		private void detach_SanPhams(SanPham entity)
-		{
-			this.SendPropertyChanging();
-			entity.TinhTrangSanPham = null;
 		}
 	}
 	
@@ -3687,7 +3687,7 @@ namespace vBay
 		
 		private int _MaSanPham;
 		
-		private System.Nullable<int> _GiaGiaoDich;
+		private System.Nullable<double> _GiaGiaoDich;
 		
 		private System.Nullable<System.DateTime> _ThoiGianGiaoDich;
 		
@@ -3709,7 +3709,7 @@ namespace vBay
     partial void OnMaTaiKhoanChanged();
     partial void OnMaSanPhamChanging(int value);
     partial void OnMaSanPhamChanged();
-    partial void OnGiaGiaoDichChanging(System.Nullable<int> value);
+    partial void OnGiaGiaoDichChanging(System.Nullable<double> value);
     partial void OnGiaGiaoDichChanged();
     partial void OnThoiGianGiaoDichChanging(System.Nullable<System.DateTime> value);
     partial void OnThoiGianGiaoDichChanged();
@@ -3793,8 +3793,8 @@ namespace vBay
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaGiaoDich", DbType="Int")]
-		public System.Nullable<int> GiaGiaoDich
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaGiaoDich", DbType="Float")]
+		public System.Nullable<double> GiaGiaoDich
 		{
 			get
 			{
@@ -5110,8 +5110,6 @@ namespace vBay
 		
 		private string _LinkURL;
 		
-		private string _FileName;
-		
 		private EntitySet<SanPham> _SanPhams;
 		
 		private EntitySet<SanPham_Multimedia> _SanPham_Multimedias;
@@ -5134,8 +5132,6 @@ namespace vBay
     partial void OnKichThuocChanged();
     partial void OnLinkURLChanging(string value);
     partial void OnLinkURLChanged();
-    partial void OnFileNameChanging(string value);
-    partial void OnFileNameChanged();
     #endregion
 		
 		public Multimedia()
@@ -5266,26 +5262,6 @@ namespace vBay
 					this._LinkURL = value;
 					this.SendPropertyChanged("LinkURL");
 					this.OnLinkURLChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FileName", DbType="NVarChar(100)")]
-		public string FileName
-		{
-			get
-			{
-				return this._FileName;
-			}
-			set
-			{
-				if ((this._FileName != value))
-				{
-					this.OnFileNameChanging(value);
-					this.SendPropertyChanging();
-					this._FileName = value;
-					this.SendPropertyChanged("FileName");
-					this.OnFileNameChanged();
 				}
 			}
 		}
@@ -6775,10 +6751,6 @@ namespace vBay
 		
 		private string _Avatar;
 		
-		private System.Nullable<bool> _BiXoa;
-		
-		private System.Nullable<System.DateTime> _ThoiGianUnlock;
-		
 		private EntitySet<aspnet_User> _aspnet_Users;
 		
 		private EntityRef<GioiTinh> _GioiTinh;
@@ -6803,10 +6775,6 @@ namespace vBay
     partial void OnMaTheTinDungChanged();
     partial void OnAvatarChanging(string value);
     partial void OnAvatarChanged();
-    partial void OnBiXoaChanging(System.Nullable<bool> value);
-    partial void OnBiXoaChanged();
-    partial void OnThoiGianUnlockChanging(System.Nullable<System.DateTime> value);
-    partial void OnThoiGianUnlockChanged();
     #endregion
 		
 		public ThongTinTaiKhoan()
@@ -6976,46 +6944,6 @@ namespace vBay
 					this._Avatar = value;
 					this.SendPropertyChanged("Avatar");
 					this.OnAvatarChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BiXoa", DbType="Bit")]
-		public System.Nullable<bool> BiXoa
-		{
-			get
-			{
-				return this._BiXoa;
-			}
-			set
-			{
-				if ((this._BiXoa != value))
-				{
-					this.OnBiXoaChanging(value);
-					this.SendPropertyChanging();
-					this._BiXoa = value;
-					this.SendPropertyChanged("BiXoa");
-					this.OnBiXoaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThoiGianUnlock", DbType="DateTime")]
-		public System.Nullable<System.DateTime> ThoiGianUnlock
-		{
-			get
-			{
-				return this._ThoiGianUnlock;
-			}
-			set
-			{
-				if ((this._ThoiGianUnlock != value))
-				{
-					this.OnThoiGianUnlockChanging(value);
-					this.SendPropertyChanging();
-					this._ThoiGianUnlock = value;
-					this.SendPropertyChanged("ThoiGianUnlock");
-					this.OnThoiGianUnlockChanged();
 				}
 			}
 		}

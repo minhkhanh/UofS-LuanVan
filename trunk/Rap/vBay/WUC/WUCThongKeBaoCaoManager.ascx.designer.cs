@@ -10,7 +10,7 @@
 namespace vBay {
     
     
-    public partial class TrangThongKeBaoCaoManager {
+    public partial class WUCTrangThongKeBaoCaoManager {
         
         /// <summary>
         /// DropDownDanhSachThang control.

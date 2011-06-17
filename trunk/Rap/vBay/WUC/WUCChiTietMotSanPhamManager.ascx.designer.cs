@@ -10,7 +10,7 @@
 namespace vBay {
     
     
-    public partial class ChiTietMotSanPhamManager {
+    public partial class WUCChiTietMotSanPhamManager {
         
         /// <summary>
         /// DanhSachTenSanPham control.

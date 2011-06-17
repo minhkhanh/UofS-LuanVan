@@ -10,15 +10,15 @@
 namespace vBay {
     
     
-    public partial class WebForm4 {
+    public partial class LoaiSanPhamManager {
         
         /// <summary>
-        /// LoaiSanPhamManager1 control.
+        /// WUCLoaiSanPhamManager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::vBay.LoaiSanPhamManager LoaiSanPhamManager1;
+        protected global::vBay.WUCLoaiSanPhamManager WUCLoaiSanPhamManager1;
     }
 }

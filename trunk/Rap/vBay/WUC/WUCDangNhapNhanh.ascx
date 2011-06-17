@@ -54,20 +54,37 @@
         </div>
     </AnonymousTemplate>
     <LoggedInTemplate>
-    <table border="0" cellspacing="0" cellpadding="0" width="100%">
-    	<tr>
-    		<td>
-            <asp:HyperLink ID="HyperLink1" runat="Server" NavigateUrl="~/UserProfile.aspx">Thông tin tài khoản</asp:HyperLink>
-            <br />
-            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/ThongKePhienDauGiaUser.aspx">Lịch sử giao dịch</asp:HyperLink>
-            </td>
-        </tr>
-        <tr>
-            <td>
-            
-            </td>
-    	</tr>
-    </table>
-        
     </LoggedInTemplate>
+    <RoleGroups>
+        <asp:RoleGroup Roles="Member">
+            <ContentTemplate>
+                <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                    <tr>
+                        <td>
+                            <asp:HyperLink ID="HyperLink1" runat="Server" NavigateUrl="~/UserProfile.aspx">Thông tin tài khoản</asp:HyperLink>
+                            <br />
+                            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/ThongKePhienDauGiaUser.aspx">Lịch sử giao dịch</asp:HyperLink>
+                        </td>
+                    </tr>
+                </table>
+            </ContentTemplate>
+        </asp:RoleGroup>
+        <asp:RoleGroup Roles="Manager">
+        <ContentTemplate>
+                <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                    <tr>
+                        <td>
+                            <asp:HyperLink ID="HyperLink3" runat="Server" NavigateUrl="~/UserProfile.aspx">Thống kê</asp:HyperLink>
+                            <br />
+                            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/ThongKePhienDauGiaUser.aspx">Quản lý chi tiết sản phẩm</asp:HyperLink>
+                            <br />
+                            <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/ThongKePhienDauGiaUser.aspx">Quản lý loại sản phẩm</asp:HyperLink>
+                        </td>
+                    </tr>
+                </table>
+            </ContentTemplate>
+        </asp:RoleGroup>
+        <asp:RoleGroup Roles="Administrator">
+        </asp:RoleGroup>
+    </RoleGroups>
 </asp:LoginView>

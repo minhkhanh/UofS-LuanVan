@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="LoaiSanPhamManager.ascx.cs" Inherits="vBay.LoaiSanPhamManager" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WUCLoaiSanPhamManager.ascx.cs" Inherits="vBay.WUCLoaiSanPhamManager" %>
 <style type="text/css">
     .headerLoaiSanPham
     {

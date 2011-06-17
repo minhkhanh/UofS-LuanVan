@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using System.Drawing;
 namespace vBay
 {
-    public partial class LoaiSanPhamManager : System.Web.UI.UserControl
+    public partial class WUCLoaiSanPhamManager : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {

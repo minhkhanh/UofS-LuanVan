@@ -17,6 +17,7 @@
 </script>
 <asp:LoginView ID="LoginView1" runat="server">
     <AnonymousTemplate>
+    <asp:HyperLink ID="HyperLink2" NavigateUrl="~/SigningUp.aspx" runat="server">Đăng ký</asp:HyperLink>.
         <asp:HyperLink ID="lnkLogin" onclick="lnkLogin_click()" runat="server">Đăng nhập</asp:HyperLink>
     </AnonymousTemplate>
     <LoggedInTemplate>

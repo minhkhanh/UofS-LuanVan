@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ChiTietMotSanPhamManager.ascx.cs" Inherits="vBay.ChiTietMotSanPhamManager" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WUCChiTietMotSanPhamManager.ascx.cs" Inherits="vBay.WUCChiTietMotSanPhamManager" %>
 <style type="text/css">
     .headerSanPham
     {

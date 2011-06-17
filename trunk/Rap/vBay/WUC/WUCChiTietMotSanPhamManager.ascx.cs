@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace vBay
 {
-    public partial class ChiTietMotSanPhamManager : System.Web.UI.UserControl
+    public partial class WUCChiTietMotSanPhamManager : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
