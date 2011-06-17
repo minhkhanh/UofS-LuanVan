@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DauGia" Class="DataEntityDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=Wiki\SQLEXPRESS;Initial Catalog=DauGia;Persist Security Info=True;User ID=vbay" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DauGiaConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=RM-PC;Initial Catalog=DauGia;Persist Security Info=True;User ID=vbay" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DauGiaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TinhTrangSanPham" Member="TinhTrangSanPhams">
+    <Type Name="TinhTrangSanPham">
+      <Column Name="MaTinhTrangSanPham" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenTinhTrangSanPham" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="TinhTrangSanPham_SanPham" Member="SanPhams" ThisKey="MaTinhTrangSanPham" OtherKey="MaTinhTrangSanPham" Type="SanPham" />
+    </Type>
+  </Table>
   <Table Name="dbo.aspnet_Applications" Member="aspnet_Applications">
     <Type Name="aspnet_Application">
       <Column Name="ApplicationName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
@@ -7,31 +14,9 @@
       <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
       <Association Name="aspnet_Application_aspnet_Membership" Member="aspnet_Memberships" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Membership" />
-      <Association Name="aspnet_Application_aspnet_Membership1" Member="aspnet_Memberships1" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Membership" />
-      <Association Name="aspnet_Application_aspnet_Membership2" Member="aspnet_Memberships2" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Membership" />
-      <Association Name="aspnet_Application_aspnet_Membership3" Member="aspnet_Memberships3" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Membership" />
-      <Association Name="aspnet_Application_aspnet_Membership4" Member="aspnet_Memberships4" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Membership" />
-      <Association Name="aspnet_Application_aspnet_Membership5" Member="aspnet_Memberships5" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Membership" />
       <Association Name="aspnet_Application_aspnet_Path" Member="aspnet_Paths" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Path" />
-      <Association Name="aspnet_Application_aspnet_Path1" Member="aspnet_Paths1" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Path" />
-      <Association Name="aspnet_Application_aspnet_Path2" Member="aspnet_Paths2" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Path" />
-      <Association Name="aspnet_Application_aspnet_Path3" Member="aspnet_Paths3" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Path" />
-      <Association Name="aspnet_Application_aspnet_Path4" Member="aspnet_Paths4" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Path" />
-      <Association Name="aspnet_Application_aspnet_Path5" Member="aspnet_Paths5" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Path" />
       <Association Name="aspnet_Application_aspnet_Role" Member="aspnet_Roles" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Role" />
-      <Association Name="aspnet_Application_aspnet_Role1" Member="aspnet_Roles1" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Role" />
-      <Association Name="aspnet_Application_aspnet_Role2" Member="aspnet_Roles2" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Role" />
-      <Association Name="aspnet_Application_aspnet_Role3" Member="aspnet_Roles3" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Role" />
-      <Association Name="aspnet_Application_aspnet_Role4" Member="aspnet_Roles4" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Role" />
-      <Association Name="aspnet_Application_aspnet_Role5" Member="aspnet_Roles5" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Role" />
       <Association Name="aspnet_Application_aspnet_User" Member="aspnet_Users" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_User" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TinhTrangSanPham" Member="TinhTrangSanPhams">
-    <Type Name="TinhTrangSanPham">
-      <Column Name="MaTinhTrangSanPham" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenTinhTrangSanPham" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="TinhTrangSanPham_SanPham" Member="SanPhams" ThisKey="MaTinhTrangSanPham" OtherKey="MaTinhTrangSanPham" Type="SanPham" />
     </Type>
   </Table>
   <Table Name="dbo.aspnet_Membership" Member="aspnet_Memberships">
@@ -58,11 +43,6 @@
       <Column Name="FailedPasswordAnswerAttemptWindowStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="Comment" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
       <Association Name="aspnet_Application_aspnet_Membership" Member="aspnet_Application" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
-      <Association Name="aspnet_Application_aspnet_Membership1" Member="aspnet_Application1" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
-      <Association Name="aspnet_Application_aspnet_Membership2" Member="aspnet_Application2" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
-      <Association Name="aspnet_Application_aspnet_Membership3" Member="aspnet_Application3" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
-      <Association Name="aspnet_Application_aspnet_Membership4" Member="aspnet_Application4" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
-      <Association Name="aspnet_Application_aspnet_Membership5" Member="aspnet_Application5" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
       <Association Name="aspnet_User_aspnet_Membership" Member="aspnet_User" ThisKey="UserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
     </Type>
   </Table>
@@ -73,23 +53,8 @@
       <Column Name="Path" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
       <Column Name="LoweredPath" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
       <Association Name="aspnet_Path_aspnet_PersonalizationAllUser" Member="aspnet_PersonalizationAllUser" ThisKey="PathId" OtherKey="PathId" Type="aspnet_PersonalizationAllUser" Cardinality="One" />
-      <Association Name="aspnet_Path_aspnet_PersonalizationAllUser1" Member="aspnet_PersonalizationAllUser1" ThisKey="PathId" OtherKey="PathId" Type="aspnet_PersonalizationAllUser" Cardinality="One" />
-      <Association Name="aspnet_Path_aspnet_PersonalizationAllUser2" Member="aspnet_PersonalizationAllUser2" ThisKey="PathId" OtherKey="PathId" Type="aspnet_PersonalizationAllUser" Cardinality="One" />
-      <Association Name="aspnet_Path_aspnet_PersonalizationAllUser3" Member="aspnet_PersonalizationAllUser3" ThisKey="PathId" OtherKey="PathId" Type="aspnet_PersonalizationAllUser" Cardinality="One" />
-      <Association Name="aspnet_Path_aspnet_PersonalizationAllUser4" Member="aspnet_PersonalizationAllUser4" ThisKey="PathId" OtherKey="PathId" Type="aspnet_PersonalizationAllUser" Cardinality="One" />
-      <Association Name="aspnet_Path_aspnet_PersonalizationAllUser5" Member="aspnet_PersonalizationAllUser5" ThisKey="PathId" OtherKey="PathId" Type="aspnet_PersonalizationAllUser" Cardinality="One" />
       <Association Name="aspnet_Path_aspnet_PersonalizationPerUser" Member="aspnet_PersonalizationPerUsers" ThisKey="PathId" OtherKey="PathId" Type="aspnet_PersonalizationPerUser" />
-      <Association Name="aspnet_Path_aspnet_PersonalizationPerUser1" Member="aspnet_PersonalizationPerUsers1" ThisKey="PathId" OtherKey="PathId" Type="aspnet_PersonalizationPerUser" />
-      <Association Name="aspnet_Path_aspnet_PersonalizationPerUser2" Member="aspnet_PersonalizationPerUsers2" ThisKey="PathId" OtherKey="PathId" Type="aspnet_PersonalizationPerUser" />
-      <Association Name="aspnet_Path_aspnet_PersonalizationPerUser3" Member="aspnet_PersonalizationPerUsers3" ThisKey="PathId" OtherKey="PathId" Type="aspnet_PersonalizationPerUser" />
-      <Association Name="aspnet_Path_aspnet_PersonalizationPerUser4" Member="aspnet_PersonalizationPerUsers4" ThisKey="PathId" OtherKey="PathId" Type="aspnet_PersonalizationPerUser" />
-      <Association Name="aspnet_Path_aspnet_PersonalizationPerUser5" Member="aspnet_PersonalizationPerUsers5" ThisKey="PathId" OtherKey="PathId" Type="aspnet_PersonalizationPerUser" />
       <Association Name="aspnet_Application_aspnet_Path" Member="aspnet_Application" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
-      <Association Name="aspnet_Application_aspnet_Path1" Member="aspnet_Application1" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
-      <Association Name="aspnet_Application_aspnet_Path2" Member="aspnet_Application2" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
-      <Association Name="aspnet_Application_aspnet_Path3" Member="aspnet_Application3" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
-      <Association Name="aspnet_Application_aspnet_Path4" Member="aspnet_Application4" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
-      <Association Name="aspnet_Application_aspnet_Path5" Member="aspnet_Application5" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.aspnet_PersonalizationAllUsers" Member="aspnet_PersonalizationAllUsers">
@@ -98,11 +63,6 @@
       <Column Name="PageSettings" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
       <Column Name="LastUpdatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Association Name="aspnet_Path_aspnet_PersonalizationAllUser" Member="aspnet_Path" ThisKey="PathId" OtherKey="PathId" Type="aspnet_Path" IsForeignKey="true" />
-      <Association Name="aspnet_Path_aspnet_PersonalizationAllUser1" Member="aspnet_Path1" ThisKey="PathId" OtherKey="PathId" Type="aspnet_Path" IsForeignKey="true" />
-      <Association Name="aspnet_Path_aspnet_PersonalizationAllUser2" Member="aspnet_Path2" ThisKey="PathId" OtherKey="PathId" Type="aspnet_Path" IsForeignKey="true" />
-      <Association Name="aspnet_Path_aspnet_PersonalizationAllUser3" Member="aspnet_Path3" ThisKey="PathId" OtherKey="PathId" Type="aspnet_Path" IsForeignKey="true" />
-      <Association Name="aspnet_Path_aspnet_PersonalizationAllUser4" Member="aspnet_Path4" ThisKey="PathId" OtherKey="PathId" Type="aspnet_Path" IsForeignKey="true" />
-      <Association Name="aspnet_Path_aspnet_PersonalizationAllUser5" Member="aspnet_Path5" ThisKey="PathId" OtherKey="PathId" Type="aspnet_Path" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.aspnet_PersonalizationPerUser" Member="aspnet_PersonalizationPerUsers">
@@ -113,11 +73,6 @@
       <Column Name="PageSettings" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
       <Column Name="LastUpdatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Association Name="aspnet_Path_aspnet_PersonalizationPerUser" Member="aspnet_Path" ThisKey="PathId" OtherKey="PathId" Type="aspnet_Path" IsForeignKey="true" />
-      <Association Name="aspnet_Path_aspnet_PersonalizationPerUser1" Member="aspnet_Path1" ThisKey="PathId" OtherKey="PathId" Type="aspnet_Path" IsForeignKey="true" />
-      <Association Name="aspnet_Path_aspnet_PersonalizationPerUser2" Member="aspnet_Path2" ThisKey="PathId" OtherKey="PathId" Type="aspnet_Path" IsForeignKey="true" />
-      <Association Name="aspnet_Path_aspnet_PersonalizationPerUser3" Member="aspnet_Path3" ThisKey="PathId" OtherKey="PathId" Type="aspnet_Path" IsForeignKey="true" />
-      <Association Name="aspnet_Path_aspnet_PersonalizationPerUser4" Member="aspnet_Path4" ThisKey="PathId" OtherKey="PathId" Type="aspnet_Path" IsForeignKey="true" />
-      <Association Name="aspnet_Path_aspnet_PersonalizationPerUser5" Member="aspnet_Path5" ThisKey="PathId" OtherKey="PathId" Type="aspnet_Path" IsForeignKey="true" />
       <Association Name="aspnet_User_aspnet_PersonalizationPerUser" Member="aspnet_User" ThisKey="UserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
     </Type>
   </Table>
@@ -139,17 +94,7 @@
       <Column Name="LoweredRoleName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
       <Association Name="aspnet_Role_aspnet_UsersInRole" Member="aspnet_UsersInRoles" ThisKey="RoleId" OtherKey="RoleId" Type="aspnet_UsersInRole" />
-      <Association Name="aspnet_Role_aspnet_UsersInRole1" Member="aspnet_UsersInRoles1" ThisKey="RoleId" OtherKey="RoleId" Type="aspnet_UsersInRole" />
-      <Association Name="aspnet_Role_aspnet_UsersInRole2" Member="aspnet_UsersInRoles2" ThisKey="RoleId" OtherKey="RoleId" Type="aspnet_UsersInRole" />
-      <Association Name="aspnet_Role_aspnet_UsersInRole3" Member="aspnet_UsersInRoles3" ThisKey="RoleId" OtherKey="RoleId" Type="aspnet_UsersInRole" />
-      <Association Name="aspnet_Role_aspnet_UsersInRole4" Member="aspnet_UsersInRoles4" ThisKey="RoleId" OtherKey="RoleId" Type="aspnet_UsersInRole" />
-      <Association Name="aspnet_Role_aspnet_UsersInRole5" Member="aspnet_UsersInRoles5" ThisKey="RoleId" OtherKey="RoleId" Type="aspnet_UsersInRole" />
       <Association Name="aspnet_Application_aspnet_Role" Member="aspnet_Application" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
-      <Association Name="aspnet_Application_aspnet_Role1" Member="aspnet_Application1" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
-      <Association Name="aspnet_Application_aspnet_Role2" Member="aspnet_Application2" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
-      <Association Name="aspnet_Application_aspnet_Role3" Member="aspnet_Application3" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
-      <Association Name="aspnet_Application_aspnet_Role4" Member="aspnet_Application4" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
-      <Association Name="aspnet_Application_aspnet_Role5" Member="aspnet_Application5" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.aspnet_SchemaVersions" Member="aspnet_SchemaVersions">
@@ -187,11 +132,6 @@
       <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="RoleId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Association Name="aspnet_Role_aspnet_UsersInRole" Member="aspnet_Role" ThisKey="RoleId" OtherKey="RoleId" Type="aspnet_Role" IsForeignKey="true" />
-      <Association Name="aspnet_Role_aspnet_UsersInRole1" Member="aspnet_Role1" ThisKey="RoleId" OtherKey="RoleId" Type="aspnet_Role" IsForeignKey="true" />
-      <Association Name="aspnet_Role_aspnet_UsersInRole2" Member="aspnet_Role2" ThisKey="RoleId" OtherKey="RoleId" Type="aspnet_Role" IsForeignKey="true" />
-      <Association Name="aspnet_Role_aspnet_UsersInRole3" Member="aspnet_Role3" ThisKey="RoleId" OtherKey="RoleId" Type="aspnet_Role" IsForeignKey="true" />
-      <Association Name="aspnet_Role_aspnet_UsersInRole4" Member="aspnet_Role4" ThisKey="RoleId" OtherKey="RoleId" Type="aspnet_Role" IsForeignKey="true" />
-      <Association Name="aspnet_Role_aspnet_UsersInRole5" Member="aspnet_Role5" ThisKey="RoleId" OtherKey="RoleId" Type="aspnet_Role" IsForeignKey="true" />
       <Association Name="aspnet_User_aspnet_UsersInRole" Member="aspnet_User" ThisKey="UserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
     </Type>
   </Table>
@@ -297,7 +237,6 @@
       <Column Name="DungLuong" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="KichThuoc" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="LinkURL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="FileName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Association Name="Multimedia_SanPham" Member="SanPhams" ThisKey="MaMT" OtherKey="MaHinhMoTa" Type="SanPham" />
       <Association Name="Multimedia_SanPham_Multimedia" Member="SanPham_Multimedias" ThisKey="MaMT" OtherKey="MaMT" Type="SanPham_Multimedia" />
       <Association Name="LoaiMultimedia_Multimedia" Member="LoaiMultimedia" ThisKey="MaLoaiMT" OtherKey="MaLoaiMT" Type="LoaiMultimedia" IsForeignKey="true" />
@@ -379,8 +318,6 @@
       <Column Name="SoDienThoai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MaTheTinDung" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Avatar" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BiXoa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="ThoiGianUnlock" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="ThongTinTaiKhoan_aspnet_User" Member="aspnet_Users" ThisKey="MaThongTinTaiKhoan" OtherKey="MaThongTinTaiKhoan" Type="aspnet_User" />
       <Association Name="GioiTinh_ThongTinTaiKhoan" Member="GioiTinh" ThisKey="MaGioiTinh" OtherKey="MaGioiTinh" Type="GioiTinh" IsForeignKey="true" />
     </Type>
