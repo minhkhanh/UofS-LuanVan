@@ -67,13 +67,13 @@ namespace vBay {
         protected global::System.Web.UI.WebControls.Menu Menu1;
         
         /// <summary>
-        /// WUCTimKiemCoBan1 control.
+        /// WUCTimKiem1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::vBay.WUC.WUCTimKiemCoBan WUCTimKiemCoBan1;
+        protected global::vBay.WUC.UCTimKiem WUCTimKiem1;
         
         /// <summary>
         /// menuDSLoaiSanPham control.

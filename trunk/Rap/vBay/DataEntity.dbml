@@ -1,12 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DauGia" Class="DataEntityDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=RM-PC;Initial Catalog=DauGia;Persist Security Info=True;User ID=vbay" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DauGiaConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.TinhTrangSanPham" Member="TinhTrangSanPhams">
-    <Type Name="TinhTrangSanPham">
-      <Column Name="MaTinhTrangSanPham" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenTinhTrangSanPham" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="TinhTrangSanPham_SanPham" Member="SanPhams" ThisKey="MaTinhTrangSanPham" OtherKey="MaTinhTrangSanPham" Type="SanPham" />
-    </Type>
-  </Table>
+  <Connection Mode="WebSettings" ConnectionString="Data Source=YAMA-PC;Initial Catalog=DauGia;User ID=vbay" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DauGiaConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.aspnet_Applications" Member="aspnet_Applications">
     <Type Name="aspnet_Application">
       <Column Name="ApplicationName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
@@ -17,6 +10,13 @@
       <Association Name="aspnet_Application_aspnet_Path" Member="aspnet_Paths" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Path" />
       <Association Name="aspnet_Application_aspnet_Role" Member="aspnet_Roles" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Role" />
       <Association Name="aspnet_Application_aspnet_User" Member="aspnet_Users" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TinhTrangSanPham" Member="TinhTrangSanPhams">
+    <Type Name="TinhTrangSanPham">
+      <Column Name="MaTinhTrangSanPham" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenTinhTrangSanPham" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="TinhTrangSanPham_SanPham" Member="SanPhams" ThisKey="MaTinhTrangSanPham" OtherKey="MaTinhTrangSanPham" Type="SanPham" />
     </Type>
   </Table>
   <Table Name="dbo.aspnet_Membership" Member="aspnet_Memberships">
@@ -159,7 +159,7 @@
       <Column Name="MaChiTietDauGia" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="MaTaiKhoan" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
       <Column Name="MaSanPham" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="GiaGiaoDich" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GiaGiaoDich" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ThoiGianGiaoDich" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="TinhTrang" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="ChiTietDauGia_DauGiaThanhCong" Member="DauGiaThanhCongs" ThisKey="MaChiTietDauGia" OtherKey="MaChiTietGiaoDich" Type="DauGiaThanhCong" />
@@ -237,6 +237,7 @@
       <Column Name="DungLuong" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="KichThuoc" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="LinkURL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FileName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Association Name="Multimedia_SanPham" Member="SanPhams" ThisKey="MaMT" OtherKey="MaHinhMoTa" Type="SanPham" />
       <Association Name="Multimedia_SanPham_Multimedia" Member="SanPham_Multimedias" ThisKey="MaMT" OtherKey="MaMT" Type="SanPham_Multimedia" />
       <Association Name="LoaiMultimedia_Multimedia" Member="LoaiMultimedia" ThisKey="MaLoaiMT" OtherKey="MaLoaiMT" Type="LoaiMultimedia" IsForeignKey="true" />
@@ -318,6 +319,8 @@
       <Column Name="SoDienThoai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MaTheTinDung" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Avatar" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BiXoa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ThoiGianUnlock" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="ThongTinTaiKhoan_aspnet_User" Member="aspnet_Users" ThisKey="MaThongTinTaiKhoan" OtherKey="MaThongTinTaiKhoan" Type="aspnet_User" />
       <Association Name="GioiTinh_ThongTinTaiKhoan" Member="GioiTinh" ThisKey="MaGioiTinh" OtherKey="MaGioiTinh" Type="GioiTinh" IsForeignKey="true" />
     </Type>
