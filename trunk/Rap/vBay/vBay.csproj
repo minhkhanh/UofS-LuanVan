@@ -114,6 +114,7 @@
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="App_Themes\ThemeNormal\styleNormal.css" />
     <Content Include="ThongKeManager.aspx" />
+    <Content Include="ThongKePhienDauGiaUser.aspx" />
     <Content Include="TimKiemCoBan.aspx" />
     <Content Include="TimKiemNangCao.aspx" />
     <Content Include="UserProfile.aspx" />
@@ -128,6 +129,7 @@
     </Content>
     <Content Include="WebForm4Test.aspx" />
     <Content Include="WebForm4TestChiTietSanPham.aspx" />
+    <Content Include="WUC\WUCUserQuickTask.ascx" />
     <Content Include="WUC\ChiTietMotSanPhamManager.ascx" />
     <Content Include="WUC\LoaiSanPhamManager.ascx" />
     <Content Include="WUC\MaintentSanPham.ascx" />
@@ -186,6 +188,7 @@
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -218,6 +221,13 @@
     </Compile>
     <Compile Include="ThongKeManager.aspx.designer.cs">
       <DependentUpon>ThongKeManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKePhienDauGiaUser.aspx.cs">
+      <DependentUpon>ThongKePhienDauGiaUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThongKePhienDauGiaUser.aspx.designer.cs">
+      <DependentUpon>ThongKePhienDauGiaUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="TimKiemCoBan.aspx.cs">
       <DependentUpon>TimKiemCoBan.aspx</DependentUpon>
@@ -253,6 +263,13 @@
     </Compile>
     <Compile Include="WebForm4TestChiTietSanPham.aspx.designer.cs">
       <DependentUpon>WebForm4TestChiTietSanPham.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WUC\WUCUserQuickTask.ascx.cs">
+      <DependentUpon>WUCUserQuickTask.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WUC\WUCUserQuickTask.ascx.designer.cs">
+      <DependentUpon>WUCUserQuickTask.ascx</DependentUpon>
     </Compile>
     <Compile Include="WUC\ChiTietMotSanPhamManager.ascx.cs">
       <DependentUpon>ChiTietMotSanPhamManager.ascx</DependentUpon>
