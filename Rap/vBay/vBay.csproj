@@ -58,6 +58,7 @@
     <Content Include="App_Themes\ThemeSunny\styleSunny.css" />
     <Content Include="ChiTietMotSanPhamManager.aspx" />
     <Content Include="Images\icon_oval.jpg" />
+    <Content Include="Images\logo.png" />
     <Content Include="Images\NavFirstPage.gif" />
     <Content Include="Images\NavFirstPageDisabled.gif" />
     <Content Include="Images\NavLastPage.gif" />
@@ -95,6 +96,7 @@
     <Content Include="JQuery\engine1\script.js" />
     <Content Include="JQuery\engine1\style.css" />
     <Content Include="JQuery\engine1\triangle.png" />
+    <Content Include="LienHe.aspx" />
     <Content Include="LoaiSanPhamManager.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Login.aspx" />
@@ -113,6 +115,8 @@
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="App_Themes\ThemeNormal\styleNormal.css" />
+    <Content Include="ThayDoiGiaoDienWebSite.aspx" />
+    <Content Include="ThayDoiLoaiNguoiDung.aspx" />
     <Content Include="ThongKeManager.aspx" />
     <Content Include="ThongKePhienDauGiaUser.aspx" />
     <Content Include="TimKiemCoBan.aspx" />
@@ -129,6 +133,9 @@
     </Content>
     <Content Include="WebForm4Test.aspx" />
     <Content Include="WebForm4TestChiTietSanPham.aspx" />
+    <Content Include="WUC\UC_ThayDoiLoaiNguoiDung.ascx" />
+    <Content Include="WUC\WUCThayDoiGiaoDienWebSite.ascx" />
+    <Content Include="WUC\WUCTimKiem.ascx" />
     <Content Include="WUC\WUCUserQuickTask.ascx" />
     <Content Include="WUC\ChiTietMotSanPhamManager.ascx" />
     <Content Include="WUC\LoaiSanPhamManager.ascx" />
@@ -172,6 +179,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="LienHe.aspx.cs">
+      <DependentUpon>LienHe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LienHe.aspx.designer.cs">
+      <DependentUpon>LienHe.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LoaiSanPhamManager.aspx.cs">
       <DependentUpon>LoaiSanPhamManager.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -214,6 +228,20 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ThayDoiGiaoDienWebSite.aspx.cs">
+      <DependentUpon>ThayDoiGiaoDienWebSite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThayDoiGiaoDienWebSite.aspx.designer.cs">
+      <DependentUpon>ThayDoiGiaoDienWebSite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThayDoiLoaiNguoiDung.aspx.cs">
+      <DependentUpon>ThayDoiLoaiNguoiDung.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThayDoiLoaiNguoiDung.aspx.designer.cs">
+      <DependentUpon>ThayDoiLoaiNguoiDung.aspx</DependentUpon>
     </Compile>
     <Compile Include="ThongKeManager.aspx.cs">
       <DependentUpon>ThongKeManager.aspx</DependentUpon>
@@ -263,6 +291,27 @@
     </Compile>
     <Compile Include="WebForm4TestChiTietSanPham.aspx.designer.cs">
       <DependentUpon>WebForm4TestChiTietSanPham.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WUC\UC_ThayDoiLoaiNguoiDung.ascx.cs">
+      <DependentUpon>UC_ThayDoiLoaiNguoiDung.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WUC\UC_ThayDoiLoaiNguoiDung.ascx.designer.cs">
+      <DependentUpon>UC_ThayDoiLoaiNguoiDung.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WUC\WUCThayDoiGiaoDienWebSite.ascx.cs">
+      <DependentUpon>WUCThayDoiGiaoDienWebSite.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WUC\WUCThayDoiGiaoDienWebSite.ascx.designer.cs">
+      <DependentUpon>WUCThayDoiGiaoDienWebSite.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WUC\WUCTimKiem.ascx.cs">
+      <DependentUpon>WUCTimKiem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WUC\WUCTimKiem.ascx.designer.cs">
+      <DependentUpon>WUCTimKiem.ascx</DependentUpon>
     </Compile>
     <Compile Include="WUC\WUCUserQuickTask.ascx.cs">
       <DependentUpon>WUCUserQuickTask.ascx</DependentUpon>

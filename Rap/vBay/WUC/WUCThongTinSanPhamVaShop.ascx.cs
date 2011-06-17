@@ -119,7 +119,7 @@ namespace vBay.WUC
             cm.ThoiGianGiaoDich = DateTime.Now;
             float gia = 1;
             float.TryParse(txtGiaCaoHon.Text, out gia);
-            cm.GiaGiaoDich = sp.GiaHienTai + gia;
+            //cm.GiaGiaoDich = sp.GiaHienTai + gia;
             SanPham sanPham = dataContext.SanPhams.Single(m => m.MaSanPham == sp.MaSanPham);
             sanPham.GiaHienTai = sp.GiaHienTai + gia;
             dataContext.ChiTietDauGias.InsertOnSubmit(cm);
