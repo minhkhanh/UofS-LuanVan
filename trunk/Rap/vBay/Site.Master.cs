@@ -12,31 +12,31 @@ namespace vBay
     {
         public void Page_Init(object sender, EventArgs e)
         {
-            //Khai báo biến dataContext để truy cập CSDL
-            DataEntityDataContext dataContext = new DataEntityDataContext();
+            ////Khai báo biến dataContext để truy cập CSDL
+            //DataEntityDataContext dataContext = new DataEntityDataContext();
 
-            //Truy xuất giá trị tham số lưu đường dẫn Url đến Logo đang được dùng trong bảng THAMSO
-            THAMSO thamSo_Logo = dataContext.THAMSOs.Single(p => p.TenThamSo == "Logo");
+            ////Truy xuất giá trị tham số lưu đường dẫn Url đến Logo đang được dùng trong bảng THAMSO
+            //THAMSO thamSo_Logo = dataContext.THAMSOs.Single(p => p.TenThamSo == "Logo");
 
-            //Lưu chuỗi Url vào biến imageUrl
-            String imageUrl = thamSo_Logo.GiaTri;
+            ////Lưu chuỗi Url vào biến imageUrl
+            //String imageUrl = thamSo_Logo.GiaTri;
 
-            //Thiết lập ImageUrl của ImageButton_Logo
-            ImageButton_Logo.ImageUrl = imageUrl;
+            ////Thiết lập ImageUrl của ImageButton_Logo
+            //ImageButton_Logo.ImageUrl = imageUrl;
 
-            //Truy xuất giá trị tham số lưu Url của file CSS được sử dụng trong bảng THAMSO
-            THAMSO thamSo_CSS = dataContext.THAMSOs.Single(p => p.TenThamSo == "StyleSheet");
+            ////Truy xuất giá trị tham số lưu Url của file CSS được sử dụng trong bảng THAMSO
+            //THAMSO thamSo_CSS = dataContext.THAMSOs.Single(p => p.TenThamSo == "StyleSheet");
 
-            //Lưu chuỗi Url vào biến cssUrl
-            String cssUrl = thamSo_CSS.GiaTri;
+            ////Lưu chuỗi Url vào biến cssUrl
+            //String cssUrl = thamSo_CSS.GiaTri;
 
-            //Thiết lập đường link dẫn đến file CSS cần load
-            HtmlLink css = new HtmlLink();
-            css.Href = cssUrl;
-            css.Attributes["rel"] = "stylesheet";
-            css.Attributes["type"] = "text/css";
-            css.Attributes["media"] = "all";
-            Page.Header.Controls.Add(css);
+            ////Thiết lập đường link dẫn đến file CSS cần load
+            //HtmlLink css = new HtmlLink();
+            //css.Href = cssUrl;
+            //css.Attributes["rel"] = "stylesheet";
+            //css.Attributes["type"] = "text/css";
+            //css.Attributes["media"] = "all";
+            //Page.Header.Controls.Add(css);
         }
 
         protected void Page_Load(object sender, EventArgs e)

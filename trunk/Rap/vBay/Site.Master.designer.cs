@@ -31,6 +31,15 @@ namespace vBay {
         protected global::System.Web.UI.ScriptManager scriptManager;
         
         /// <summary>
+        /// UserQuickTask1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::vBay.WUCUserQuickTask UserQuickTask1;
+        
+        /// <summary>
         /// ImageButton_Logo control.
         /// </summary>
         /// <remarks>
@@ -40,15 +49,6 @@ namespace vBay {
         protected global::System.Web.UI.WebControls.ImageButton ImageButton_Logo;
         
         /// <summary>
-        /// Menu1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu Menu1;
-        
-        /// <summary>
         /// WUCDangNhapNhanh1 control.
         /// </summary>
         /// <remarks>
@@ -56,6 +56,15 @@ namespace vBay {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::vBay.WUCDangNhapNhanh WUCDangNhapNhanh1;
+        
+        /// <summary>
+        /// Menu1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Menu Menu1;
         
         /// <summary>
         /// WUCTimKiemCoBan1 control.
