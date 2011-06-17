@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TrangThongKeBaoCaoManager.ascx.cs" Inherits="vBay.TrangThongKeBaoCaoManager" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WUCThongKeBaoCaoManager.ascx.cs" Inherits="vBay.WUCTrangThongKeBaoCaoManager" %>
 <style type="text/css">
     .headerSanPham
     {

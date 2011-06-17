@@ -10,7 +10,7 @@
 namespace vBay {
     
     
-    public partial class LoaiSanPhamManager {
+    public partial class WUCLoaiSanPhamManager {
         
         /// <summary>
         /// PanelLoaiSanPham control.

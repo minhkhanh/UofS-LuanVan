@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
+using System.Web.Security;
+using System.Web.Configuration;
 
 namespace vBay
 {
@@ -12,6 +14,20 @@ namespace vBay
     {
         public void Page_Init(object sender, EventArgs e)
         {
+            string[] roles = Roles.GetRolesForUser(Page.User.Identity.Name);
+            foreach (string i in roles)
+            {
+                switch (i)
+                {
+                    case "Manager":
+                        Response.Redirect(WebConfigurationManager.AppSettings["ManagerHeadPage"]);
+                        break;
+                    case "Administrator":
+                        Response.Redirect(WebConfigurationManager.AppSettings["ManagerHeadPage"]);
+                        break;
+                }
+            }
+
             ////Khai báo biến dataContext để truy cập CSDL
             //DataEntityDataContext dataContext = new DataEntityDataContext();
 

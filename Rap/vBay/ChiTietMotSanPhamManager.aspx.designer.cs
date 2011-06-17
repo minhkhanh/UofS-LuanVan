@@ -10,15 +10,15 @@
 namespace vBay {
     
     
-    public partial class WebForm3 {
+    public partial class ChiTietMotSanPhamManager {
         
         /// <summary>
-        /// ChiTietMotSanPhamManager1 control.
+        /// WUCChiTietMotSanPhamManager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::vBay.ChiTietMotSanPhamManager ChiTietMotSanPhamManager1;
+        protected global::vBay.WUCChiTietMotSanPhamManager WUCChiTietMotSanPhamManager1;
     }
 }

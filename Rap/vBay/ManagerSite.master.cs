@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace vBay
 {
-    public partial class LoaiSanPhamManager : System.Web.UI.Page
+    public partial class ManagerSite : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

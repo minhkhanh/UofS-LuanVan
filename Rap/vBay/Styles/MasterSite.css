@@ -1,7 +1,4 @@
-﻿/* DEFAULTS
-----------------------------------------------------------*/
-
-body   
+﻿body   
 {
     font-size: .80em;
     font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
@@ -35,7 +32,6 @@ p
     line-height: 1.6em;
 }
 
-
 /* PRIMARY LAYOUT ELEMENTS   
 ----------------------------------------------------------*/
 
@@ -66,51 +62,12 @@ p
 
 .main
 {
-	position:relative;
-	float:left;
     width:100%;
     min-height:700px;
-    height:auto;
-    
-	background: #F0F0F0;
-    
+    height:auto;    
+	background: #F0F0F0;    
     border:2px solid #000;
 }
-
-.content
-{
-	float:left;
-	width:750px;
-	height:inherit;
-	margin:5px 5px 5px 5px;
-	min-height:500px;
-	position:relative;
-	padding:10px;
-	
-	border:2px solid #F00;
-}
-
-.siderbar
-{
-	float:left;
-	width:200px;
-	min-height:200px;
-	margin:5px 5px;
-	height: inherit;
-	position:relative;
-	
-	border:2px solid #F00;
-}
-
-
-
-.contentuc
-{
-    height: inherit;
-    width: 691px;
-}
-
-
 
 .footer
 {	
@@ -145,28 +102,39 @@ p
     padding: 3px;
 }
 
-/* ITEM TABLE 
+
+/* INFO BAR   
 ----------------------------------------------------------*/
-.itemtable .itemrow td
+.info
 {
-    padding: 5px;
-    border-right: 1px solid #8A8A8A;
-    border-bottom: 1px solid #8A8A8A;
+	position:absolute;
+	left:350px;
+	top:20px;
 }
 
-.itemtable .itemrow td:first-child
+
+/* LOGO 
+----------------------------------------------------------*/
+
+.logo
 {
-    border-left: 1px solid #8A8A8A;
-    border-right: none;
+	/*border:2px solid #F00;*/
+	height:150px;
+	width:550px;
+	margin-left:10px;
+	margin-top:10px;
+	/*position:absolute;*/
+	float: left;
+	text-align: left;
 }
 
-.itemtable tr#header td
-{
-    padding: 5px;
-    background: gray;
-    border: 1px solid #8A8A8A;
-}
+/* QUICK TASK*/
+/*-------------------------------------------------------*/
 
+.quicktask
+{
+    text-align: right;
+}
 
 /* NAV BAR MENU
 ----------------------------------------------------------*/
@@ -218,97 +186,4 @@ p
     background-color: #465c71;
     color: #cfdbe6;
     text-decoration: none;
-}
-
-
-/* INFO BAR   
-----------------------------------------------------------*/
-.info
-{
-	position:absolute;
-	left:350px;
-	top:20px;
-}
-
-
-
-/* LOGO 
-----------------------------------------------------------*/
-
-.logo
-{
-	/*border:2px solid #F00;*/
-	height:150px;
-	width:550px;
-	margin-left:10px;
-	margin-top:10px;
-	/*position:absolute;*/
-	float: left;
-	text-align: left;
-}
-
-
-/* SIDE BAR MENU
-----------------------------------------------------------*/
-
-.sidebar1
-{
-	border:2px solid #FF0;
-	min-width:200px;
-	min-height:200px;
-	
-}
-
-.sidebarmenu
-{
-	padding: 0px 0px 0px 0px;
-	table-layout:fixed;
-	width:200px;
-}
-
-.sidebarmenu ul
-{
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
-    width: auto;
-}
-
-.sidebarmenu ul li a, .sidebarmenu ul li a:visited
-{
-    background-color: #465c71;
-    border: 1px #4e667d solid;
-    color: #dde4ec;
-    display: block;
-    line-height: 1.35em;
-    padding: 4px 20px;
-    text-decoration: none;
-    white-space: nowrap;
-}
-
-.sidebarmenu ul li a:hover
-{
-    background-color: #bfcbd6;
-    color: #465c71;
-    text-decoration: none;
-}
-
-.sidebarmenu ul li a:active
-{
-    background-color: #465c71;
-    color: #cfdbe6;
-    text-decoration: none;
-}
-
-/* SEARCH BAR   
-----------------------------------------------------------*/
-.searchbar
-{
-	position:absolute;
-	left:700px;
-	top:170px;
-	
-	min-height:10px;
-	min-width:10px;
-
 }

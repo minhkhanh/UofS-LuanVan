@@ -28,7 +28,7 @@ namespace vBay
             var danhSachTaiKhoan = from a in dataContext.aspnet_Memberships
                                    from b in dataContext.aspnet_Users
                                    from c in dataContext.ThongTinTaiKhoans
-                                   where a.UserId == b.UserId && b.MaThongTinTaiKhoan == c.MaThongTinTaiKhoan && c.BiXoa == false && a.IsApproved == true
+                                   where a.UserId == b.UserId && b.MaThongTinTaiKhoan == c.MaThongTinTaiKhoan && a.IsApproved == true //&& c.BiXoa == false
                                    select new { a.UserId, b.UserName};
 
             List_DanhSachTaiKhoan.DataSource = danhSachTaiKhoan;
