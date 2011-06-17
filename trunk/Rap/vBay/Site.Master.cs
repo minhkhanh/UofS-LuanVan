@@ -23,7 +23,7 @@ namespace vBay
                         Response.Redirect(WebConfigurationManager.AppSettings["ManagerHeadPage"]);
                         break;
                     case "Administrator":
-                        Response.Redirect(WebConfigurationManager.AppSettings["ManagerHeadPage"]);
+                        Response.Redirect(WebConfigurationManager.AppSettings["AdminHeadPage"]);
                         break;
                 }
             }

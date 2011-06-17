@@ -13,12 +13,12 @@ namespace vBay {
     public partial class ThayDoiGiaoDienWebSite {
         
         /// <summary>
-        /// WUCThayDoiGiaoDienWebSite control.
+        /// WUCThayDoiGiaoDienWebSite1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::vBay.WUC.WUCThayDoiGiaoDienWebSite WUCThayDoiGiaoDienWebSite;
+        protected global::vBay.WUC.WUCThayDoiGiaoDienWebSite WUCThayDoiGiaoDienWebSite1;
     }
 }
