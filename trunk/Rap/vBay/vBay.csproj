@@ -95,7 +95,6 @@
     <Content Include="JQuery\engine1\script.js" />
     <Content Include="JQuery\engine1\style.css" />
     <Content Include="JQuery\engine1\triangle.png" />
-    <Content Include="LienHe.aspx" />
     <Content Include="LoaiSanPhamManager.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Login.aspx" />
@@ -132,7 +131,6 @@
     <Content Include="WUC\ChiTietMotSanPhamManager.ascx" />
     <Content Include="WUC\LoaiSanPhamManager.ascx" />
     <Content Include="WUC\MaintentSanPham.ascx" />
-    <Content Include="WUC\WUCTimKiem.ascx" />
     <Content Include="WUC\WUCSanPhamCungLoai.ascx" />
     <Content Include="WUC\WUCThongTinTaiKhoan.ascx" />
     <Content Include="WUC\WUCDateSelect.ascx" />
@@ -171,13 +169,6 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="LienHe.aspx.cs">
-      <DependentUpon>LienHe.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LienHe.aspx.designer.cs">
-      <DependentUpon>LienHe.aspx</DependentUpon>
     </Compile>
     <Compile Include="LoaiSanPhamManager.aspx.cs">
       <DependentUpon>LoaiSanPhamManager.aspx</DependentUpon>
@@ -283,13 +274,6 @@
     </Compile>
     <Compile Include="WUC\MaintentSanPham.ascx.designer.cs">
       <DependentUpon>MaintentSanPham.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="WUC\WUCTimKiem.ascx.cs">
-      <DependentUpon>WUCTimKiem.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WUC\WUCTimKiem.ascx.designer.cs">
-      <DependentUpon>WUCTimKiem.ascx</DependentUpon>
     </Compile>
     <Compile Include="WUC\WUCSanPhamCungLoai.ascx.cs">
       <DependentUpon>WUCSanPhamCungLoai.ascx</DependentUpon>

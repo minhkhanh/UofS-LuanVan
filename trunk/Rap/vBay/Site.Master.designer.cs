@@ -22,6 +22,15 @@ namespace vBay {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
         
         /// <summary>
+        /// scriptManager control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager scriptManager;
+        
+        /// <summary>
         /// ImageButton_Logo control.
         /// </summary>
         /// <remarks>
@@ -49,13 +58,13 @@ namespace vBay {
         protected global::vBay.WUCDangNhapNhanh WUCDangNhapNhanh1;
         
         /// <summary>
-        /// WUCTimKiem1 control.
+        /// WUCTimKiemCoBan1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UserControl WUCTimKiem1;
+        protected global::vBay.WUC.WUCTimKiemCoBan WUCTimKiemCoBan1;
         
         /// <summary>
         /// menuDSLoaiSanPham control.

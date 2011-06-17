@@ -53,8 +53,7 @@
     }
 </style>
 <div class="binhLuanSanPham">
-<asp:ScriptManager ID="scriptManager" runat="server">
-</asp:ScriptManager>
+
 <asp:UpdatePanel ID="updateComment" runat="server">
     <ContentTemplate>
         <div class="comment_product">
