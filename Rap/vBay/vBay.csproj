@@ -98,6 +98,7 @@
     <Content Include="LienHe.aspx" />
     <Content Include="LoaiSanPhamManager.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="PasswordRecovering.aspx" />
     <Content Include="Scripts\jquery-1.6.1.js" />
     <Content Include="Scripts\jquery-1.6.1.min.js" />
@@ -191,6 +192,12 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="PasswordRecovering.aspx.cs">
       <DependentUpon>PasswordRecovering.aspx</DependentUpon>
