@@ -1,0 +1,21 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterSite.Master" AutoEventWireup="true" CodeBehind="AdminSite.master.cs" Inherits="vBay.AdminSite" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder4" runat="server">
+    <asp:Menu ID="Menu1" runat="server" StaticSubMenuIndent="16px" CssClass="navbarmenu"
+                                    IncludeStyleBlock="False" Orientation="Horizontal">
+    <Items>
+        <asp:MenuItem Text="Sửa quyền truy cập" NavigateUrl="~/ThayDoiLoaiNguoiDung.aspx"></asp:MenuItem>
+        <asp:MenuItem Text="Thay đổi giao diện" NavigateUrl="~/ThayDoiGiaoDienWebSite.aspx"></asp:MenuItem>
+        <asp:MenuItem Text="Khóa người dùng" NavigateUrl="~/QuanLiTaiKhoan.aspx"></asp:MenuItem>
+    </Items>
+    </asp:Menu>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder5" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+</asp:Content>
