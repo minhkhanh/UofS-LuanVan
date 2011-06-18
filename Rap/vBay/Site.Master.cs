@@ -44,16 +44,17 @@ namespace vBay
         protected void Page_Load(object sender, EventArgs e)
         {
             string[] roles = Roles.GetRolesForUser(Page.User.Identity.Name);
+
             foreach (string i in roles)
             {
                 switch (i)
                 {
                     case "Manager":
                         Response.Redirect(WebConfigurationManager.AppSettings["ManagerHeadPage"]);
-                        break;
+                        return;
                     case "Administrator":
                         Response.Redirect(WebConfigurationManager.AppSettings["AdminHeadPage"]);
-                        break;
+                        return;
                 }
             }
 

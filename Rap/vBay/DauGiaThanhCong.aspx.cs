@@ -12,8 +12,8 @@ namespace vBay
     {
         public void Page_Init(object sender, EventArgs e)
         {
-            //if (!Page.User.Identity.IsAuthenticated)
-            //    Response.Redirect("~/Login.aspx");
+            if (!Page.User.Identity.IsAuthenticated)
+                Response.Redirect("~/Login.aspx");
 
         }
        
@@ -44,7 +44,7 @@ namespace vBay
             
             DataEntityDataContext db = new DataEntityDataContext();
             var query = from dgtc in db.DauGiaThanhCongs
-                        where dgtc.ChiTietDauGia.aspnet_User == Membership.GetUser()
+                        where dgtc.ChiTietDauGia.aspnet_User.UserName == Page.User.Identity.Name
                         select dgtc;
 
             
@@ -104,7 +104,7 @@ namespace vBay
                 lbTinhTrang.Text = "Chưa nhận hàng";
                 btDaNhanHang.Enabled = true;
             }
-
+            btDaNhanHang.CommandName = dt.MaDauGiaThanhCong.ToString();
         }
 
         //private int NumPerPage = 5;
@@ -209,5 +209,22 @@ namespace vBay
             btnNext.ImageUrl = (btnNext.Enabled) ? btnNext.ImageUrl.Remove(btnNext.ImageUrl.IndexOf("Page") + 4) + ".gif" : btnNext.ImageUrl.Remove(btnNext.ImageUrl.IndexOf("Page") + 4) + "Disabled.gif";
             btnPrevious.ImageUrl = (btnPrevious.Enabled) ? btnPrevious.ImageUrl.Remove(btnPrevious.ImageUrl.IndexOf("Page") + 4) + ".gif" : btnPrevious.ImageUrl.Remove(btnPrevious.ImageUrl.IndexOf("Page") + 4) + "Disabled.gif";
         }
+
+        protected void btDaNhanHang_Click1(object sender, EventArgs e)
+        {
+            DataEntityDataContext db = new DataEntityDataContext();
+            int maDauGiaThanhCong = int.Parse(((Button)sender).CommandName);
+            
+            DauGiaThanhCong dgtc = db.DauGiaThanhCongs.Single(m => m.MaDauGiaThanhCong == maDauGiaThanhCong);
+            dgtc.DaNhanHang = true;
+
+            ThongTinDauGia ttdg = db.ThongTinDauGias.Single(m => m.MaThongTinDauGia == dgtc.ChiTietDauGia.SanPham.aspnet_User.ThongTinDauGia.MaThongTinDauGia);
+            ttdg.DiemTinCayBan++;
+
+            db.SubmitChanges();
+
+
+        }
     }
+  
 }

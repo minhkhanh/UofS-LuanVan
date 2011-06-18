@@ -27,16 +27,6 @@ namespace vBay
             return CreateUserWizard1.CreateUserStep.ContentTemplateContainer.FindControl(id);
         }
 
-        FileUpload AvatarUploadCtrl
-        {
-            get { return GetControl("FileUpload1") as FileUpload; }
-        }
-
-        Image AvatarImg
-        {
-            get { return GetControl("Image1") as Image; }
-        }
-
         TextBox AddressTxb
         {
             get { return GetControl("txbAddress") as TextBox; }
@@ -67,61 +57,54 @@ namespace vBay
             get { return GetControl("drlSex") as DropDownList; }
         }
 
-        CheckBox NoAvatarCheck
-        {
-            get { return GetControl("ckbNoAvatar") as CheckBox; }
-        }
-
         #endregion
-
-        string _avatarPath = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (NoAvatarCheck.Checked == true)
-            {
-                AvatarImg.ImageUrl = _avatarPath = "";
-            }
+            //if (NoAvatarCheck.Checked == true)
+            //{
+            //    AvatarImg.ImageUrl = AvatarPath = "";
+            //}
 
             if (IsPostBack)
             {
-                Boolean fileOK = false;
-                String path = Server.MapPath(WebConfigurationManager.AppSettings["AvatarFolder"]);
-                if (AvatarUploadCtrl.HasFile)
-                {
-                    String fileExtension =
-                        System.IO.Path.GetExtension(AvatarUploadCtrl.FileName).ToLower();
-                    String[] allowedExtensions = { ".gif", ".png", ".jpeg", ".jpg" };
-                    for (int i = 0; i < allowedExtensions.Length; i++)
-                    {
-                        if (fileExtension == allowedExtensions[i])
-                        {
-                            fileOK = true;
-                            break;
-                        }
-                    }
-                }
+                //Boolean fileOK = false;
+                //String path = Server.MapPath(WebConfigurationManager.AppSettings["AvatarFolder"]);
+                //if (AvatarUploadCtrl.HasFile)
+                //{
+                //    String fileExtension =
+                //        System.IO.Path.GetExtension(AvatarUploadCtrl.FileName).ToLower();
+                //    String[] allowedExtensions = { ".gif", ".png", ".jpeg", ".jpg" };
+                //    for (int i = 0; i < allowedExtensions.Length; i++)
+                //    {
+                //        if (fileExtension == allowedExtensions[i])
+                //        {
+                //            fileOK = true;
+                //            break;
+                //        }
+                //    }
+                //}
 
-                if (fileOK)
-                {
-                    try
-                    {
-                        AvatarUploadCtrl.PostedFile.SaveAs(path
-                            + AvatarUploadCtrl.FileName);
+                //if (fileOK)
+                //{
+                //    try
+                //    {
+                //        AvatarUploadCtrl.PostedFile.SaveAs(path
+                //            + AvatarUploadCtrl.FileName);
 
-                        _avatarPath = AvatarImg.ImageUrl = WebConfigurationManager.AppSettings["AvatarFolder"] + AvatarUploadCtrl.FileName;
-                        //AvatarImage.DataBind();
-                        //Label1.Text = "File uploaded!";
-                    }
-                    catch (Exception ex)
-                    {
-                        //Label1.Text = "File could not be uploaded.";
-                    }
-                }
-                else
-                {
-                    //Label1.Text = "Cannot accept files of this type.";
-                }
+                //        _avatarPath = AvatarImg.ImageUrl = WebConfigurationManager.AppSettings["AvatarFolder"] + AvatarUploadCtrl.FileName;
+                //        //AvatarImage.DataBind();
+                //        //Label1.Text = "File uploaded!";
+                //    }
+                //    catch (Exception ex)
+                //    {
+                //        //Label1.Text = "File could not be uploaded.";
+                //    }
+                //}
+                //else
+                //{
+                //    //Label1.Text = "Cannot accept files of this type.";
+                //}
             }
         }
 
@@ -135,11 +118,11 @@ namespace vBay
             ThongTinDauGia ttdg = new ThongTinDauGia();
             ThongTinTaiKhoan tttk = new ThongTinTaiKhoan();
 
-            tttk.Avatar = _avatarPath;
+            //tttk.Avatar = AvatarImg.ImageUrl;
             tttk.DiaChi = AddressTxb.Text;
             tttk.MaGioiTinh = int.Parse(SexDrl.SelectedValue);
             tttk.HoTen = FullNameTxb.Text;
-            tttk.MaTheTinDung = CreditCardIdTxb.Text;
+            //tttk.MaTheTinDung = CreditCardIdTxb.Text;
             tttk.SoDienThoai = PhoneTxb.Text;
             tttk.NgaySinh = DOBSelect.SelectedDate;
 
@@ -147,10 +130,6 @@ namespace vBay
             currUser.ThongTinTaiKhoan = tttk;
 
             dc.SubmitChanges();
-
-            
-
-
         }
 
         protected void CreateUserWizard1_CreatingUser(object sender, LoginCancelEventArgs e)
@@ -180,13 +159,6 @@ namespace vBay
                 e.Cancel = true;
 
             MyErrorLabel.Text = errMess;
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            NoAvatarCheck.Checked = false;
-        }
-
-        
+        }        
     }
 }

@@ -54,23 +54,35 @@ namespace vBay
         protected void Button_DangThongTinSanPham_Click(object sender, EventArgs e)
         {
             //Phương hướng xử lí trong hàm Button_DangThongTinSanPham_Click()
+            //Kiểm tra: Nếu người dùng chưa upload hình ảnh thì không tiếp tục phương thức
+            //  1. Gọi hàm trừ tiền tài khoản; Nếu thành công thì tiến hành tiếp
             //Kiểm tra: Nếu giá trị tiền khởi điểm hợp lệ
-            //  1. Khởi tạo biến sanPham để lưu thông tin sản phẩm cần đăng
-            //  2. Lưu các thông tin sản phẩm mới vào biến sanPham
-            //  3. Lưu thông tin maHinhMoTa vào biến sanPham
-            //  4. Lưu biến sanPham vào CSDL và trả về maSanPham
-            //  5. Khởi tạo các biến SanPham_Multimedia để lưu thông tin các hình mô tả có liên quan đến sản phẩm
+            //  2. Khởi tạo biến sanPham để lưu thông tin sản phẩm cần đăng
+            //  3. Lưu các thông tin sản phẩm mới vào biến sanPham
+            //  4. Lưu thông tin maHinhMoTa vào biến sanPham
+            //  5. Lưu biến sanPham vào CSDL và trả về maSanPham
+            //  6. Khởi tạo các biến SanPham_Multimedia để lưu thông tin các hình mô tả có liên quan đến sản phẩm
             
             
             //Tiến hành
+            //Kiểm tra: Nếu người dùng chưa upload hình ảnh thì không tiếp tục phương thức
+            if (DropDownList_DanhSachHinhMinhHoa.Items.Count == 0)
+                return;
+
+            //  1. Gọi hàm trừ tiền tài khoản; Nếu thành công thì tiến hành tiếp
+            aspnet_User user = dataContext.aspnet_Users.Single(p => p.UserName == TextBox_TenTaiKhoan.Text);
+            Guid userId = user.UserId;            
+            if (TruTien(userId) == false)
+                return;
+
             //Kiểm tra: Nếu giá trị tiền khởi điểm hợp lệ
             int temp;
             if (int.TryParse(TextBox_GiaKhoiDiem.Text, out temp) == true)
             {
-                //  1. Khởi tạo biến sanPham để lưu thông tin sản phẩm cần đăng
+                //  2. Khởi tạo biến sanPham để lưu thông tin sản phẩm cần đăng
                 SanPham sanPham = new SanPham();
 
-                //  2. Lưu các thông tin sản phẩm mới vào biến sanPham
+                //  3. Lưu các thông tin sản phẩm mới vào biến sanPham
                 sanPham.GiaHienTai = 0;
                 sanPham.GiaKhoiDiem = double.Parse(TextBox_GiaKhoiDiem.Text);
                 sanPham.MaLoaiSanPham = int.Parse(DropDownList_LoaiSanPham.SelectedItem.Value.ToString());
@@ -113,13 +125,13 @@ namespace vBay
 
                 sanPham.TenSanPham = TextBox_TenSanPham.Text;
 
-                //  3. Lưu thông tin maHinhMoTa vào biến sanPham
+                //  4. Lưu thông tin maHinhMoTa vào biến sanPham
                 //      Khởi tạo chuỗi String fileName để lấy ra trường TenMT trong bảng Multimedia
                 String fileName = DropDownList_DanhSachHinhMinhHoa.SelectedItem.Value.ToString();
                 Multimedia multimedia = dataContext.Multimedias.Single(p => p.TenMT == fileName);
                 sanPham.Multimedia = multimedia;
 
-                //  4. Lưu biến sanPham vào CSDL và trả về maSanPham
+                //  5. Lưu biến sanPham vào CSDL và trả về maSanPham
                 //      Lưu biến sanPham vào CSDL
                 dataContext.SanPhams.InsertOnSubmit(sanPham);
                 dataContext.SubmitChanges();
@@ -127,7 +139,7 @@ namespace vBay
                 //      Thực hiện tra cứu để lấy lại mã sản phẩm vừa thêm vào CSDL
                 SanPham product = dataContext.SanPhams.Single(p => p.TenSanPham == TextBox_TenSanPham.Text && p.NgayDang == sanPham.NgayDang);
                 
-                //  5. Khởi tạo các biến SanPham_Multimedia để lưu thông tin các hình mô tả có liên quan đến sản phẩm
+                //  6. Khởi tạo các biến SanPham_Multimedia để lưu thông tin các hình mô tả có liên quan đến sản phẩm
                 for (int i = 0; i < DropDownList_DanhSachHinhMinhHoa.Items.Count; i++)
                 {
                     //  Kiểm tra: Nếu fileName của hình được lưu trong Item[i].Value khác fileName được lưu trong product.Multimedia
@@ -151,6 +163,13 @@ namespace vBay
                     }
                 }
             }
+        }
+
+        private bool TruTien(Guid userId)
+        {
+            //Xỉn cài đặt
+
+            return true;
         }
 
         protected void Button_Upload_Click(object sender, EventArgs e)
@@ -194,13 +213,11 @@ namespace vBay
                 fileName = fileName + fileExtent;
 
                 //      Xuất chuỗi Path đường dẫn dùng để lưu file xuống server
-                THAMSO thamSo = dataContext.THAMSOs.Single(p => p.TenThamSo == "ProductImagesUploadFolder");
-                staticImagePath = thamSo.GiaTri;
+                staticImagePath = Page.Request.PhysicalApplicationPath + "imagine\\";
                 filePath = staticImagePath + fileName;
 
                 //      Xuất chuỗi Url dùng để load file lên page 
-                thamSo = dataContext.THAMSOs.Single(p => p.TenThamSo == "ProductImagesUploadUrl");
-                staticImageUrl = thamSo.GiaTri;
+                staticImageUrl = "~/imagine/";
                 fileUrl = staticImageUrl + fileName;
 
                 //  2. Lưu file ảnh xuống server với fileName đã được chỉnh sửa

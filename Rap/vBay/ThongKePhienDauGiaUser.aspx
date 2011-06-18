@@ -34,7 +34,7 @@
                     <asp:Image ID="imgSanPham" runat="server" Height="100px" Width="100px" ImageUrl='<%# DataBinder.Eval(Container, "DataItem.LinkURL") %>' ImageAlign="AbsMiddle" />
                 </td>
                 <td>
-                    <asp:HyperLink ID="lnkTenSanPham" NavigateUrl="~/xemchitietsanpham.aspx?" runat="server"><%# DataBinder.Eval(Container, "DataItem.TenSanPham") %></asp:HyperLink>
+                    <asp:HyperLink ID="lnkTenSanPham" NavigateUrl='<%# "~/xemchitietsanpham.aspx?MaSanPham=" + DataBinder.Eval(Container, "DataItem.MaSanPham") %>' runat="server"><%# DataBinder.Eval(Container, "DataItem.TenSanPham") %></asp:HyperLink>
                 </td>
                 <td>
                     <asp:Label ID="lblThoiGianGiaoDich" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.ThoiGianGiaoDich") %>'></asp:Label>
@@ -72,7 +72,7 @@
                         <asp:Image ID="imgSanPham" ImageAlign="AbsMiddle" runat="server" Height="100px" Width="100px" ImageUrl='<%# DataBinder.Eval(Container, "DataItem.LinkURL") %>' />
                     </td>
                     <td>
-                        <asp:HyperLink ID="lnkTenSanPham" NavigateUrl="~/xemchitietsanpham.aspx?" runat="server"><%# DataBinder.Eval(Container, "DataItem.TenSanPham") %></asp:HyperLink>
+                        <asp:HyperLink ID="lnkTenSanPham" NavigateUrl='<%# "~/xemchitietsanpham.aspx?MaSanPham=" + DataBinder.Eval(Container, "DataItem.MaSanPham") %>' runat="server"> <%# DataBinder.Eval(Container, "DataItem.TenSanPham") %></asp:HyperLink>
                     </td>
                     <td>
                         <asp:Label ID="lblThoiGianGiaoDich" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.ThoiGianGiaoDich") %>'></asp:Label>

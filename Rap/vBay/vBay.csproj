@@ -57,9 +57,12 @@
     <Content Include="About.aspx" />
     <Content Include="AdminDefault.aspx" />
     <Content Include="App_Themes\ThemeSunny\styleSunny.css" />
+    <Content Include="CapNhatThongTinTaiKhoan.aspx" />
     <Content Include="ChiTietMotSanPhamManager.aspx" />
+    <Content Include="DangThongTinSanPham.aspx" />
     <Content Include="DauGiaThanhCong.aspx" />
     <Content Include="DefaultPP.aspx" />
+    <Content Include="HuongDan.aspx" />
     <Content Include="Images\crying-racoon.gif" />
     <Content Include="Images\icon_oval.jpg" />
     <Content Include="Images\logo.png" />
@@ -107,6 +110,7 @@
     <Content Include="PageNotFound.aspx" />
     <Content Include="ManagerDefault.aspx" />
     <Content Include="PasswordRecovering.aspx" />
+    <Content Include="QuanLiTaiKhoan.aspx" />
     <Content Include="Scripts\jquery-1.6.1.js" />
     <Content Include="Scripts\jquery-1.6.1.min.js" />
     <Content Include="Scripts\jquery.cross-slide.min.js" />
@@ -140,8 +144,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="WebForm4Test.aspx" />
-    <Content Include="WebForm4TestChiTietSanPham.aspx" />
+    <Content Include="WUC\UC_CapNhatThongTinTaiKhoan.ascx" />
+    <Content Include="WUC\UC_DangThongTinSanPham.ascx" />
+    <Content Include="WUC\UC_QuanLiTaiKhoan.ascx" />
     <Content Include="WUC\UC_ThayDoiLoaiNguoiDung.ascx" />
     <Content Include="WUC\WUCThayDoiGiaoDienWebSite.ascx" />
     <Content Include="WUC\UC_TheoDoiLichSuGiaoDich.ascx" />
@@ -187,6 +192,13 @@
     <Compile Include="AdminSite.master.designer.cs">
       <DependentUpon>AdminSite.master</DependentUpon>
     </Compile>
+    <Compile Include="CapNhatThongTinTaiKhoan.aspx.cs">
+      <DependentUpon>CapNhatThongTinTaiKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CapNhatThongTinTaiKhoan.aspx.designer.cs">
+      <DependentUpon>CapNhatThongTinTaiKhoan.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ChiTietMotSanPhamManager.aspx.cs">
       <DependentUpon>ChiTietMotSanPhamManager.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -196,6 +208,13 @@
     </Compile>
     <Compile Include="Class\PayPalGateway.cs" />
     <Compile Include="Class\Task.cs" />
+    <Compile Include="DangThongTinSanPham.aspx.cs">
+      <DependentUpon>DangThongTinSanPham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DangThongTinSanPham.aspx.designer.cs">
+      <DependentUpon>DangThongTinSanPham.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DataEntity.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -214,6 +233,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HuongDan.aspx.cs">
+      <DependentUpon>HuongDan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HuongDan.aspx.designer.cs">
+      <DependentUpon>HuongDan.aspx</DependentUpon>
     </Compile>
     <Compile Include="LienHe.aspx.cs">
       <DependentUpon>LienHe.aspx</DependentUpon>
@@ -283,6 +309,13 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLiTaiKhoan.aspx.cs">
+      <DependentUpon>QuanLiTaiKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuanLiTaiKhoan.aspx.designer.cs">
+      <DependentUpon>QuanLiTaiKhoan.aspx</DependentUpon>
     </Compile>
     <Compile Include="SigningUp.aspx.cs">
       <DependentUpon>SigningUp.aspx</DependentUpon>
@@ -366,19 +399,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
-    <Compile Include="WebForm4Test.aspx.cs">
-      <DependentUpon>WebForm4Test.aspx</DependentUpon>
+    <Compile Include="WUC\UC_CapNhatThongTinTaiKhoan.ascx.cs">
+      <DependentUpon>UC_CapNhatThongTinTaiKhoan.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm4Test.aspx.designer.cs">
-      <DependentUpon>WebForm4Test.aspx</DependentUpon>
+    <Compile Include="WUC\UC_CapNhatThongTinTaiKhoan.ascx.designer.cs">
+      <DependentUpon>UC_CapNhatThongTinTaiKhoan.ascx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm4TestChiTietSanPham.aspx.cs">
-      <DependentUpon>WebForm4TestChiTietSanPham.aspx</DependentUpon>
+    <Compile Include="WUC\UC_DangThongTinSanPham.ascx.cs">
+      <DependentUpon>UC_DangThongTinSanPham.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm4TestChiTietSanPham.aspx.designer.cs">
-      <DependentUpon>WebForm4TestChiTietSanPham.aspx</DependentUpon>
+    <Compile Include="WUC\UC_DangThongTinSanPham.ascx.designer.cs">
+      <DependentUpon>UC_DangThongTinSanPham.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WUC\UC_QuanLiTaiKhoan.ascx.cs">
+      <DependentUpon>UC_QuanLiTaiKhoan.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WUC\UC_QuanLiTaiKhoan.ascx.designer.cs">
+      <DependentUpon>UC_QuanLiTaiKhoan.ascx</DependentUpon>
     </Compile>
     <Compile Include="WUC\UC_ThayDoiLoaiNguoiDung.ascx.cs">
       <DependentUpon>UC_ThayDoiLoaiNguoiDung.ascx</DependentUpon>
@@ -548,13 +588,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminSite.master" />
+    <Content Include="MasterSite.Master" />
+    <Content Include="ManagerSite.master" />
     <None Include="DataEntity.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataEntity.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <Content Include="MasterSite.Master" />
-    <Content Include="ManagerSite.master" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -734,11 +774,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="DataEntity.dbml.layout">
-      <DependentUpon>DataEntity.dbml</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
@@ -753,6 +788,11 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>vBay_com_paypal_sandbox_www_PayPalAPIInterfaceService</CachedSettingsPropName>
     </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataEntity.dbml.layout">
+      <DependentUpon>DataEntity.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

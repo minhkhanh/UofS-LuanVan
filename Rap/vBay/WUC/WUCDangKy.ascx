@@ -146,21 +146,6 @@
                     </tr>
                     <tr>
                         <td align="right" class="style6">
-                            <asp:Label ID="Label1" runat="server" Text="Hình đại diện"></asp:Label>
-                        </td>
-                        <td class="style7">
-                            <asp:Image ID="Image1" runat="server" Height="64px" Width="64px" GenerateEmptyAlternateText="True"
-                                AlternateText="Avatar" />
-                            <br />
-                            <asp:FileUpload ID="FileUpload1" runat="server" />
-                            <asp:CheckBox ID="ckbNoAvatar" runat="server" Text="Không dùng hình đại diện" />
-                            <br />
-                            <asp:Button ID="Button1" runat="server" Text="Đăng hình lên" 
-                                onclick="Button1_Click" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="right" class="style6">
                             Captcha</td>
                         <td class="style7">
                              <recaptcha:RecaptchaControl ID="recaptcha" runat="server" 

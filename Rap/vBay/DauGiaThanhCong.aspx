@@ -50,7 +50,7 @@
                     </td>
                     <td class="style4" rowspan="2">
                         <asp:Button ID="btDaNhanHang" runat="server" style="text-align: center" 
-                            Text="Đã Nhận Hàng" />
+                            Text="Đã Nhận Hàng" onclick="btDaNhanHang_Click1" />
                     </td>
                 </tr>
                 <tr>

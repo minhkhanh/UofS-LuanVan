@@ -6,23 +6,30 @@
     </center>
     <asp:Label ID="Label2" runat="server" Text="Tên tài khoản:" Font-Bold="True" 
         ForeColor="Black" Width="35%"></asp:Label>
-    <asp:DropDownList ID="DropDownList_DanhSachTaiKhoan" runat="server" 
-        AutoPostBack="True" ForeColor="Black" Width="60%" 
-        onselectedindexchanged="DropDownList_DanhSachTaiKhoan_SelectedIndexChanged">
-        <asp:ListItem>Choose user name...</asp:ListItem>
-    </asp:DropDownList>
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
+        AutoGenerateSelectButton="True" DataSourceID="LinqDataSource2" 
+        onselectedindexchanged="GridView1_SelectedIndexChanged" 
+        onselectedindexchanging="GridView1_SelectedIndexChanging">
+        <Columns>
+            <asp:BoundField DataField="UserName" HeaderText="UserName" ReadOnly="True" 
+                SortExpression="UserName" />
+        </Columns>
+    </asp:GridView>
+    <asp:LinqDataSource ID="LinqDataSource2" runat="server" 
+        ContextTypeName="vBay.DataEntityDataContext" EntityTypeName="" 
+        Select="new (UserName)" TableName="aspnet_Users">
+    </asp:LinqDataSource>
     <br />
-    <asp:Label ID="Label3" runat="server" Text="Loại người dùng hiện tại:" 
-        Font-Bold="True" Width="35%" ForeColor="Black"></asp:Label>
-    <asp:TextBox ID="TextBox_LoaiNguoiDungHienTai" runat="server" Enabled="False" 
-        ForeColor="Gray" ReadOnly="True" Width="59%"></asp:TextBox>
+    <center>
+    <asp:CheckBoxList ID="CheckBoxList1" runat="server" DataSourceID="LinqDataSource1" 
+            DataTextField="RoleName" DataValueField="RoleName">
+    </asp:CheckBoxList>
+        <asp:LinqDataSource ID="LinqDataSource1" runat="server" 
+            ContextTypeName="vBay.DataEntityDataContext" EntityTypeName="" 
+            Select="new (RoleName)" TableName="aspnet_Roles">
+        </asp:LinqDataSource>
+    </center>
     <br />
-    <asp:Label ID="Label4" runat="server" Text="Loại người dùng mới:" 
-        Font-Bold="True" Width="35%" ForeColor="Black"></asp:Label>
-    <asp:DropDownList ID="DropDownList_LoaiNguoiDungMoi" runat="server" 
-        ForeColor="Black" Width="60%" AutoPostBack="True" 
-        onselectedindexchanged="DropDownList_LoaiNguoiDungMoi_SelectedIndexChanged">
-    </asp:DropDownList>
     <br /><br />
     <center>
         <asp:Label ID="Label_ThayDoiLoaiTaiKhoanThanhCong" runat="server" 

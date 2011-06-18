@@ -4,6 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Timers;
 using System.Threading;
+using System.Configuration;
+using System.Net.Configuration;
+using System.Web.Configuration;
+using System.Net.Mail;
+using System.Net;
 
 namespace vBay
 {
@@ -71,6 +76,55 @@ namespace vBay
                 this.LastRunTime = DateTime.Now;
                 //File.AppendAllText(this.FilePath, DateTime.UtcNow.ToString() + "\n");
                 this.IsLastRunSuccessful = true;
+
+                DataEntityDataContext dt = new DataEntityDataContext();
+
+                foreach (SanPham i in dt.SanPhams)
+                {
+                    if (i.NgayHetHan.Value.CompareTo(i.NgayDang.Value) <= 0)
+                        if (i.ChiTietDauGias.Count != 0)
+                        {
+                            i.MaTinhTrangSanPham = 3;
+                            ChiTietDauGia winUser = new ChiTietDauGia();
+                            winUser.GiaGiaoDich = -1;
+                            foreach (ChiTietDauGia j in i.ChiTietDauGias)
+                            {
+                                if (j.GiaGiaoDich > winUser.GiaGiaoDich)
+                                    winUser = j;
+                            }
+
+                            if (winUser.GiaGiaoDich == -1)
+                                return;
+
+                            // gui mail cho tmp.user
+
+                            Configuration config = WebConfigurationManager.OpenWebConfiguration(HttpContext.Current.Request.ApplicationPath);
+
+                            MailSettingsSectionGroup settings = (MailSettingsSectionGroup)config.GetSectionGroup("system.net/mailSettings");
+
+                            try
+                            {
+                                SmtpClient smtpSender = new SmtpClient(settings.Smtp.Network.Host, settings.Smtp.Network.Port);
+                                smtpSender.DeliveryMethod = SmtpDeliveryMethod.Network;
+                                smtpSender.Credentials = new NetworkCredential(settings.Smtp.Network.UserName, settings.Smtp.Network.Password);
+                                smtpSender.EnableSsl = true;
+
+                                string message = "Chúc mừng bạn vừa sở hữu được một món hàng từ vBay.\n" + "Mời bạn vào link sau để xác nhận:\n";
+
+                                MailMessage mailMess = new MailMessage(settings.Smtp.From, winUser.aspnet_User.aspnet_Membership.Email, "vBay - Đấu giá thành công", message);
+
+                                smtpSender.Send(mailMess);
+                            }
+                            catch (Exception ex)
+                            {
+                                //Response.Write("There was a problem sending the email. " + ex);
+                            }
+                        }
+                        else    // khong ai mua
+                        {
+                            i.MaTinhTrangSanPham = 4;
+                        }
+                }
             }
             catch
             {

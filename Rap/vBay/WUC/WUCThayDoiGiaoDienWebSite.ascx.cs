@@ -32,19 +32,15 @@ namespace vBay.WUC
             dataContext = new DataEntityDataContext();
 
             //  2. Truy vấn CSDL đọc các đường dẫn và lưu vào các biến staticLogoBeginUrl, staticLogoBeginPath
-            THAMSO thamSo = dataContext.THAMSOs.Single(p => p.TenThamSo == "LogoUploadFolder");
-            staticLogoBeginPath = thamSo.GiaTri;
-            thamSo = dataContext.THAMSOs.Single(p => p.TenThamSo == "LogoUploadUrl");
-            staticLogoBeginUrl = thamSo.GiaTri;
+            staticLogoBeginPath = Page.Request.PhysicalApplicationPath + "Images\\";
+            staticLogoBeginUrl = "~/Images/";
             
             //  3. Truy vấn CSDL đọc các đường dẫn và lưu vào các biến staticCSSBeginUrl, staticCSSBeginPath
-            thamSo = dataContext.THAMSOs.Single(p => p.TenThamSo == "StyleSheetUploadFolder");
-            staticCSSBeginPath = thamSo.GiaTri;
-            thamSo = dataContext.THAMSOs.Single(p => p.TenThamSo == "StyleSheetUploadUrl");
-            staticCSSBeginUrl = thamSo.GiaTri;
+            staticCSSBeginPath = Page.Request.PhysicalApplicationPath + "Styles\\";
+            staticCSSBeginUrl = "../Styles/";
 
             //  4. Lấy Image Url của Logo trong CSDL thông qua dataContext và gán vào Image_Logo
-            thamSo = dataContext.THAMSOs.Single(p => p.TenThamSo == "Logo");
+            THAMSO thamSo = dataContext.THAMSOs.Single(p => p.TenThamSo == "Logo");
             String imageUrl = thamSo.GiaTri;
             Image_Logo.ImageUrl = imageUrl;
 
