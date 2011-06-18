@@ -71,9 +71,12 @@ namespace vBay
 
             //  1. Gọi hàm trừ tiền tài khoản; Nếu thành công thì tiến hành tiếp
             aspnet_User user = dataContext.aspnet_Users.Single(p => p.UserName == TextBox_TenTaiKhoan.Text);
-            Guid userId = user.UserId;            
+            Guid userId = user.UserId;
             if (TruTien(userId) == false)
+            {
+                Page.Response.Redirect("./Default.aspx");
                 return;
+            }
 
             //Kiểm tra: Nếu giá trị tiền khởi điểm hợp lệ
             int temp;
@@ -83,7 +86,8 @@ namespace vBay
                 SanPham sanPham = new SanPham();
 
                 //  3. Lưu các thông tin sản phẩm mới vào biến sanPham
-                sanPham.GiaHienTai = 0;
+                sanPham.MaTaiKhoan = userId;
+                sanPham.GiaHienTai = double.Parse(TextBox_GiaKhoiDiem.Text);
                 sanPham.GiaKhoiDiem = double.Parse(TextBox_GiaKhoiDiem.Text);
                 sanPham.MaLoaiSanPham = int.Parse(DropDownList_LoaiSanPham.SelectedItem.Value.ToString());
                 sanPham.MaTinhTrangSanPham = int.Parse(DropDownList_TinhTrangSanPham.SelectedItem.Value.ToString());
@@ -162,14 +166,31 @@ namespace vBay
                         dataContext.SubmitChanges();
                     }
                 }
+                Page.Response.Redirect("./xemchitietsanpham.aspx?MaSanPham=" + product.MaSanPham.ToString());
             }
         }
 
         private bool TruTien(Guid userId)
         {
             //Xỉn cài đặt
+            DataEntityDataContext dataContext = new DataEntityDataContext();
+            var ttThe = (from a in dataContext.aspnet_Users
+                         join b in dataContext.ThongTinTaiKhoans on a.MaThongTinTaiKhoan equals b.MaThongTinTaiKhoan
+                         where a.UserId == userId
+                         select new { b.ThongTinThe_Address, b.ThongTinThe_CardNumber, b.ThongTinThe_CardType, b.ThongTinThe_Country, b.ThongTinThe_CVV2, b.ThongTinThe_ExpireTime, b.ThongTinThe_FirstName, b.ThongTinThe_LastName, b.ThongTinThe_State, b.ThongTinThe_ZipCode }
+                        ).FirstOrDefault();
+            var phi = (from a in dataContext.THAMSOs
+                       where a.TenThamSo == "MucPhi"
+                       select new { a.GiaTri }).FirstOrDefault();
+            if (ttThe==null || phi==null)
+            {
+                return false;
+            }
 
-            return true;
+            PayPalGateway pp = new PayPalGateway();
+            PayPalReturn rv = pp.Pay("123", phi.GiaTri, ttThe.ThongTinThe_LastName, ttThe.ThongTinThe_FirstName, ttThe.ThongTinThe_Address, ttThe.ThongTinThe_State, ttThe.ThongTinThe_State, ttThe.ThongTinThe_Country, ttThe.ThongTinThe_Country, ttThe.ThongTinThe_ZipCode, ttThe.ThongTinThe_CardType, ttThe.ThongTinThe_CardNumber, ttThe.ThongTinThe_CVV2, ttThe.ThongTinThe_ExpireTime.Value.Month.ToString(), ttThe.ThongTinThe_ExpireTime.Value.Year.ToString());
+            return rv.IsSucess;
+            //return true;
         }
 
         protected void Button_Upload_Click(object sender, EventArgs e)
@@ -228,6 +249,11 @@ namespace vBay
                 image.TenMT = fileName;
                 image.DungLuong = FileUpload_HinhAnhMinhHoa.PostedFile.ContentLength;
                 image.LinkURL = fileUrl;
+                var loaiMul = (from a in dataContext.LoaiMultimedias
+                               where a.TenLoaiMT == "Picture"
+                               select new { a.MaLoaiMT }
+                                   ).FirstOrDefault();
+                image.MaLoaiMT = loaiMul.MaLoaiMT;
 
                 //  4. Lưu biến Multimedia vừa được tạo vào CSDL
                 dataContext.Multimedias.InsertOnSubmit(image);
