@@ -1,0 +1,93 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="vBay.SiteMaster" %>
+
+<%@ Register Src="WUC/WUCDangNhapNhanh.ascx" TagName="WUCDangNhapNhanh" TagPrefix="uc1" %>
+<%@ Register Src="WUC/WUCTimKiemCoBan.ascx" TagName="WUCTimKiemCoBan" TagPrefix="uc2" %>
+<%@ Register Src="WUC/WUCUserQuickTask.ascx" TagName="WUCUserQuickTask" TagPrefix="uc3" %>
+<%@ Register src="WUC/WUCTimKiem.ascx" tagname="WUCTimKiem" tagprefix="uc4" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../JQuery/engine1/jquery.js"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <asp:ScriptManager ID="scriptManager" runat="server">
+    </asp:ScriptManager>
+    <div class="page">
+        <div class="quicktask" align="right">
+            <uc3:wucuserquicktask id="UserQuickTask1" runat="Server" />
+        </div>
+        <div class="header">
+            <div class="logo">
+                <asp:ImageButton ID="ImageButton_Logo" runat="server" 
+                    PostBackUrl="~/Default.aspx" ImageUrl="~/Images/logo.png" />
+            </div>
+            <div class="loginbar">
+                <uc1:WUCDangNhapNhanh ID="WUCDangNhapNhanh1" runat="server" />
+                <!-- Login Here -->
+            </div>
+            <script type="text/javascript">
+                $('.loginbar').hide();
+            </script>
+            <!-- logo end-->
+            <div class="navbar">
+                <asp:Menu ID="Menu1" runat="server" StaticSubMenuIndent="16px" CssClass="navbarmenu"
+                    IncludeStyleBlock="False" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem Text="Trang Chủ" Value="Trang Chủ" NavigateUrl="~/Default.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Sản Phẩm" Value="Sản Phẩm" NavigateUrl="~/Default.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Thanh Toán" Value="Thanh Toán" NavigateUrl="~/Default.aspx">
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Hướng Dẫn" Value="Hướng Dẫn" NavigateUrl="~/HuongDan.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Liên Hệ" Value="Liên Hệ" NavigateUrl="~/LienHe.aspx"></asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </div>
+            <!-- navbar end-->
+            <!-- loginbar end-->
+            <div class="searchbar">
+                <uc4:WUCTimKiem ID="WUCTimKiem1" runat="server" />
+            </div>
+            <!-- searchbar end-->
+        </div>
+        <!-- header end-->
+        <div class="main">
+            <div class="siderbar">
+                <div class="sidebar1">
+                    <span style="font-size: 20px;">Danh mục</span>
+                    <asp:Menu ID="menuDSLoaiSanPham" runat="server" CssClass="navbarmenu">
+                    </asp:Menu>
+                </div>
+                <!-- sidebarmenu end-->
+            </div>
+            <!-- sidebar end-->
+            <div class="content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+            <!-- content end-->
+        </div>
+        <!-- main end-->
+        <div class="clear">
+        </div>
+        <!-- clear end-->
+        <div class="footer">
+            <div class="info">
+                <p>
+                    Auction Web</p>
+                <p>
+                    Copyright 2011 @ Group E4 All rights reservered</p>
+            </div>
+            <!-- info end-->
+        </div>
+        <!-- footer end-->
+    </div>
+    <!-- page end-->
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderGo" runat="server">
+    </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>
