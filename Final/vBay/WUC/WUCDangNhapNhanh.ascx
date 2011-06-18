@@ -63,6 +63,9 @@
                             <asp:HyperLink ID="HyperLink1" runat="Server" NavigateUrl="~/CapNhatThongTinTaiKhoan.aspx">Thông tin tài khoản</asp:HyperLink>
                             <br />
                             <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/ThongKePhienDauGiaUser.aspx">Lịch sử giao dịch</asp:HyperLink>
+                            <br />
+                            <asp:HyperLink ID="HyperLink3" runat="server" 
+                                NavigateUrl="~/DangThongTinSanPham.aspx">Đăng sản phẩm đấu giá</asp:HyperLink>
                         </td>
                     </tr>
                 </table>
