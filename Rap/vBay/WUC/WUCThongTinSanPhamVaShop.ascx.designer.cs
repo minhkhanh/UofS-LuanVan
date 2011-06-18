@@ -40,6 +40,24 @@ namespace vBay.WUC {
         protected global::System.Web.UI.WebControls.Label lbGiaKhoiDau;
         
         /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
+        /// Timer1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.Timer Timer1;
+        
+        /// <summary>
         /// lbGiaHienTai control.
         /// </summary>
         /// <remarks>
@@ -83,6 +101,15 @@ namespace vBay.WUC {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbThoiGianCon;
+        
+        /// <summary>
+        /// lbHienDangCoSanPham control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbHienDangCoSanPham;
         
         /// <summary>
         /// btn_checkout control.
