@@ -61,56 +61,13 @@ namespace vBay
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (NoAvatarCheck.Checked == true)
-            //{
-            //    AvatarImg.ImageUrl = AvatarPath = "";
-            //}
-
             if (IsPostBack)
             {
-                //Boolean fileOK = false;
-                //String path = Server.MapPath(WebConfigurationManager.AppSettings["AvatarFolder"]);
-                //if (AvatarUploadCtrl.HasFile)
-                //{
-                //    String fileExtension =
-                //        System.IO.Path.GetExtension(AvatarUploadCtrl.FileName).ToLower();
-                //    String[] allowedExtensions = { ".gif", ".png", ".jpeg", ".jpg" };
-                //    for (int i = 0; i < allowedExtensions.Length; i++)
-                //    {
-                //        if (fileExtension == allowedExtensions[i])
-                //        {
-                //            fileOK = true;
-                //            break;
-                //        }
-                //    }
-                //}
-
-                //if (fileOK)
-                //{
-                //    try
-                //    {
-                //        AvatarUploadCtrl.PostedFile.SaveAs(path
-                //            + AvatarUploadCtrl.FileName);
-
-                //        _avatarPath = AvatarImg.ImageUrl = WebConfigurationManager.AppSettings["AvatarFolder"] + AvatarUploadCtrl.FileName;
-                //        //AvatarImage.DataBind();
-                //        //Label1.Text = "File uploaded!";
-                //    }
-                //    catch (Exception ex)
-                //    {
-                //        //Label1.Text = "File could not be uploaded.";
-                //    }
-                //}
-                //else
-                //{
-                //    //Label1.Text = "Cannot accept files of this type.";
-                //}
             }
         }
 
         protected void CreateUserWizard1_CreatedUser(object sender, EventArgs e)
         {
-
             DataEntityDataContext dc = new DataEntityDataContext();
 
             aspnet_User currUser = dc.aspnet_Users.Single(i => i.UserName == CreateUserWizard1.UserName);
@@ -125,6 +82,8 @@ namespace vBay
             //tttk.MaTheTinDung = CreditCardIdTxb.Text;
             tttk.SoDienThoai = PhoneTxb.Text;
             tttk.NgaySinh = DOBSelect.SelectedDate;
+
+            Roles.AddUsersToRole(new string[] { currUser.UserName}, "Member");
 
             currUser.ThongTinDauGia = ttdg;
             currUser.ThongTinTaiKhoan = tttk;

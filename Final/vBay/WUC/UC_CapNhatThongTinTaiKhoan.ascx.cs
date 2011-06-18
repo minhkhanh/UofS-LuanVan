@@ -44,6 +44,7 @@ namespace vBay
             
             //  4. Thiết lập các item cho DropDownList_Date, DropDownList_Month và DropDownList_Year
             //  Thiết lập các item cho DropDownList_Date
+            DropDownList_Date.Items.Add("day");
             for (int i = 1; i <= 31; i++)
             {
                 ListItem item = new ListItem(i.ToString(), i.ToString());
@@ -51,6 +52,7 @@ namespace vBay
             }
 
             //  Thiết lập các item cho DropDownList_Month
+            DropDownList_Month.Items.Add("month");
             for (int i = 1; i <= 12; i++)
             {
                 ListItem item = new ListItem(i.ToString(), i.ToString());
@@ -58,6 +60,7 @@ namespace vBay
             }
 
             //  Thiết lập item cho DropDownList_Year
+            DropDownList_Year.Items.Add("year");
             for (int i = 1900; i <= DateTime.Today.Year; i++)
             {
                 ListItem item = new ListItem(i.ToString(), i.ToString());
@@ -71,6 +74,7 @@ namespace vBay
 
             //  6. Thiết lập các item cho DropDownList_ExpiredMonth và DropDownList_ExpiredYear
             //DropDownList_ExpiredMonth.Items.Clear();
+            DropDownList_ExpiredMonth.Items.Add("month");
             for (int i = 1; i <= 12; i++)
             {
                 ListItem item = new ListItem(i.ToString(), i.ToString());
@@ -78,6 +82,7 @@ namespace vBay
             }
 
             //DropDownList_ExpiredYear.Items.Clear();
+            DropDownList_ExpiredYear.Items.Add("year");
             for (int i = DateTime.Today.Year - 500; i <= DateTime.Today.Year + 1000; i++)
             {
                 ListItem item = new ListItem(i.ToString(), i.ToString());
@@ -122,17 +127,15 @@ namespace vBay
                             + AvatarUploadCtrl.FileName);
 
                         AvatarImg.ImageUrl = WebConfigurationManager.AppSettings["AvatarFolder"] + AvatarUploadCtrl.FileName;
-                        //AvatarImage.DataBind();
-                        //Label1.Text = "File uploaded!";
                     }
                     catch (Exception ex)
                     {
-                        //Label1.Text = "File could not be uploaded.";
+
                     }
                 }
                 else
                 {
-                    //Label1.Text = "Cannot accept files of this type.";
+
                 }
             }
         }
@@ -176,9 +179,9 @@ namespace vBay
             //Tiến hành
             //  1. Tiến hành cập nhật thông tin tài khoản
             //  Kiểm tra: Nếu mật khẩu trong TextBox_Pass khác với mật khẩu trong accInfo
-            if (TextBox_Pass.Text != accMembership.Password)
-                //      1.1 Cập nhật lại mật khẩu
-                accMembership.Password = TextBox_Pass.Text;
+            //if (TextBox_Pass.Text != accMembership.Password)
+            //    //      1.1 Cập nhật lại mật khẩu
+            //    accMembership.Password = TextBox_Pass.Text;
 
             //  Kiểm tra: Nếu TextBox_HoTen khác với thông tin trong accInfo
             if (TextBox_HoTen.Text != accInfo.HoTen)
@@ -186,10 +189,16 @@ namespace vBay
                 accInfo.HoTen = TextBox_HoTen.Text;
 
             //  Kiểm tra: Nếu NgaySinh khác với thông tin trong accInfo
-            DateTime birthday = new DateTime(int.Parse(DropDownList_Year.SelectedItem.Value), int.Parse(DropDownList_Month.SelectedItem.Value), int.Parse(DropDownList_Date.SelectedItem.Value));
-            if (birthday.ToString() != accInfo.NgaySinh.Value.ToString())
-                //      1.3 Cập nhật lại ngày sinh
-                accInfo.NgaySinh = birthday;
+            int day, month, year;
+            if (int.TryParse(DropDownList_Date.SelectedItem.Text, out day)
+                && int.TryParse(DropDownList_Month.SelectedItem.Text, out month)
+                && int.TryParse(DropDownList_Year.SelectedItem.Text, out year))
+            {
+                DateTime birthday = new DateTime(year, month, day);
+                //if (birthday.ToString() != accInfo.NgaySinh.Value.ToString())
+                    //      1.3 Cập nhật lại ngày sinh
+                    accInfo.NgaySinh = birthday;
+            }            
 
             //  Kiểm tra: Nếu TextBox_DiaChi khác với thông tin trong accInfo
             if (TextBox_DiaChi.Text != accInfo.DiaChi)
@@ -243,17 +252,28 @@ namespace vBay
 
             //  Kiểm tra: Nếu ExpiredTime khác
             //      1.15 Cập nhật lạ ExpiredTime
-            if (int.Parse(DropDownList_ExpiredMonth.SelectedItem.Value) != accInfo.ThongTinThe_ExpireTime.Value.Month)
+            if (
+                int.TryParse(DropDownList_ExpiredMonth.SelectedItem.Text, out month)
+                && int.TryParse(DropDownList_ExpiredYear.SelectedItem.Text, out year)
+                )
             {
-                DateTime date = new DateTime(accInfo.ThongTinThe_ExpireTime.Value.Year, int.Parse(DropDownList_ExpiredMonth.SelectedItem.Value.ToString()), accInfo.ThongTinThe_ExpireTime.Value.Day);
-                accInfo.ThongTinThe_ExpireTime = date;
-            }
+                //if (month != accInfo.ThongTinThe_ExpireTime.Value.Month)
+                //{
+                //    DateTime date = new DateTime(accInfo.ThongTinThe_ExpireTime.Value.Year, int.Parse(DropDownList_ExpiredMonth.SelectedItem.Value.ToString()), accInfo.ThongTinThe_ExpireTime.Value.Day);
+                //    accInfo.ThongTinThe_ExpireTime = date;
+                //}
 
-            if (int.Parse(DropDownList_ExpiredYear.SelectedItem.Value) != accInfo.ThongTinThe_ExpireTime.Value.Year)
-            {
-                DateTime date = new DateTime(int.Parse(DropDownList_ExpiredYear.SelectedItem.Value.ToString()), accInfo.ThongTinThe_ExpireTime.Value.Month, accInfo.ThongTinThe_ExpireTime.Value.Day);
+                //if (int.Parse(DropDownList_ExpiredYear.SelectedItem.Value) != accInfo.ThongTinThe_ExpireTime.Value.Year)
+                //{
+                //    DateTime date = new DateTime(int.Parse(DropDownList_ExpiredYear.SelectedItem.Value.ToString()), accInfo.ThongTinThe_ExpireTime.Value.Month, accInfo.ThongTinThe_ExpireTime.Value.Day);
+                //    accInfo.ThongTinThe_ExpireTime = date;
+                //}
+
+                DateTime date = new DateTime(year, month, 1);
                 accInfo.ThongTinThe_ExpireTime = date;
             }
+            else
+                return;
 
             //  Kiểm tra: Nếu CVV2 khác
             if (TextBox_CVV2.Text != accInfo.ThongTinThe_CVV2)
@@ -284,10 +304,14 @@ namespace vBay
                     break;
                 }
 
-            DropDownList_Date.SelectedIndex = DropDownList_Date.Items.IndexOf(new ListItem(accInfo.NgaySinh.Value.Day.ToString()));
-            DropDownList_Month.SelectedIndex = DropDownList_Month.Items.IndexOf(new ListItem(accInfo.NgaySinh.Value.Month.ToString()));
-            DropDownList_Year.SelectedIndex = DropDownList_Year.Items.IndexOf(new ListItem(accInfo.NgaySinh.Value.Year.ToString()));
-            TextBox_Pass.Text = TextBox_RePass.Text = accMembership.Password;
+            if (accInfo.NgaySinh != null)
+            {
+                DropDownList_Date.SelectedIndex = DropDownList_Date.Items.IndexOf(new ListItem(accInfo.NgaySinh.Value.Day.ToString()));
+                DropDownList_Month.SelectedIndex = DropDownList_Month.Items.IndexOf(new ListItem(accInfo.NgaySinh.Value.Month.ToString()));
+                DropDownList_Year.SelectedIndex = DropDownList_Year.Items.IndexOf(new ListItem(accInfo.NgaySinh.Value.Year.ToString()));
+            }
+
+            //TextBox_Pass.Text = TextBox_RePass.Text = accMembership.Password;
             TextBox_DiaChi.Text = accInfo.DiaChi;
             TextBox_SoDienThoai.Text = accInfo.SoDienThoai;
             TextBox_Email.Text = accMembership.Email;
@@ -299,13 +323,34 @@ namespace vBay
             TextBox_LastName.Text = accInfo.ThongTinThe_LastName;
             TextBox_State.Text = accInfo.ThongTinThe_State;
             TextBox_ZipCode.Text = accInfo.ThongTinThe_ZipCode;
-            DropDownList_ExpiredMonth.SelectedIndex = DropDownList_ExpiredMonth.Items.IndexOf(new ListItem(accInfo.ThongTinThe_ExpireTime.Value.Month.ToString()));
-            DropDownList_ExpiredYear.SelectedIndex = DropDownList_ExpiredYear.Items.IndexOf(new ListItem(accInfo.ThongTinThe_ExpireTime.Value.Year.ToString()));
+
+            if (accInfo.ThongTinThe_ExpireTime != null)
+            {
+                DropDownList_ExpiredMonth.SelectedIndex = DropDownList_ExpiredMonth.Items.IndexOf(new ListItem(accInfo.ThongTinThe_ExpireTime.Value.Month.ToString()));
+                DropDownList_ExpiredYear.SelectedIndex = DropDownList_ExpiredYear.Items.IndexOf(new ListItem(accInfo.ThongTinThe_ExpireTime.Value.Year.ToString()));
+            }
         }
 
         protected void Validation_NgaySinh_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            if (int.Parse(DropDownList_Date.SelectedItem.Value) > DateTime.DaysInMonth(int.Parse(DropDownList_Year.SelectedItem.Value), int.Parse(DropDownList_Month.SelectedItem.Value)))
+            int day, month, year;
+            bool bDay = int.TryParse(DropDownList_Date.SelectedItem.Text, out day);
+            bool bMonth = int.TryParse(DropDownList_Month.SelectedItem.Text, out month);
+            bool bYear = int.TryParse(DropDownList_Year.SelectedItem.Text, out year);
+
+            if (!bDay && !bMonth && !bYear)
+            {
+                args.IsValid = true;
+                return;
+            }
+
+            if (bDay || bMonth || bYear)
+            {
+                args.IsValid = false;
+                return;
+            }
+
+            if (day > DateTime.DaysInMonth(year, month))
             {
                 args.IsValid = false;
                 return;
@@ -316,8 +361,16 @@ namespace vBay
 
         protected void CustomValidator_ExpiredTime_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            int year = int.Parse(DropDownList_ExpiredYear.SelectedItem.Value.ToString());
-            int month = int.Parse(DropDownList_ExpiredMonth.SelectedItem.Value.ToString());
+            int year, month;
+            bool bYear = int.TryParse(DropDownList_ExpiredYear.SelectedItem.Text, out year);
+            bool bMonth = int.TryParse(DropDownList_ExpiredMonth.SelectedItem.Text, out month);
+
+            if (!bYear || !bMonth)
+            {
+                args.IsValid = false;
+                return;
+            }
+
             if (year < DateTime.Today.Year)
                 args.IsValid = false;
             else
@@ -333,9 +386,9 @@ namespace vBay
                         args.IsValid = true;
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Button1_Click1(object sender, EventArgs e)
         {
-            ckbNoAvatar.Checked = false;
+            ckbNoAvatar.Checked = false;            
         }
     }
 }

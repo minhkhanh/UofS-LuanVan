@@ -24,7 +24,9 @@
     oncreateduser="CreateUserWizard1_CreatedUser" 
     oncreatinguser="CreateUserWizard1_CreatingUser" Width="574px" 
     BackColor="#F7F6F3" BorderColor="#E6E2D8" BorderStyle="Solid" BorderWidth="1px" 
-    Font-Names="Verdana" Font-Size="1em">
+    Font-Names="Verdana" Font-Size="1em" 
+    CompleteSuccessText="Bạn vừa tạo tài khoản và đăng nhập thành công." 
+    ContinueDestinationPageUrl="~/Default.aspx">
     <ContinueButtonStyle BackColor="#FFFBFF" BorderColor="#CCCCCC" 
         BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" 
         ForeColor="#284775" />

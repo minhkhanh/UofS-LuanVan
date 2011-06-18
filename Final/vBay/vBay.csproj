@@ -57,6 +57,9 @@
     <Content Include="About.aspx" />
     <Content Include="AdminDefault.aspx" />
     <Content Include="App_Themes\ThemeSunny\styleSunny.css" />
+    <Content Include="Avatars\AvatarDefaul.jpg" />
+    <Content Include="Avatars\avatar_cua.png" />
+    <Content Include="Avatars\minhkhanhhaugiang.jpg" />
     <Content Include="CapNhatThongTinTaiKhoan.aspx" />
     <Content Include="ChiTietMotSanPhamManager.aspx" />
     <Content Include="DangThongTinSanPham.aspx" />
@@ -109,6 +112,7 @@
     <Content Include="Login.aspx" />
     <Content Include="PageNotFound.aspx" />
     <Content Include="ManagerDefault.aspx" />
+    <Content Include="PasswordChanging.aspx" />
     <Content Include="PasswordRecovering.aspx" />
     <Content Include="QuanLiTaiKhoan.aspx" />
     <Content Include="Scripts\jquery-1.6.1.js" />
@@ -216,9 +220,9 @@
       <DependentUpon>DangThongTinSanPham.aspx</DependentUpon>
     </Compile>
     <Compile Include="DataEntity.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>DataEntity.dbml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="DauGiaThanhCong.aspx.cs">
       <DependentUpon>DauGiaThanhCong.aspx</DependentUpon>
@@ -296,6 +300,13 @@
     </Compile>
     <Compile Include="MasterSite.Master.designer.cs">
       <DependentUpon>MasterSite.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordChanging.aspx.cs">
+      <DependentUpon>PasswordChanging.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PasswordChanging.aspx.designer.cs">
+      <DependentUpon>PasswordChanging.aspx</DependentUpon>
     </Compile>
     <Compile Include="PasswordRecovering.aspx.cs">
       <DependentUpon>PasswordRecovering.aspx</DependentUpon>
@@ -577,7 +588,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Avatars\" />
     <Folder Include="Pictures\" />
   </ItemGroup>
   <ItemGroup>
