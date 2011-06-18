@@ -19,7 +19,7 @@ namespace vBay
         {
             //Phương hướng xử lí trong hàm Page_Init()
             //  1. Khởi tạo biến dataContext để đọc dữ liệu từ CSDL
-            //  2. Đọc tên tài khoản đang đăng nhập từ session và hiện tên đăng nhập vào TextBox_TenTaiKhoan
+            //  2. Đọc tên tài khoản đang đăng nhập và hiện tên đăng nhập vào TextBox_TenTaiKhoan
             //  3. Đọc danh sách các loại sản phẩm và load lên DropDownList_LoaiSanPham
             //  4. Đọc danh sách tình trạng sản phẩm và load lên DropDownList_TinhTrangSanPham
 
@@ -27,8 +27,9 @@ namespace vBay
             //  1. Khởi tạo biến dataContext để đọc dữ liệu từ CSDL
             dataContext = new DataEntityDataContext();
 
-            //  2. Đọc tên tài khoản đang đăng nhập từ session và hiện tên đăng nhập vào TextBox_TenTaiKhoan
-            //????
+            //  2. Đọc tên tài khoản đang đăng nhập và hiện tên đăng nhập vào TextBox_TenTaiKhoan
+            String userName = Page.User.Identity.Name;
+            TextBox_TenTaiKhoan.Text = userName;
 
             //  3. Đọc danh sách các loại sản phẩm và load lên DropDownList_LoaiSanPham
             var loaiSanPham = from a in dataContext.LoaiSanPhams
