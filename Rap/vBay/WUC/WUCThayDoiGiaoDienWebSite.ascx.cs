@@ -10,37 +10,51 @@ namespace vBay.WUC
     public partial class WUCThayDoiGiaoDienWebSite : System.Web.UI.UserControl
     {
         private DataEntityDataContext dataContext;
-        private String staticLogoBeginUrl = @"~/Images/";
-        private String staticLogoBeginPath = @"E:\Study At School\Workspace\eBay[08-06-2011]\Rap\vBay\Images\";
-        private String staticCSSBeginUrl = @"../Styles/";
-        private String staticCSSBeginPath = @"E:\Study At School\Workspace\eBay[08-06-2011]\Rap\vBay\Styles\";
+        private String staticLogoBeginUrl;
+        private String staticLogoBeginPath;
+        private String staticCSSBeginUrl;
+        private String staticCSSBeginPath;
 
         protected void Page_Init(object sender, EventArgs e)
         {
             //Hướng xử lí trong hàm Page_Init()
             //  1. Khởi tạo biến dataContext
-            //  2. Lấy Image Url của Logo trong CSDL thông qua dataContext và gán vào Image_Logo
-            //  3. Thiết lập trạng thái Invisible cho Label_UploadLogoThanhCong
-            //  4. Thiết lập trạng thái Invisible cho Label_UploadCSSThanhCong
-            //  5. Thiết lập trạng thái Invisible cho Label_ReturnToDefault
+            //  2. Truy vấn CSDL đọc các đường dẫn và lưu vào các biến staticLogoBeginUrl, staticLogoBeginPath
+            //  3. Truy vấn CSDL đọc các đường dẫn và lưu vào các biến staticCSSBeginUrl, staticCSSBeginPath
+            //  4. Lấy Image Url của Logo trong CSDL thông qua dataContext và gán vào Image_Logo
+            //  5. Thiết lập trạng thái Invisible cho Label_UploadLogoThanhCong
+            //  6. Thiết lập trạng thái Invisible cho Label_UploadCSSThanhCong
+            //  7. Thiết lập trạng thái Invisible cho Label_ReturnToDefault
             
 
             //Tiến hành
             //  1. Khởi tạo biến dataContext
             dataContext = new DataEntityDataContext();
 
-            //  2. Lấy Image Url của Logo trong CSDL thông qua dataContext và gán vào Image_Logo
-            THAMSO thamSo = dataContext.THAMSOs.Single(p => p.TenThamSo == "Logo");
+            //  2. Truy vấn CSDL đọc các đường dẫn và lưu vào các biến staticLogoBeginUrl, staticLogoBeginPath
+            THAMSO thamSo = dataContext.THAMSOs.Single(p => p.TenThamSo == "LogoUploadFolder");
+            staticLogoBeginPath = thamSo.GiaTri;
+            thamSo = dataContext.THAMSOs.Single(p => p.TenThamSo == "LogoUploadUrl");
+            staticLogoBeginUrl = thamSo.GiaTri;
+            
+            //  3. Truy vấn CSDL đọc các đường dẫn và lưu vào các biến staticCSSBeginUrl, staticCSSBeginPath
+            thamSo = dataContext.THAMSOs.Single(p => p.TenThamSo == "StyleSheetUploadFolder");
+            staticCSSBeginPath = thamSo.GiaTri;
+            thamSo = dataContext.THAMSOs.Single(p => p.TenThamSo == "StyleSheetUploadUrl");
+            staticCSSBeginUrl = thamSo.GiaTri;
+
+            //  4. Lấy Image Url của Logo trong CSDL thông qua dataContext và gán vào Image_Logo
+            thamSo = dataContext.THAMSOs.Single(p => p.TenThamSo == "Logo");
             String imageUrl = thamSo.GiaTri;
             Image_Logo.ImageUrl = imageUrl;
 
-            //  3. Thiết lập trạng thái Invisible cho Label_UploadThanhCong
+            //  5. Thiết lập trạng thái Invisible cho Label_UploadThanhCong
             Label_UploadLogoThanhCong.Visible = false;
 
-            //  4. Thiết lập trạng thái Invisible cho Label_UploadCSSThanhCong
+            //  6. Thiết lập trạng thái Invisible cho Label_UploadCSSThanhCong
             Label_UploadCSSThanhCong.Visible = false;
 
-            //  5. Thiết lập trạng thái Invisible cho Label_ReturnToDefault
+            //  7. Thiết lập trạng thái Invisible cho Label_ReturnToDefault
             Label_ReturnToDefault.Visible = false;
         }
 
