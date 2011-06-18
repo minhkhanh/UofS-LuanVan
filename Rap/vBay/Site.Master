@@ -42,7 +42,7 @@
                         <asp:MenuItem Text="Sản Phẩm" Value="Sản Phẩm" NavigateUrl="~/Default.aspx"></asp:MenuItem>
                         <asp:MenuItem Text="Thanh Toán" Value="Thanh Toán" NavigateUrl="~/Default.aspx">
                         </asp:MenuItem>
-                        <asp:MenuItem Text="Hướng Dẫn" Value="Hướng Dẫn" NavigateUrl="~/Default.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Hướng Dẫn" Value="Hướng Dẫn" NavigateUrl="~/HuongDan.aspx"></asp:MenuItem>
                         <asp:MenuItem Text="Liên Hệ" Value="Liên Hệ" NavigateUrl="~/LienHe.aspx"></asp:MenuItem>
                     </Items>
                 </asp:Menu>
