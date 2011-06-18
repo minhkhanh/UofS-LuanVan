@@ -58,6 +58,7 @@
     <Content Include="AdminDefault.aspx" />
     <Content Include="App_Themes\ThemeSunny\styleSunny.css" />
     <Content Include="ChiTietMotSanPhamManager.aspx" />
+    <Content Include="HuongDan.aspx" />
     <Content Include="Images\crying-racoon.gif" />
     <Content Include="Images\icon_oval.jpg" />
     <Content Include="Images\logo.png" />
@@ -201,6 +202,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HuongDan.aspx.cs">
+      <DependentUpon>HuongDan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HuongDan.aspx.designer.cs">
+      <DependentUpon>HuongDan.aspx</DependentUpon>
     </Compile>
     <Compile Include="LienHe.aspx.cs">
       <DependentUpon>LienHe.aspx</DependentUpon>
