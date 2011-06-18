@@ -306,6 +306,10 @@
                     <asp:Label ID="lbGiaKhoiDau" runat="server" Text="0"></asp:Label>
                 </strong>
             </span>
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <asp:Timer ID="Timer1" runat="server" Interval="5000">
+                </asp:Timer>
             <span class="option">
                 <span class="label">Giá hiện tại</span> 
                 <strong class="price exp">
@@ -336,6 +340,14 @@
                 <asp:Label ID="lbThoiGianCon" runat="server" Text="0"></asp:Label>
                 </strong>
             </span>
+            <span class="option">
+                <span class="label">Người có sản phẩm</span> 
+                <strong class="price ex">
+                <asp:Label ID="lbHienDangCoSanPham" runat="server" Text="0"></asp:Label>
+                </strong>
+            </span>
+            </ContentTemplate>
+            </asp:UpdatePanel>
             <div class="clear">
             </div>
             <asp:Button ID="btn_checkout" runat="server" Text="" CssClass="btn_order" 

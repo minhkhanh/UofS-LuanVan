@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Security;
+using System.Data.Linq;
 
 namespace vBay.WUC
 {
@@ -30,10 +31,25 @@ namespace vBay.WUC
             if (sp.GiaHienTai == null || sp.GiaKhoiDiem >= sp.GiaHienTai)
             {
                 lbGiaHienTai.Text = "Chưa ai đặt giá";
+                lbHienDangCoSanPham.Text = "#NA";
             }
             else
             {
                 lbGiaHienTai.Text = sp.GiaHienTai.ToString();
+                var nguoimua = (from a in dataContext.ChiTietDauGias
+                               where (a.MaSanPham == sp.MaSanPham && a.GiaGiaoDich == sp.GiaHienTai)
+                               select new { a.MaTaiKhoan }).FirstOrDefault();
+                if (nguoimua!=null)
+                {
+                    var tennguoimua = (from a in dataContext.aspnet_Users
+                                       join b in dataContext.ThongTinTaiKhoans on a.MaThongTinTaiKhoan equals b.MaThongTinTaiKhoan
+                                       where a.UserId == nguoimua.MaTaiKhoan
+                                       select new { b.HoTen }).FirstOrDefault();
+                    if (tennguoimua!=null)
+                    {
+                        lbHienDangCoSanPham.Text = tennguoimua.HoTen;
+                    }
+                }
             }
             var sl = (from dg in dataContext.ChiTietDauGias
                      where (dg.MaSanPham == sp.MaSanPham)
@@ -119,11 +135,22 @@ namespace vBay.WUC
             cm.ThoiGianGiaoDich = DateTime.Now;
             float gia = 1;
             float.TryParse(txtGiaCaoHon.Text, out gia);
-            //cm.GiaGiaoDich = sp.GiaHienTai + gia;
+            cm.GiaGiaoDich = sp.GiaHienTai + gia;
             SanPham sanPham = dataContext.SanPhams.Single(m => m.MaSanPham == sp.MaSanPham);
             sanPham.GiaHienTai = sp.GiaHienTai + gia;
             dataContext.ChiTietDauGias.InsertOnSubmit(cm);
-            dataContext.SubmitChanges();
+            try
+            {
+                dataContext.SubmitChanges(ConflictMode.FailOnFirstConflict);
+            }
+            catch (ChangeConflictException ex)
+            {
+                foreach (ObjectChangeConflict objchangeconf in dataContext.ChangeConflicts)
+                {
+                    objchangeconf.Resolve(RefreshMode.KeepCurrentValues);
+                }
+            }
+            
             this.Page_Load(this, e);
         }
         private string GetTextTimeOut(DateTime time)
