@@ -141,7 +141,6 @@
     </Content>
     <Content Include="WebForm4Test.aspx" />
     <Content Include="WebForm4TestChiTietSanPham.aspx" />
-    <Content Include="WUCThayDoiGiaoDienWebSite.ascx" />
     <Content Include="WUC\UC_ThayDoiLoaiNguoiDung.ascx" />
     <Content Include="WUC\WUCThayDoiGiaoDienWebSite.ascx" />
     <Content Include="WUC\UC_TheoDoiLichSuGiaoDich.ascx" />
