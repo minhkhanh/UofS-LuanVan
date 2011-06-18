@@ -37,6 +37,6 @@
     </center>
     <center>
         <asp:Button ID="Button_Default" runat="server" Text="Trở về trang chủ" 
-            onclick="Button_Default_Click" PostBackUrl="~/MainContent.aspx" />
+            onclick="Button_Default_Click" PostBackUrl="~/Default.aspx" />
     </center>
 </div>

@@ -4,8 +4,9 @@
     {
         text-align: center;
         height: 55px;
-        width: 757px;
-    }    
+        width: 1040px;
+    }  
+      
     .ChiTietLoaiSanPham
     {
         margin: 0 auto;
@@ -14,8 +15,10 @@
 <div class="headerLoaiSanPham">
     <font face= "Calibri" color= "red" size = "5pt"><b>QUẢN LÝ CHI TIẾT LOẠI SẢN PHẨM</b></font>
 </div>
-<asp:Panel ID="PanelLoaiSanPham" runat="server" style="margin-right: 289px" 
-    Width="756px">
+<asp:Panel ID="PanelLoaiSanPham" runat="server" style="margin-right: 2px" 
+    Width="1040px">
+    <div align="center">
+   
 <asp:GridView ID="ChiTietLoaiSanPham" runat="server" 
               AllowPaging="True" 
               AllowSorting="True" 
@@ -25,8 +28,7 @@
               DataSourceID="ChiTietLoaiSanPhamManager" 
               PageSize="15" 
               Width="578px"
-              ShowFooter = "True" style="
-              margin-left: 87px; margin-right: 4px; text-align: left;" onrowdeleted="ChiTietLoaiSanPham_RowDeleted" 
+              ShowFooter = "True" onrowdeleted="ChiTietLoaiSanPham_RowDeleted" 
     onrowupdated="ChiTietLoaiSanPham_RowUpdated" ForeColor="#333333" 
         GridLines="None">              
     <AlternatingRowStyle BackColor="White" />
@@ -62,6 +64,7 @@
     <SortedDescendingCellStyle BackColor="#FCF6C0" />
     <SortedDescendingHeaderStyle BackColor="#820000" />    
 </asp:GridView>
+</div>
 <asp:LinqDataSource ID="ChiTietLoaiSanPhamManager" runat="server" 
                     ContextTypeName="vBay.DataEntityDataContext" 
                     EnableDelete="True" 

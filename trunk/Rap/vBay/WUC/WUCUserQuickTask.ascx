@@ -44,7 +44,7 @@
                     </asp:LoginView>
                     .
                     <asp:LoginStatus ID="LoginStatus1" runat="server" 
-                        LogoutPageUrl="~/Default.aspx" />
+                        LogoutPageUrl="~/Default.aspx" LogoutAction="Redirect" />
                     .
                 </td>
             </tr>

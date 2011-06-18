@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Configuration;
 
 namespace vBay
 {
@@ -13,35 +14,25 @@ namespace vBay
         static private aspnet_User accUser;
         static private aspnet_Membership accMembership;
         static private ThongTinTaiKhoan accInfo;
-        static private bool isPageChange = false;
-        private Guid userId;
 
         protected void Page_Init(object sender, EventArgs e)
         {
             //Hướng xử lí trong hàm
             //  1. Khởi tạo biến dataContext để đọc thông tin từ CSDL
-            //  2. Thực hiện câu truy vấn để lấy danh sách các tài khoản chưa bị xóa từ CSDL và load lên List_DanhSachTaiKhoan
+            //  2. Đọc UserName của người dùng đang đăng nhập
             //  3. Thực hiện truy vấn để lấy danh sách giới tính và load lên DropDownList_GioiTinh
             //  4. Thiết lập các item cho DropDownList_Date, DropDownList_Month và DropDownList_Year
-            //  5. Thiết lập SelectionItem cho DropDownList_Date, DropDownList_Month và DropDownList_Year
-
+            //  5. Truy vấn CSDL để lấy ra thông tin (UserName, Pass, HoTen, NgaySinh, DiaChi, SoDienThoai, Email) và thông tin thẻ (FirstName, LastName, Address, Country, State, ZipCode, CardType, CardNumber, ExpiredTime và CVV2)
+            //  6. Thiết lập các item cho DropDownList_ExpiredMonth và DropDownList_ExpiredYear
+            //  7. Load các thông tin của người dùng lên các TextBox tương ứng
                         
             //Tiến hành
             //  1. Khởi tạo biến dataContext để đọc thông tin từ CSDL
             dataContext = new DataEntityDataContext();
+
+            //  2. Đọc UserName của người dùng đang đăng nhập
+            String userName = Page.User.Identity.Name;
             
-            //  2. Thực hiện câu truy vấn để lấy danh sách các tài khoản chưa bị xóa và chưa bị khóa từ CSDL và load lên List_DanhSachTaiKhoan
-            var danhSachTaiKhoan = from a in dataContext.aspnet_Users
-                                   from b in dataContext.ThongTinTaiKhoans
-                                   from c in dataContext.aspnet_Memberships
-                                   where a.MaThongTinTaiKhoan == b.MaThongTinTaiKhoan && a.UserId == c.UserId && c.IsApproved == true && b.BiXoa == false
-                                   select new { a.UserId, a.UserName };
-
-            List_DanhSachTaiKhoan.DataSource = danhSachTaiKhoan;
-            List_DanhSachTaiKhoan.DataTextField = "UserName";
-            List_DanhSachTaiKhoan.DataValueField = "UserId";
-            List_DanhSachTaiKhoan.DataBind();
-
             //  3. Thực hiện truy vấn để lấy danh sách giới tính và load lên DropDownList_GioiTinh
             var danhSachGioiTinh = from a in dataContext.GioiTinhs
                                    select new { a.MaGioiTinh, a.TenGioiTinh};
@@ -51,7 +42,7 @@ namespace vBay
             DropDownList_GioiTinh.DataValueField = "MaGioiTinh";
             DropDownList_GioiTinh.DataBind();
             
-            //  6. Thiết lập các item cho DropDownList_Date, DropDownList_Month và DropDownList_Year
+            //  4. Thiết lập các item cho DropDownList_Date, DropDownList_Month và DropDownList_Year
             //  Thiết lập các item cho DropDownList_Date
             for (int i = 1; i <= 31; i++)
             {
@@ -73,39 +64,81 @@ namespace vBay
                 DropDownList_Year.Items.Add(item);
             }
 
-            //  7. Thiết lập SelectionItem cho DropDownList_Date, DropDownList_Month và DropDownList_Year
-            DropDownList_Date.SelectedIndex = 0;
-            DropDownList_Month.SelectedIndex = 0;
-            DropDownList_Year.SelectedIndex = 0;
+            //  5. Truy vấn CSDL để lấy ra thông tin (UserName, Pass, HoTen, NgaySinh, DiaChi, SoDienThoai, Email) và thông tin thẻ (FirstName, LastName, Address, Country, State, ZipCode, CardType, CardNumber, ExpiredTime và CVV2)
+            accUser = dataContext.aspnet_Users.Single(p => p.UserName == userName);
+            accInfo = dataContext.ThongTinTaiKhoans.Single(p => p.MaThongTinTaiKhoan == accUser.MaThongTinTaiKhoan);
+            accMembership = dataContext.aspnet_Memberships.Single(p => p.UserId == accUser.UserId);
+
+            //  6. Thiết lập các item cho DropDownList_ExpiredMonth và DropDownList_ExpiredYear
+            //DropDownList_ExpiredMonth.Items.Clear();
+            for (int i = 1; i <= 12; i++)
+            {
+                ListItem item = new ListItem(i.ToString(), i.ToString());
+                DropDownList_ExpiredMonth.Items.Add(item);
+            }
+
+            //DropDownList_ExpiredYear.Items.Clear();
+            for (int i = DateTime.Today.Year - 500; i <= DateTime.Today.Year + 1000; i++)
+            {
+                ListItem item = new ListItem(i.ToString(), i.ToString());
+                DropDownList_ExpiredYear.Items.Add(item);
+            }
+
+            //  7. Load các thông tin của người dùng lên các TextBox tương ứng
+            Load_AccountInfo(accUser.UserId);
         }
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (ckbNoAvatar.Checked == true)
+            {
+                AvatarImg.ImageUrl = "";
+            }
 
-        }
-        protected void List_DanhSachTaiKhoan_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Hướng xử lí
-            //  1. Lấy mã tài khoản từ SelectedItem.Value trong List_DanhSachTaiKhoan và gán cho biến userId
-            //  2. Gọi hàm Load_AccountInfo với tham số truyền vào là mã tài khoản ở trên
-            //  3. Gán giá trị true cho cờ hiệu isPageChange => Page đã được ReLoad ít nhất 1 lần
+            if (IsPostBack)
+            {
+                Boolean fileOK = false;
+                String path = Server.MapPath(WebConfigurationManager.AppSettings["AvatarFolder"]);
+                if (AvatarUploadCtrl.HasFile)
+                {
+                    String fileExtension =
+                        System.IO.Path.GetExtension(AvatarUploadCtrl.FileName).ToLower();
+                    String[] allowedExtensions = { ".gif", ".png", ".jpeg", ".jpg" };
+                    for (int i = 0; i < allowedExtensions.Length; i++)
+                    {
+                        if (fileExtension == allowedExtensions[i])
+                        {
+                            fileOK = true;
+                            break;
+                        }
+                    }
+                }
 
-            //Tiến hành
-            //  1. Lấy mã tài khoản từ SelectedItem.Value trong List_DanhSachTaiKhoan
-            userId = Guid.Parse(List_DanhSachTaiKhoan.SelectedItem.Value.ToString());
-            
-            //  2. Gọi hàm Load_AccountInfo với tham số truyền vào là mã tài khoản ở trên
-            Load_AccountInfo(userId);
-            
-            //  3. Gán giá trị true cho cờ hiệu isPageChange => Page đã được ReLoad ít nhất 1 lần
-            //  Kiểm tra: nếu isPageChange == false
-            if (isPageChange == false)
-                //Gán giá trị true cho isPageChange
-                isPageChange = true;
+                if (fileOK)
+                {
+                    try
+                    {
+                        AvatarUploadCtrl.PostedFile.SaveAs(path
+                            + AvatarUploadCtrl.FileName);
+
+                        AvatarImg.ImageUrl = WebConfigurationManager.AppSettings["AvatarFolder"] + AvatarUploadCtrl.FileName;
+                        //AvatarImage.DataBind();
+                        //Label1.Text = "File uploaded!";
+                    }
+                    catch (Exception ex)
+                    {
+                        //Label1.Text = "File could not be uploaded.";
+                    }
+                }
+                else
+                {
+                    //Label1.Text = "Cannot accept files of this type.";
+                }
+            }
         }
         protected void Button_Update_Click(object sender, EventArgs e)
         {
             //Hướng xử lí trong hàm Button_Update_Click
-            //Kiểm tra: Nếu Page đã được ReLoad ít nhất 1 lần
             //  1. Tiến hành cập nhật thông tin tài khoản
             //  Kiểm tra: Nếu mật khẩu trong TextBox_Pass khác với mật khẩu trong accInfo
             //      1.1 Cập nhật lại mật khẩu
@@ -117,18 +150,30 @@ namespace vBay
             //      1.5 Cập nhật lại địa chỉ
             //  Kiểm tra: Nếu TextBox_SoDienThoai khác với thông tin trong accInfo
             //      1.6 Cập nhật lại số điện thoại
-            //  Kiểm tra: Nếu TextBox_MaTheTinDung khác với thông tin trong accInfo
-            //      1.7 Cập nhật lại mã thẻ tín dụng
             //  Kiểm tra: Nếu TextBox_Email khác với thông tin trong accInfo
-            //      1.8 Cập nhật lại email
+            //      1.7 Cập nhật lại email
+            //  Kiểm tra: Nếu FirstName khác với thông tin trong accInfo
+            //      1.8 Cập nhật lại FirstName
+            //  Kiểm tra: Nếu LastName khác với thông tin trong accInfo
+            //      1.9 Cập nhật lại LastName
+            //  Kiểm tra: Nếu Address khác
+            //      1.10 Cập nhật lại Address
+            //  Kiểm tra: Nếu Country khác
+            //      1.11 Cập nhật lại Country
+            //  Kiểm tra: Nếu State khác
+            //      1.12 Cập nhật lại State
+            //  Kiểm tra: Nếu ZipCode khác
+            //      1.13 Cập nhật lại ZipCode
+            //  Kiểm tra: Nếu CardNumber khác
+            //      1.14 Cập nhật lại CardNumber
+            //  Kiểm tra: Nếu ExpiredTime khác
+            //      1.15 Cập nhật lạ ExpiredTime
+            //  Kiểm tra: Nếu CVV2 khác
+            //      1.16 Cập nhật lại CVV2
             //  2. Cập nhật lại CSDL thông qua biến dataContext
 
 
             //Tiến hành
-            //Kiểm tra: Nếu Page đã được ReLoad ít nhất 1 lần
-            if (isPageChange == false)
-                return;
-
             //  1. Tiến hành cập nhật thông tin tài khoản
             //  Kiểm tra: Nếu mật khẩu trong TextBox_Pass khác với mật khẩu trong accInfo
             if (TextBox_Pass.Text != accMembership.Password)
@@ -156,33 +201,79 @@ namespace vBay
                 //      1.6 Cập nhật lại số điện thoại
                 accInfo.SoDienThoai = TextBox_SoDienThoai.Text;
 
-            //  Kiểm tra: Nếu TextBox_MaTheTinDung khác với thông tin trong accInfo
-            if (TextBox_MaTheTinDung.Text != accInfo.MaTheTinDung)
-                //      1.7 Cập nhật lại mã thẻ tín dụng
-                accInfo.MaTheTinDung = TextBox_MaTheTinDung.Text;
-
             //  Kiểm tra: Nếu TextBox_Email khác với thông tin trong accInfo
             if (TextBox_Email.Text != accMembership.Email)
-                //      1.8 Cập nhật lại email
+                //      1.7 Cập nhật lại email
                 accMembership.Email = TextBox_Email.Text;
+
+            //  Kiểm tra: Nếu FirstName khác với thông tin trong accInfo
+            if (TextBox_FirstName.Text != accInfo.ThongTinThe_FirstName)
+                //      1.8 Cập nhật lại FirstName
+                accInfo.ThongTinThe_FirstName = TextBox_FirstName.Text;
+
+            //  Kiểm tra: Nếu LastName khác với thông tin trong accInfo
+            if (TextBox_LastName.Text != accInfo.ThongTinThe_LastName)
+                //      1.9 Cập nhật lại LastName
+                accInfo.ThongTinThe_LastName = TextBox_LastName.Text;
+
+            //  Kiểm tra: Nếu Address khác
+            if (TextBox_Address.Text != accInfo.ThongTinThe_Address)
+                //      1.10 Cập nhật lại Address
+                accInfo.ThongTinThe_Address = TextBox_Address.Text;
+
+            //  Kiểm tra: Nếu Country khác
+            if (TextBox_Country.Text != accInfo.ThongTinThe_Country)
+                //      1.11 Cập nhật lại Country
+                accInfo.ThongTinThe_Country = TextBox_Country.Text;
+
+            //  Kiểm tra: Nếu State khác
+            if (TextBox_State.Text != accInfo.ThongTinThe_State)
+                //      1.12 Cập nhật lại State
+                accInfo.ThongTinThe_State = TextBox_State.Text;
+
+            //  Kiểm tra: Nếu ZipCode khác
+            if (TextBox_ZipCode.Text != accInfo.ThongTinThe_ZipCode)
+                //      1.13 Cập nhật lại ZipCode
+                accInfo.ThongTinThe_ZipCode = TextBox_ZipCode.Text;
+
+            //  Kiểm tra: Nếu CardNumber khác
+            if (TextBox_CardNumber.Text != accInfo.ThongTinThe_CardNumber)
+                //      1.14 Cập nhật lại CardNumber
+                accInfo.ThongTinThe_CardNumber = TextBox_CardNumber.Text;
+
+            //  Kiểm tra: Nếu ExpiredTime khác
+            //      1.15 Cập nhật lạ ExpiredTime
+            if (int.Parse(DropDownList_ExpiredMonth.SelectedItem.Value) != accInfo.ThongTinThe_ExpireTime.Value.Month)
+            {
+                DateTime date = new DateTime(accInfo.ThongTinThe_ExpireTime.Value.Year, int.Parse(DropDownList_ExpiredMonth.SelectedItem.Value.ToString()), accInfo.ThongTinThe_ExpireTime.Value.Day);
+                accInfo.ThongTinThe_ExpireTime = date;
+            }
+
+            if (int.Parse(DropDownList_ExpiredYear.SelectedItem.Value) != accInfo.ThongTinThe_ExpireTime.Value.Year)
+            {
+                DateTime date = new DateTime(int.Parse(DropDownList_ExpiredYear.SelectedItem.Value.ToString()), accInfo.ThongTinThe_ExpireTime.Value.Month, accInfo.ThongTinThe_ExpireTime.Value.Day);
+                accInfo.ThongTinThe_ExpireTime = date;
+            }
+
+            //  Kiểm tra: Nếu CVV2 khác
+            if (TextBox_CVV2.Text != accInfo.ThongTinThe_CVV2)
+                //      1.16 Cập nhật lại CVV2
+                accInfo.ThongTinThe_CVV2 = TextBox_CVV2.Text;
+
+            accInfo.Avatar = AvatarImg.ImageUrl;
 
             //  2. Cập nhật lại CSDL thông qua biến dataContext
             dataContext.SubmitChanges();
         }
+
         public void Load_AccountInfo(Guid maTaiKhoan)
         {
             //Hướng xử lí trong hàm Load_AccountInfo
-            //  1. Thực hiện truy vấn để lấy các thông tin có liên quan đến tài khoản có mã tài khoản được truyền là maTaiKhoan
-            //  2. Load thông tin của tài khoản lên các Control tương ứng của Page
+            //  1. Load thông tin của tài khoản lên các Control tương ứng của Page
 
 
             //Tiến hành
-            //  1. Thực hiện truy vấn để lấy các thông tin có liên quan đến tài khoản có mã tài khoản được truyền là maTaiKhoan
-            accUser = dataContext.aspnet_Users.Single(p => p.UserId == maTaiKhoan);
-            accMembership = dataContext.aspnet_Memberships.Single(p => p.UserId == maTaiKhoan);
-            accInfo = dataContext.ThongTinTaiKhoans.Single(p => p.MaThongTinTaiKhoan == accUser.MaThongTinTaiKhoan);
-
-            //  2. Load thông tin của tài khoản lên các Control tương ứng của Page
+            //  1. Load thông tin của tài khoản lên các Control tương ứng của Page
             TextBox_TenTaiKhoan.Text = accUser.UserName;
             TextBox_HoTen.Text = accInfo.HoTen;
             //      Tra cứu các index trong DropDownList_GioiTinh để tìm index của Item có text là giới tính được lưu trong AccInfo
@@ -199,9 +290,19 @@ namespace vBay
             TextBox_Pass.Text = TextBox_RePass.Text = accMembership.Password;
             TextBox_DiaChi.Text = accInfo.DiaChi;
             TextBox_SoDienThoai.Text = accInfo.SoDienThoai;
-            TextBox_MaTheTinDung.Text = accInfo.MaTheTinDung;
             TextBox_Email.Text = accMembership.Email;
+            TextBox_Address.Text = accInfo.ThongTinThe_Address;
+            TextBox_CardNumber.Text = accInfo.ThongTinThe_CardNumber;
+            TextBox_Country.Text = accInfo.ThongTinThe_Country;
+            TextBox_CVV2.Text = accInfo.ThongTinThe_CVV2;
+            TextBox_FirstName.Text = accInfo.ThongTinThe_FirstName;
+            TextBox_LastName.Text = accInfo.ThongTinThe_LastName;
+            TextBox_State.Text = accInfo.ThongTinThe_State;
+            TextBox_ZipCode.Text = accInfo.ThongTinThe_ZipCode;
+            DropDownList_ExpiredMonth.SelectedIndex = DropDownList_ExpiredMonth.Items.IndexOf(new ListItem(accInfo.ThongTinThe_ExpireTime.Value.Month.ToString()));
+            DropDownList_ExpiredYear.SelectedIndex = DropDownList_ExpiredYear.Items.IndexOf(new ListItem(accInfo.ThongTinThe_ExpireTime.Value.Year.ToString()));
         }
+
         protected void Validation_NgaySinh_ServerValidate(object source, ServerValidateEventArgs args)
         {
             if (int.Parse(DropDownList_Date.SelectedItem.Value) > DateTime.DaysInMonth(int.Parse(DropDownList_Year.SelectedItem.Value), int.Parse(DropDownList_Month.SelectedItem.Value)))
@@ -211,6 +312,30 @@ namespace vBay
             }
             else
                 args.IsValid = true;
+        }
+
+        protected void CustomValidator_ExpiredTime_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            int year = int.Parse(DropDownList_ExpiredYear.SelectedItem.Value.ToString());
+            int month = int.Parse(DropDownList_ExpiredMonth.SelectedItem.Value.ToString());
+            if (year < DateTime.Today.Year)
+                args.IsValid = false;
+            else
+                if (year == DateTime.Today.Year)
+                {
+                    if (month <= DateTime.Today.Month)
+                        args.IsValid = false;
+                    else
+                        args.IsValid = true;
+                }
+                else
+                    if (year > DateTime.Today.Year)
+                        args.IsValid = true;
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            ckbNoAvatar.Checked = false;
         }
     }
 }

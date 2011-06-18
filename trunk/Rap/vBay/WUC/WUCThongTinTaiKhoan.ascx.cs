@@ -38,7 +38,7 @@ namespace vBay
             txbFullname.Text = accInfo.HoTen;
             txbAddress.Text = accInfo.DiaChi;
             WUCDateSelect1.SelectedDate = accInfo.NgaySinh;
-            txbCreditCardId.Text = accInfo.MaTheTinDung;
+            //txbCreditCardId.Text = accInfo.MaTheTinDung;
             txbPhoneNumber.Text = accInfo.SoDienThoai;
         }
 
@@ -59,7 +59,7 @@ namespace vBay
                 accInfo.HoTen = txbFullname.Text;
                 accInfo.DiaChi = txbAddress.Text;
                 accInfo.NgaySinh = WUCDateSelect1.SelectedDate;
-                accInfo.MaTheTinDung = txbCreditCardId.Text;
+                //accInfo.MaTheTinDung = txbCreditCardId.Text;
                 accInfo.SoDienThoai = txbPhoneNumber.Text;
 
                 dc.SubmitChanges();

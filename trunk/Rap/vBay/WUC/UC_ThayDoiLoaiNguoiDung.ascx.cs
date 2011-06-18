@@ -28,20 +28,20 @@ namespace vBay.WUC
             dataContext = new DataEntityDataContext();
 
             //  2. Thiết lập thuộc tính Visible cho Label_ThayDoiLoaiNguoiDungThanhCong
-            Label_ThayDoiLoaiTaiKhoanThanhCong.Visible = false;
+            //Label_ThayDoiLoaiTaiKhoanThanhCong.Visible = false;
 
             //  3. Đọc danh sách người dùng trong CSDL thông qua dataContext và load lên DropDownList_DanhSachTaiKhoan
-            var danhSachTaiKhoan = from a in dataContext.aspnet_Users
-                                   select new { a.UserId, a.UserName };
+            //var danhSachTaiKhoan = from a in dataContext.aspnet_Users
+            //                       select new { a.UserId, a.UserName };
 
-            foreach (var i in danhSachTaiKhoan)
-            {
-                ListItem item = new ListItem(i.UserName, i.UserId.ToString());
-                DropDownList_DanhSachTaiKhoan.Items.Add(item);
-            }
+            //foreach (var i in danhSachTaiKhoan)
+            //{
+            //    ListItem item = new ListItem(i.UserName, i.UserId.ToString());
+            //    DropDownList_DanhSachTaiKhoan.Items.Add(item);
+            //}
 
             //  4. Thiết lập thuộc tính Enable cho DropDownList_DanhSachLoaiNguoiDung nếu isReload == true và ngược lại nếu isReload == false
-            DropDownList_LoaiNguoiDungMoi.Enabled = false;
+            //DropDownList_LoaiNguoiDungMoi.Enabled = false;
 
             //  5. Thiết lập thuộc tịnh Enable = false cho Button_Save nếu isReload == true và ngược lại nếu isReload == false
             Button_Save.Enabled = false;
@@ -50,6 +50,8 @@ namespace vBay.WUC
         protected void Page_Load(object sender, EventArgs e)
         {
             //Do nothing here
+            
+            
         }
 
         protected void Button_Save_Click(object sender, EventArgs e)
@@ -66,26 +68,50 @@ namespace vBay.WUC
 
             //Thực hiện
             //  1. Lấy UserName của User được chọn trong DropDownList_DanhSachTaiKhoan
-            String userName = DropDownList_DanhSachTaiKhoan.SelectedItem.Text;
+            String userName = GridView1.SelectedRow.Cells[1].Text;
 
             //  2. Lấy RoleName của Role được chọn trong DropDownList_LoaiNguoiDungMoi
-            String newRoleName = DropDownList_LoaiNguoiDungMoi.SelectedItem.Text;
+            //String newRoleName = DropDownList_LoaiNguoiDungMoi.SelectedItem.Text;
+            List<string> newRoles = new List<string>();
+            
+            foreach (ListItem i in CheckBoxList1.Items)
+            {
+                if (i.Selected)
+                    newRoles.Add(i.Text);
+            }
+
+            Label_ThayDoiLoaiTaiKhoanThanhCong.Visible = true;
+            if (newRoles.Count == 0)
+            {
+                Label_ThayDoiLoaiTaiKhoanThanhCong.Text = "Không được để trống phân quyền";
+                
+                return;
+            }
 
             //  3. Lấy RoleName của Role hiện tại của User đang được hiển thị trong TextBox_LoaiNguoiDungHienTai
-            String presentRoleName = TextBox_LoaiNguoiDungHienTai.Text;
+            //String presentRoleName = TextBox_LoaiNguoiDungHienTai.Text;
+            string[] oldRoles = Roles.GetRolesForUser(GridView1.SelectedRow.Cells[1].Text);
+
 
             //  4. Thực hiện sửa đổi và lưu vào CSDL
-            Roles.RemoveUserFromRole(userName, presentRoleName);
-            Roles.AddUserToRole(userName, newRoleName);
+            foreach (string i in oldRoles)
+            {
+                Roles.RemoveUserFromRole(userName, i);
+            }
+            
+            foreach (string i in newRoles)
+            {
+                Roles.AddUserToRole(userName, i);
+            }
 
             //  5. Thiết lập thuộc tính Visible cho Label_ThayDoiLoaiNguoiDungThanhCong = true
-            Label_ThayDoiLoaiTaiKhoanThanhCong.Visible = true;
+            Label_ThayDoiLoaiTaiKhoanThanhCong.Text = "Thay đổi loại tài khoản thành công";
 
             //  6. Thiết lập thuộc tính Enable cho Button_Save = false
-            Button_Save.Enabled = false;
+            Button_Save.Enabled = false ;
 
             //  7. Load lại TextBox_LoaiNguoiDungHienTai
-            TextBox_LoaiNguoiDungHienTai.Text = newRoleName;
+            //TextBox_LoaiNguoiDungHienTai.Text = newRoleName;
         }
 
         protected void DropDownList_DanhSachTaiKhoan_SelectedIndexChanged(object sender, EventArgs e)
@@ -101,58 +127,70 @@ namespace vBay.WUC
 
             //Tiến hành
             //Kiểm tra: Nếu SelectedIndex == 0 => Thiết lập thuộc tính Enable của DropDownList_LoaiNguoiDungMoi = false và return
-            if (DropDownList_DanhSachTaiKhoan.SelectedIndex == 0)
-            {
-                DropDownList_LoaiNguoiDungMoi.Enabled = false;
-                return;
-            }
+            //if (DropDownList_DanhSachTaiKhoan.SelectedIndex == 0)
+            //{
+            //    //DropDownList_LoaiNguoiDungMoi.Enabled = false;
+            //    return;
+            //}
 
-            //  1. Thay đổi giá trị thuộc tính isReload thành true nếu giá trị đang là false <=> Page đã được Reload ít nhất 1 lần
-            if (isReload == false)
-                isReload = true;
+            ////  1. Thay đổi giá trị thuộc tính isReload thành true nếu giá trị đang là false <=> Page đã được Reload ít nhất 1 lần
+            //if (isReload == false)
+            //    isReload = true;
 
-            //  2. Truy vấn CSDL thông qua dataContext để lấy loại người dùng của user đang được chọn
-            Guid userId = Guid.Parse(DropDownList_DanhSachTaiKhoan.SelectedItem.Value.ToString());
-            aspnet_UsersInRole userInRole = dataContext.aspnet_UsersInRoles.Single(p => p.UserId == userId);
-            aspnet_Role role = dataContext.aspnet_Roles.Single(p => p.RoleId == userInRole.RoleId);
+            ////  2. Truy vấn CSDL thông qua dataContext để lấy loại người dùng của user đang được chọn
+            ////string username = DropDownList_DanhSachTaiKhoan.SelectedItem.Text;
+            //Guid userId = Guid.Parse(DropDownList_DanhSachTaiKhoan.SelectedItem.Value.ToString());
+            //aspnet_UsersInRole userInRole = dataContext.aspnet_UsersInRoles.Single(p => p.UserId == userId);
+            //aspnet_Role role = dataContext.aspnet_Roles.Single(p => p.RoleId == userInRole.RoleId);
+            ////string[] roles = Roles.GetRolesForUser(username);
 
-            //  3. Load tên loại người dùng RoleName của User đang được chọn lên TextBox_LoaiNguoiDungHienTai
-            TextBox_LoaiNguoiDungHienTai.Text = role.RoleName;
+            ////  3. Load tên loại người dùng RoleName của User đang được chọn lên TextBox_LoaiNguoiDungHienTai
+            //TextBox_LoaiNguoiDungHienTai.Text = role.RoleName;
 
-            //  4. Thiết lập giá trị Enable cho DropDownList_DanhSachLoaiNguoiDungMoi thành true
-            DropDownList_LoaiNguoiDungMoi.Enabled = isReload;   //Khi này isReload đã mang giá trị true
+            ////  4. Thiết lập giá trị Enable cho DropDownList_DanhSachLoaiNguoiDungMoi thành true
+            //DropDownList_LoaiNguoiDungMoi.Enabled = isReload;   //Khi này isReload đã mang giá trị true
 
-            //  5. Đọc danh sách loại người dùng khác với loại người dùng hiện tại của User được chọn và load lên DropDownList_LoaiNguoiDungMoi
-            var danhSachLoaiNguoiDungMoi = from a in dataContext.aspnet_Roles
-                                           where a.RoleId != userInRole.RoleId
-                                           select new { a.RoleId, a.RoleName };
+            ////  5. Đọc danh sách loại người dùng khác với loại người dùng hiện tại của User được chọn và load lên DropDownList_LoaiNguoiDungMoi
+            //var danhSachLoaiNguoiDungMoi = from a in dataContext.aspnet_Roles
+            //                               where a.RoleId != userInRole.RoleId
+            //                               select new { a.RoleId, a.RoleName };
 
-            DropDownList_LoaiNguoiDungMoi.Items.Clear();
-            DropDownList_LoaiNguoiDungMoi.Items.Add(new ListItem("Choose new role..."));
-            foreach (var i in danhSachLoaiNguoiDungMoi)
-            {
-                ListItem item = new ListItem(i.RoleName, i.RoleId.ToString());
-                DropDownList_LoaiNguoiDungMoi.Items.Add(item);
-            }
+            //DropDownList_LoaiNguoiDungMoi.Items.Clear();
+            //DropDownList_LoaiNguoiDungMoi.Items.Add(new ListItem("Choose new role..."));
+            //foreach (var i in danhSachLoaiNguoiDungMoi)
+            //{
+            //    ListItem item = new ListItem(i.RoleName, i.RoleId.ToString());
+            //    DropDownList_LoaiNguoiDungMoi.Items.Add(item);
+            //}
         }
 
-        protected void DropDownList_LoaiNguoiDungMoi_SelectedIndexChanged(object sender, EventArgs e)
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Hướng xử lí trong hàm DropDownList_LoaiNguoiDungMoi_SelectedIndexChanged
-            //Kiểm tra: Nếu SelectedIndex của DropDownList_LoaiNguoiDungMoi == 0 => Thiết lập thuộc tính Enable của Button_Save = false và return
-            //  1. Thiết lập thuộc tính Enable của Button_Save = true
-
-
-            //Tiến hành
-            //Kiểm tra: Nếu SelectedIndex của DropDownList_LoaiNguoiDungMoi == 0 => Thiết lập thuộc tính Enable của Button_Save = false và return
-            if (DropDownList_LoaiNguoiDungMoi.SelectedIndex == 0)
+            try
             {
-                Button_Save.Enabled = false;
-                return;
+                string[] oldRoles = Roles.GetRolesForUser(GridView1.SelectedRow.Cells[1].Text);
+
+                foreach (ListItem i in CheckBoxList1.Items)
+                {
+                    i.Selected = false;
+                }
+
+                foreach (string i in oldRoles)
+                {
+                    CheckBoxList1.Items.FindByText(i).Selected = true;
+                }
+            }
+            catch (System.Exception ex)
+            {
+
             }
 
-            //  1. Thiết lập thuộc tính Enable của Button_Save = true
             Button_Save.Enabled = true;
+        }
+
+        protected void GridView1_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        {
+            
         }
     }
 }

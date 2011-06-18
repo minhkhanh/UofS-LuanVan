@@ -7,8 +7,9 @@
     <asp:Menu ID="Menu1" runat="server" StaticSubMenuIndent="16px" CssClass="navbarmenu"
                                     IncludeStyleBlock="False" Orientation="Horizontal">
     <Items>
-        <asp:MenuItem Text="Quản lý quyền hạn" NavigateUrl="~/ThayDoiLoaiNguoiDung.aspx"></asp:MenuItem>
+        <asp:MenuItem Text="Sửa quyền truy cập" NavigateUrl="~/ThayDoiLoaiNguoiDung.aspx"></asp:MenuItem>
         <asp:MenuItem Text="Thay đổi giao diện" NavigateUrl="~/ThayDoiGiaoDienWebSite.aspx"></asp:MenuItem>
+        <asp:MenuItem Text="Khóa người dùng" NavigateUrl="~/QuanLiTaiKhoan.aspx"></asp:MenuItem>
     </Items>
     </asp:Menu>
 </asp:Content>

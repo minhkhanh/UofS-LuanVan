@@ -16,30 +16,5 @@ namespace vBay
             {
             }
         }
-
-        protected void btnSignup_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
-        {
-            
-        }
-
-        protected void LinkButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void LinkButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void QuickLoginView_ViewChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
