@@ -59,7 +59,14 @@ namespace vBay.WUC
             if (sl!=null)
             {
                 lbSoLanDatGia.Text = sl.SoLuotDauGia.ToString();
-            } 
+            }
+            var img = from spMul in dataContext.SanPham_Multimedias
+                      join mul in dataContext.Multimedias on spMul.MaMT equals mul.MaMT
+                      join loai in dataContext.LoaiMultimedias on mul.MaLoaiMT equals loai.MaLoaiMT
+                      where (spMul.MaSanPham == sp.MaSanPham) && (loai.TenLoaiMT == "Picture")
+                      select new { mul.LinkURL };
+            repImages.DataSource = img;
+            repImages.DataBind();
             var info = (from a in dataContext.ThongTinTaiKhoans
                         join b in dataContext.aspnet_Users on a.MaThongTinTaiKhoan equals b.MaThongTinTaiKhoan
                       where (b.UserId == sp.MaTaiKhoan)
@@ -84,14 +91,6 @@ namespace vBay.WUC
             }
             lbDiemBanNguoiBan.Text = (infoDG.DiemTinCayBan != null) ? infoDG.DiemTinCayBan.ToString() : "#NA";
             lbDiemMuaNguoiBan.Text = (infoDG.DiemTinCayMua != null) ? infoDG.DiemTinCayMua.ToString() : "#NA";
-
-            var img = from spMul in dataContext.SanPham_Multimedias
-                      join mul in dataContext.Multimedias on spMul.MaMT equals mul.MaMT
-                      join loai in dataContext.LoaiMultimedias on mul.MaLoaiMT equals loai.MaLoaiMT
-                      where (spMul.MaSanPham == sp.MaSanPham) && (loai.TenLoaiMT == "Picture")
-                      select new { mul.LinkURL };
-            repImages.DataSource = img;
-            repImages.DataBind();
         }
 
         protected void repImages_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -181,7 +180,7 @@ namespace vBay.WUC
         }
         public string TrangKhongCoQuyenTruyCap
         {
-            get { return "./Default.aspx"; }
+            get { return "./Stop.aspx"; }
         }
         private Guid GetUserId()
         {
