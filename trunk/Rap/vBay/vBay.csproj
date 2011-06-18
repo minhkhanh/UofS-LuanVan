@@ -58,6 +58,7 @@
     <Content Include="AdminDefault.aspx" />
     <Content Include="App_Themes\ThemeSunny\styleSunny.css" />
     <Content Include="ChiTietMotSanPhamManager.aspx" />
+    <Content Include="DauGiaThanhCong.aspx" />
     <Content Include="DefaultPP.aspx" />
     <Content Include="Images\crying-racoon.gif" />
     <Content Include="Images\icon_oval.jpg" />
@@ -199,6 +200,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataEntity.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DauGiaThanhCong.aspx.cs">
+      <DependentUpon>DauGiaThanhCong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DauGiaThanhCong.aspx.designer.cs">
+      <DependentUpon>DauGiaThanhCong.aspx</DependentUpon>
     </Compile>
     <Compile Include="DefaultPP.aspx.cs">
       <DependentUpon>DefaultPP.aspx</DependentUpon>
