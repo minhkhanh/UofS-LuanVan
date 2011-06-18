@@ -168,6 +168,7 @@ namespace vBay.WUC
         {
             try
             {
+                GridView1.SelectedRowStyle.BackColor = System.Drawing.Color.Yellow;
                 string[] oldRoles = Roles.GetRolesForUser(GridView1.SelectedRow.Cells[1].Text);
 
                 foreach (ListItem i in CheckBoxList1.Items)

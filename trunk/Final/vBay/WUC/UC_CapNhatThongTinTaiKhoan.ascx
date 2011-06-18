@@ -16,24 +16,6 @@
                     ForeColor="Black" Height="20px" MaxLength="50" Width="65%" ReadOnly="True" 
                     Enabled="False"></asp:TextBox>
                 <br />
-                <asp:Label ID="Label4" runat="server" Text="Mật khẩu:" 
-                    Font-Bold="True" Width="30%" Enabled="False"></asp:Label>
-                <asp:TextBox ID="TextBox_Pass" runat="server" BackColor="White" 
-                    ForeColor="Black" Height="20px" MaxLength="50" Width="65%"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator_Pass" runat="server" 
-                    ControlToValidate="TextBox_Pass" ErrorMessage="RequiredFieldValidator" 
-                    Font-Italic="True" ForeColor="Red" ValidationGroup="InfoValidation">*</asp:RequiredFieldValidator>
-                <br />
-                <asp:Label ID="Label5" runat="server" Text="Nhập lại mật khẩu:" 
-                    Font-Bold="True" Width="30%" 
-                    Enabled="False"></asp:Label>
-                <asp:TextBox ID="TextBox_RePass" runat="server" BackColor="White" 
-                    ForeColor="Black" Height="20px" MaxLength="50" Width="65%"></asp:TextBox>
-                <asp:CompareValidator ID="CompareValidator_RePass" runat="server" ControlToCompare="TextBox_Pass" 
-                    ControlToValidate="TextBox_RePass" ErrorMessage="Mật khẩu nhắc lại không khớp" 
-                    ForeColor="Red" Display="Dynamic" ValidationGroup="InfoValidation" 
-                    Font-Italic="True">*</asp:CompareValidator>
-                <br />
                 <asp:Label ID="Label6" runat="server" Text="Họ tên:" 
                     Font-Bold="True" Width="30%" Enabled="False"></asp:Label>
                 <asp:TextBox ID="TextBox_HoTen" runat="server" BackColor="White" 
@@ -82,18 +64,23 @@
                 <br />
                 <asp:Label ID="Label1" runat="server" Text="Avatar:" Font-Bold="True" 
                     Width="30%" Enabled="False"></asp:Label>
-                <asp:Image ID="AvatarImg" runat="server" Height="64px" Width="64px" GenerateEmptyAlternateText="True"
-                    AlternateText="Avatar" />
-                <asp:FileUpload ID="AvatarUploadCtrl" runat="server" />
-                <br />
-                <asp:Label ID="Label28" runat="server" Text="" Font-Bold="True" 
+                        <asp:Image ID="AvatarImg" runat="server" AlternateText="Avatar" 
+                            GenerateEmptyAlternateText="True" Height="64px" Width="64px" 
+                    ImageUrl="~/Avatars/AvatarDefaul.jpg" />
+                        <asp:FileUpload ID="AvatarUploadCtrl" runat="server" />
+                        <br />
+                        <asp:Label ID="Label4" runat="server" Text="" Font-Bold="True" 
                     Width="30%" Enabled="False"></asp:Label>
-                <asp:Button ID="Button1" runat="server" Text="Upload"/>
-                <asp:CheckBox ID="ckbNoAvatar" runat="server" Text="No avatar" />
+                        <asp:Button ID="Button1" runat="server" Text="Upload" 
+                            onclick="Button1_Click1" />
+                        <asp:CheckBox ID="ckbNoAvatar" runat="server" Text="No avatar" />
                 <br />
             </div>
             <br />
             <div id="CapNhatThongTinCaNhan_ThongTinTheTinDung">
+            <p align="left">
+            Sau đây là phần nội dung bắt buộc:
+            </p>
                 <center>
                     <asp:Label ID="Label8" runat="server" Text="THÔNG TIN THẺ TÍN DỤNG" 
                         Font-Bold="True" Font-Size="20px"></asp:Label>
@@ -105,14 +92,15 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator_FirstName" runat="server" 
                     ErrorMessage="Bạn chưa điền thông tin First name" 
                     ControlToValidate="TextBox_FirstName" ForeColor="Red" 
-                    ValidationGroup="InfoValidation">*</asp:RequiredFieldValidator>
+                    ValidationGroup="InfoValidation" EnableClientScript="False">*</asp:RequiredFieldValidator>
                 <br />
                 <asp:Label ID="Label10" runat="server" Text="Last name:" Font-Bold="True" 
                     Width="30%"></asp:Label>
                 <asp:TextBox ID="TextBox_LastName" runat="server" Width="65%"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator_LastName" runat="server" 
                     ErrorMessage="Bạn chưa điền thông tin Last name" 
-                    ControlToValidate="TextBox_LastName" ForeColor="Red">*</asp:RequiredFieldValidator>
+                    ControlToValidate="TextBox_LastName" ForeColor="Red" 
+                    EnableClientScript="False">*</asp:RequiredFieldValidator>
                 <br />
                 <asp:Label ID="Label11" runat="server" Text="Address:" Font-Bold="True" 
                     Width="30%"></asp:Label>
@@ -120,7 +108,7 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator_Address" runat="server" 
                     ControlToValidate="TextBox_Address" 
                     ErrorMessage="Bạn chưa điền thông tin Address" ForeColor="Red" 
-                    ValidationGroup="InfoValidation">*</asp:RequiredFieldValidator>
+                    ValidationGroup="InfoValidation" EnableClientScript="False">*</asp:RequiredFieldValidator>
                 <br />
                 <asp:Label ID="Label20" runat="server" Text="Country:" Font-Bold="True" 
                     Width="30%"></asp:Label>
@@ -128,14 +116,15 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator_Country" runat="server" 
                     ErrorMessage="Bạn chưa điền thông tin Country" 
                     ControlToValidate="TextBox_Country" ForeColor="Red" 
-                    ValidationGroup="InfoValidation">*</asp:RequiredFieldValidator>
+                    ValidationGroup="InfoValidation" EnableClientScript="False">*</asp:RequiredFieldValidator>
                 <br />
                 <asp:Label ID="Label15" runat="server" Text="State:" Font-Bold="True" 
                     Width="30%"></asp:Label>
                 <asp:TextBox ID="TextBox_State" runat="server" Width="65%"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator_State" runat="server" 
                     ControlToValidate="TextBox_State" ErrorMessage="Bạn chưa điền thông tin State" 
-                    ForeColor="Red" ValidationGroup="InfoValidation">*</asp:RequiredFieldValidator>
+                    ForeColor="Red" ValidationGroup="InfoValidation" 
+                    EnableClientScript="False">*</asp:RequiredFieldValidator>
                 <br />
                 <asp:Label ID="Label21" runat="server" Text="Zip code" Font-Bold="True" 
                     Width="30%"></asp:Label>
@@ -143,7 +132,7 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator_ZipCode" runat="server" 
                     ControlToValidate="TextBox_ZipCode" 
                     ErrorMessage="Bạn chưa điền thông tin Zipcode" ForeColor="Red" 
-                    ValidationGroup="InfoValdidation">*</asp:RequiredFieldValidator>
+                    ValidationGroup="InfoValdidation" EnableClientScript="False">*</asp:RequiredFieldValidator>
                 <br />
                 <asp:Label ID="Label22" runat="server" Text="Card type:" Font-Bold="True" 
                     Width="30%"></asp:Label>
@@ -156,7 +145,7 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator_CardNumber" runat="server" 
                     ControlToValidate="TextBox_CardNumber" 
                     ErrorMessage="Bạn chưa điền thông tin Card number" ForeColor="Red" 
-                    ValidationGroup="InfoValidation">*</asp:RequiredFieldValidator>
+                    ValidationGroup="InfoValidation" EnableClientScript="False">*</asp:RequiredFieldValidator>
                 <br />
                 <asp:Label ID="Label24" runat="server" Text="Expried time:" Font-Bold="True" 
                     Width="30%"></asp:Label>
@@ -174,14 +163,16 @@
                     ControlToValidate="DropDownList_ExpiredMonth" 
                     ErrorMessage="Thông tin Expired time không hợp lệ" ForeColor="Red" 
                     ValidationGroup="InfoValidation" 
-                    onservervalidate="CustomValidator_ExpiredTime_ServerValidate">*</asp:CustomValidator>
+                    onservervalidate="CustomValidator_ExpiredTime_ServerValidate" 
+                    EnableClientScript="False">*</asp:CustomValidator>
                 <br />
                 <asp:Label ID="Label27" runat="server" Text="CVV2:" Font-Bold="True" 
                     Width="30%"></asp:Label>
                 <asp:TextBox ID="TextBox_CVV2" runat="server" Width="65%"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator_CVV2" runat="server" 
                     ControlToValidate="TextBox_CVV2" ErrorMessage="Bạn chưa điền thông tin CVV2" 
-                    ForeColor="Red" ValidationGroup="InfoValidation">*</asp:RequiredFieldValidator>
+                    ForeColor="Red" ValidationGroup="InfoValidation" 
+                    EnableClientScript="False">*</asp:RequiredFieldValidator>
             </div>
             <asp:ValidationSummary ID="ValidationSummary" runat="server" Font-Italic="True" 
                 ForeColor="Red" ValidationGroup="InfoValidation" />

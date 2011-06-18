@@ -17,7 +17,7 @@
                                         <td align="right">
                                             <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">Tên đăng nhập:</asp:Label>
                                         </td>
-                                        <td>
+                                        <td colspan="2">
                                             <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" 
                                                 ControlToValidate="UserName" ErrorMessage="User Name is required." 
@@ -28,7 +28,7 @@
                                         <td align="right">
                                             <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Mật khẩu:</asp:Label>
                                         </td>
-                                        <td>
+                                        <td colspan="2">
                                             <asp:TextBox ID="Password" runat="server" TextMode="Password"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" 
                                                 ControlToValidate="Password" ErrorMessage="Password is required." 
@@ -38,6 +38,9 @@
                                     <tr>
                                         <td colspan="1">
                                             <asp:CheckBox ID="RememberMe" runat="server" Text="Ghi nhớ." />
+                                        </td>
+                                        <td>
+                                            <asp:HyperLink ID="HyperLink4" NavigateUrl="~/PasswordRecovering.aspx" runat="server">Quên mật khẩu?</asp:HyperLink>
                                         </td>
                                         <td align="right">
                                             <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Log In" 
@@ -61,7 +64,10 @@
                     <tr>
                         <td>
                             <asp:HyperLink ID="HyperLink1" runat="Server" NavigateUrl="~/CapNhatThongTinTaiKhoan.aspx">Thông tin tài khoản</asp:HyperLink>
-                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/ThongKePhienDauGiaUser.aspx">Lịch sử giao dịch</asp:HyperLink>
                             <br />
                             <asp:HyperLink ID="HyperLink4" runat="server" 
@@ -69,6 +75,11 @@
                             <br />
                             <asp:HyperLink ID="HyperLink3" runat="server" 
                                 NavigateUrl="~/DangThongTinSanPham.aspx">Đăng sản phẩm đấu giá</asp:HyperLink>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/PasswordChanging.aspx">Đổi mật khẩu</asp:HyperLink>
                         </td>
                     </tr>
                 </table>

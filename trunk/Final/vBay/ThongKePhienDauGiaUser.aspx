@@ -5,6 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:Label ID="Label1" runat="server" Text="Các phiên đang đấu giá"></asp:Label>
+    <br />
     <asp:DataList ID="DataList1" runat="server" HorizontalAlign="Center">
         <HeaderTemplate>
             <table class="itemtable" border="0" cellspacing="0" cellpadding="0" width="100%">
@@ -50,8 +51,13 @@
                 </td>
             </tr>
         </ItemTemplate>
+        <FooterTemplate>
+        </table>
+        </FooterTemplate>
     </asp:DataList>
+    <br />
     <asp:Label ID="Label2" runat="server" Text="Lịch sử đấu giá"></asp:Label>
+    <br />
     <asp:DataList ID="DataList2" runat="server" HorizontalAlign="Center">
         <HeaderTemplate>
             <table class="itemtable" border="0" cellspacing="0" cellpadding="0" width="100%">
