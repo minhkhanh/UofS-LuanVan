@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+	       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+	       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+    <definition name="trangchu" template="/tileslayout/template.jsp">
+        <put-attribute name="menuheader" value="/tileslayout/menuheader.jsp" />
+        <put-attribute name="maincontent" value="/tileslayout/trangchu-content.jsp" />        
+        <put-attribute name="footer" value="/tileslayout/footer.jsp" />
+    </definition>
+    <definition name ="lienhe" extends="trangchu">
+    	<put-attribute name="maincontent" value="/tileslayout/lienhe-content.jsp" />
+    </definition>   
+    <definition name ="dangky" extends="trangchu">
+    	<put-attribute name="maincontent" value="/tileslayout/dangky-content.jsp" />
+    </definition>
+    <definition name ="dangnhap" extends="trangchu">
+    	<put-attribute name="maincontent" value="/tileslayout/dangnhap-content.jsp" />
+    </definition>   
+    <definition name ="bando" extends="trangchu">
+    	<put-attribute name="maincontent" value="/tileslayout/bando-content.jsp" />
+    </definition>   
+    <definition name ="themdiadiem" extends="trangchu">
+    	<put-attribute name="maincontent" value="/tileslayout/themdiadiem-content.jsp" />
+    </definition>
+    <definition name ="themthumuc" extends="trangchu">
+    	<put-attribute name="maincontent" value="/tileslayout/themthumuc-content.jsp" />
+    </definition>                            
+</tiles-definitions>

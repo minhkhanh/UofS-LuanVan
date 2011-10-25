@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>GMap</display-name>
+  <welcome-file-list>
+    <welcome-file>trang-chu</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>TrangChuServlet</servlet-name>
+    <servlet-class>gmap.servlet.TrangChuServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TrangChuServlet</servlet-name>
+    <url-pattern>/trang-chu</url-pattern>
+  </servlet-mapping>  
+  <servlet>
+    <servlet-name>DangKyServlet</servlet-name>
+    <servlet-class>gmap.servlet.DangKyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DangKyServlet</servlet-name>
+    <url-pattern>/dang-ky</url-pattern>
+  </servlet-mapping>   
+  <servlet>
+    <servlet-name>DangNhapServlet</servlet-name>
+    <servlet-class>gmap.servlet.DangNhapServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DangNhapServlet</servlet-name>
+    <url-pattern>/dang-nhap</url-pattern>
+  </servlet-mapping>     
+  <servlet>
+    <servlet-name>DangXuatServlet</servlet-name>
+    <servlet-class>gmap.servlet.DangXuatServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DangXuatServlet</servlet-name>
+    <url-pattern>/dang-xuat</url-pattern>
+  </servlet-mapping>     
+  <servlet>
+    <servlet-name>BanDoServlet</servlet-name>
+    <servlet-class>gmap.servlet.BanDoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BanDoServlet</servlet-name>
+    <url-pattern>/ban-do</url-pattern>
+  </servlet-mapping>   
+  <servlet>
+    <servlet-name>ThemDiaDiemServlet</servlet-name>
+    <servlet-class>gmap.servlet.ThemDiaDiemServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ThemDiaDiemServlet</servlet-name>
+    <url-pattern>/them-dia-diem</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ThemThuMucServlet</servlet-name>
+    <servlet-class>gmap.servlet.ThemThuMucServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ThemThuMucServlet</servlet-name>
+    <url-pattern>/them-thu-muc</url-pattern>
+  </servlet-mapping>  
+  
+  <context-param>
+    <description>This is mysql database host, ie. localhost</description>
+    <param-name>database.host</param-name>
+    <param-value>localhost</param-value>
+  </context-param>
+  <context-param>
+    <description>This is mysql database host port, ie. 3308 for demo, 3306 for dev</description>
+    <param-name>database.port</param-name>
+    <param-value>3306</param-value>
+  </context-param>
+  <context-param>
+    <description>This is mysql database name</description>
+    <param-name>database.name</param-name>
+    <param-value>gmap</param-value>
+  </context-param>
+  <context-param>
+    <description>This is mysql database user name, root for demo, gofer for dev</description>
+    <param-name>database.user</param-name>
+    <param-value>root</param-value>
+  </context-param>
+  <context-param>
+    <description>This is mysql database password</description>
+    <param-name>database.password</param-name>
+    <param-value>minhkhanh</param-value>
+  </context-param>
+  <context-param>
+    <param-name>org.apache.tiles.definition.DefinitionsFactory.DEFINITIONS_CONFIG</param-name>
+    <param-value>/WEB-INF/tiles.xml</param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.apache.tiles.web.startup.TilesListener</listener-class>
+  </listener>
+</web-app>
